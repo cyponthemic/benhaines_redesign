@@ -9,3 +9,7 @@ assets/javascript/foundation.js
 assets/javascript/custom/demosite.js
 packaged/
 wpcs/
+
+.idea/
+.idea
+.idea/*

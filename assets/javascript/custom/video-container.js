@@ -18,7 +18,7 @@ function heroVideo(){
         position: '50% 50%', // Similar to the CSS `background-position` property.
         posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
         resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
-        bgColor: 'transparent', // Allow custom background-color for Vide div,
+        bgColor: '#B7B7B7', // Allow custom background-color for Vide div,
         className: '' // Add custom CSS class to Vide div
     };
 
@@ -61,6 +61,9 @@ function heroVideo(){
 }
 $(document).ready(function(){
     $(heroVideo.container).height(heroVideo.height());
+
+    $(heroVideo.container).find('div').first().css('z-index','1');
+
     $(heroVideo.container).vide(heroVideo.vide.path, heroVideo.vide.options);
 
     $(window).resize(function() {

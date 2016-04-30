@@ -14,8 +14,8 @@
 
  <?php get_template_part( 'template-parts/featured-image' ); ?>
 <div class="">
-    <div class="video-container" id="heroVideoJs" style="height: 80vh"
-         data-vide-bg="<?php echo get_template_directory_uri(); ?>/assets/images/drone.mp4" data-vide-options="loop: false, muted: false, position: 0% 0%"
+    <div class="video-container" id="heroVideoJs"
+
         ></div>
 </div>
  <div id="page" role="main">

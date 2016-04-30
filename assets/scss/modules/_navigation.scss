@@ -15,6 +15,36 @@
     height: 100vh;
     padding: 1rem;
   }
+  a {
+    color: #fff;
+    line-height: 65px;
+
+    padding-top: 0;
+    padding-bottom: 0;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  li.active{
+    position: relative;
+
+  }
+  li.active a{
+    margin-left: 1rem;
+    color: map-get($foundation-palette, 'primary');
+  }
+  li.active a:before {
+    content: "";
+    position: absolute;
+    background: map-get($foundation-palette, 'primary');
+    height: auto;
+    width: 4px;
+    bottom: 20%;
+    top: 20%;
+    left: 1rem;
+    right: auto;
+  }
+
 }
 
 .title-bar-title {
@@ -97,6 +127,7 @@
 }
 .bh-logo{
   margin-right: 20px;
+  max-height: 85px;
 }
 .menu-item-1338 .fa{
   font-size: 14px;
@@ -114,5 +145,62 @@
     content: "\f07a";
     position: relative;
     top: -2px;
+  }
+}
+.title-bar{
+  display: flex;
+  align-content: space-between;
+  justify-content: flex-end;
+  align-items: center;
+  .title-bar-title{
+    flex: 1;
+  }
+
+  .bh-logo{
+    max-height: 50px;
+  }
+  .menu-icon {
+    //flex: 1;
+    //max-width: 50px;
+    position: relative;
+    //border: 1px solid black;
+    span{
+      position: absolute;
+      top: 0px;
+      right: 35px;
+      text-transform: uppercase;
+    }
+  }
+}
+.off-canvas-wrapper{
+  background: $offcanvas-background;
+}
+
+
+//for small
+
+.top-bar ul.desktop-menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 767px) and  (max-width: 992px){
+  .main-navigation{
+    padding-top: 70px ;
+  }
+  .top-bar-right{
+    position: absolute;
+    top: 0%;
+    right: 30px;
+  }
+  .top-bar-left .bh-logo{
+    position: absolute;
+    top: 0%;
+    left: 30px;
+  }
+  ul#menu-main.desktop-menu{
+    width: 100vw;
+    justify-content: space-around;
+    padding-right: 30px;
   }
 }

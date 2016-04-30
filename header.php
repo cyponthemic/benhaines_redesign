@@ -40,10 +40,16 @@
 
 	<header id="masthead" class="site-header contain-to-grid" role="banner" style="padding: 5px 0px 7px;">
 		<div class="title-bar" data-responsive-toggle="site-navigation">
-			<button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
+
+
 			<div class="title-bar-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                    <img class="bh-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/logo-desktop.png">
+                </a>
 			</div>
+            <button class="menu-icon" type="button" data-toggle="mobile-menu">
+                <span>Menu</span>
+            </button>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">

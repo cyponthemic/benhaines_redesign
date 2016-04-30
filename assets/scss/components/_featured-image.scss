@@ -18,3 +18,7 @@
 		height: rem-calc(400);
 		}
 }
+
+.video-container>div {
+  z-index: 0 !important;
+}

@@ -49,11 +49,26 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #2199e8,
+  primary: #D2BB92,
   secondary: #777,
   success: #3adb76,
   warning: #ffae00,
   alert: #ec5840,
+);
+$ben-palette: (
+        gold: #D2BB92,
+        navy-blue: #2A304E,
+        charcoal: #1D1D1D,
+        secondary-text-grey: #474747,
+        primary-grey: #B7B7B7 ,
+        secondary-grey: #e0e0e0,
+        cream: #f5f5f5
+
+);
+$blog-palette: (
+        green: #8CC4CB,
+        grape: #9F8ECC,
+        blue: #8EB4CC
 );
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
@@ -62,7 +77,7 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: 'Lato', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -379,8 +394,9 @@ $mediaobject-image-width-stacked: 100%;
 $menu-margin: 0;
 $menu-margin-nested: 1rem;
 $menu-item-padding: 0.7rem 1rem;
-$menu-item-color-active: $white;
-$menu-item-background-active: #121212;
+$menu-item-color-active: map-get($foundation-palette, 'primary');
+$menu-item-color-active: #fff;
+$menu-item-background-active: transparent;
 $menu-icon-spacing: 0.25rem;
 
 // 23. Meter
@@ -397,14 +413,14 @@ $meter-fill-bad: $alert-color;
 // --------------
 
 $offcanvas-size: 250px;
-$offcanvas-background: $light-gray;
+$offcanvas-background: map-get($ben-palette, 'charcoal');
 $offcanvas-zindex: -1;
 $offcanvas-transition-length: 0.5s;
 $offcanvas-transition-timing: ease;
 $offcanvas-fixed-reveal: true;
 $offcanvas-exit-background: rgba($white, 0.25);
 $maincontent-class: 'off-canvas-content';
-$maincontent-shadow: 0 0 10px rgba($black, 0.5);
+$maincontent-shadow: none; //0 0 10px rgba($black, 0.5);
 
 // 25. Orbit
 // ---------
@@ -535,12 +551,12 @@ $thumbnail-radius: $global-radius;
 // 34. Title Bar
 // -------------
 
-$titlebar-background: $black;
-$titlebar-color: $white;
-$titlebar-padding: 0.5rem;
+$titlebar-background: $white;
+$titlebar-color: $black;
+$titlebar-padding: 1rem;
 $titlebar-text-font-weight: bold;
-$titlebar-icon-color: $white;
-$titlebar-icon-color-hover: $medium-gray;
+$titlebar-icon-color: #000;
+$titlebar-icon-color-hover: map-get($foundation-palette, 'primary');
 $titlebar-icon-spacing: 0.25rem;
 
 // 35. Tooltip
@@ -558,8 +574,8 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0;
-$topbar-background: #121212;
+$topbar-background: #fff;
 $topbar-submenu-background: $topbar-background;
-$topbar-link-color: #fff;
+$topbar-link-color: #000;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;

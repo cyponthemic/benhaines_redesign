@@ -12,6 +12,9 @@
 if ( ! function_exists( 'foundationpress_scripts' ) ) :
 	function foundationpress_scripts() {
 
+        // Enqueue Google Fonts.
+        wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' );
+
 	// Enqueue the main Stylesheet.
 	wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/foundation.css', array(), '2.6.1', 'all' );
 

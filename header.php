@@ -19,7 +19,13 @@
 		<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons/apple-touch-icon-114x114.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons/apple-touch-icon-72x72.png">
 		<link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons/apple-touch-icon.png">
-		<?php wp_head(); ?>
+
+        <script>
+            //            Global variables
+            var templateUrl = '<?php echo get_template_directory_uri(); ?>';
+            var foundationMobileBreakpoint = 640;
+        </script>
+        <?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
 	<?php do_action( 'foundationpress_after_body' ); ?>
@@ -32,19 +38,26 @@
 
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header contain-to-grid" role="banner" style="padding: 5px 0px 7px;">
 		<div class="title-bar" data-responsive-toggle="site-navigation">
-			<button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
+
+
 			<div class="title-bar-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                    <img class="bh-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/logo-desktop.png">
+                </a>
 			</div>
+            <button class="menu-icon" type="button" data-toggle="mobile-menu">
+                <span>Menu</span>
+            </button>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
 			<div class="top-bar-left">
-				<ul class="menu">
-					<li class="home"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
-				</ul>
+                <img class="bh-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/logo-desktop.png">
+                <ul class="menu">
+                    <?php foundationpress_top_bar_l();?>
+                </ul>
 			</div>
 			<div class="top-bar-right">
 				<?php foundationpress_top_bar_r(); ?>

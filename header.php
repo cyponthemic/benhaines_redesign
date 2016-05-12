@@ -25,7 +25,10 @@
             var templateUrl = '<?php echo get_template_directory_uri(); ?>';
             var foundationMobileBreakpoint = 640;
         </script>
-        <?php wp_head(); ?>
+<!--		TODO: enaue the fonts -->
+		<link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+		<?php wp_head(); ?>
+
 	</head>
 	<body <?php body_class(); ?>>
 	<?php do_action( 'foundationpress_after_body' ); ?>

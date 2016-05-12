@@ -22,3 +22,68 @@
 .video-container>div {
   z-index: 0 !important;
 }
+
+.image-crop {
+	position: relative;
+	overflow: hidden;
+	height: auto;
+	width: 100%;
+	margin-bottom: 30px;
+
+	&_feature{
+		@include aspect-ratio(569,352);
+	}
+	&_bottle{
+		@include aspect-ratio(115 , 248);
+
+	}
+	&_news{
+		@include aspect-ratio(374 , 210);
+	}
+	&--image{
+		position: absolute;
+		opacity: 1;
+		top: 50%;
+		transform: translate(0,-50%);
+		width: 100%;
+		transition: all .4s;
+		max-width: none;
+		left: auto;
+		&:hover{
+			width: 110%;
+
+			transform: translate(-5%,-50%);
+			transition: all .4s;
+		}
+	}
+	&--bottle-shot{
+		position: absolute;
+		opacity: 1;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
+		height: 100%;
+		width: auto;
+		max-width: none;
+		transition: all .4s;
+		&:hover{
+			height: 200%;
+			top: -90%;
+			transform: translate(-50%);
+			transition: all .4s;
+		}
+	}
+	&--description{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		color: white;
+		text-align: center;
+		font-weight: 600;
+		padding: 0 10%;
+	}
+	&-outer{
+		padding: 0 80px;
+	}
+
+}

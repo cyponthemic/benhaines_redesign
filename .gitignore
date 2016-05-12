@@ -13,6 +13,6 @@ wpcs/
 .idea/
 .idea
 .idea/*
-assets/stylesheets/foundation.css
+#assets/stylesheets/foundation.css
 
-assets/javascript/foundation.js
+#assets/javascript/foundation.js

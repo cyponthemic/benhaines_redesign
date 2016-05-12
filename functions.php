@@ -49,3 +49,14 @@ require_once( 'library/responsive-images.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
+
+/**
+ * Filter the except length to 20 characters.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+    return 30;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );

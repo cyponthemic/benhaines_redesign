@@ -28,3 +28,24 @@ p.wp-caption-text{
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.center{
+  text-align: center;
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

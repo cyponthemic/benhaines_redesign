@@ -13,11 +13,116 @@
  get_header(); ?>
 
  <?php get_template_part( 'template-parts/featured-image' ); ?>
-<div class="">
-    <div class="video-container" id="heroVideoJs"
+    <div class="section">
+        <div class="video-container" id="heroVideoJs">
+            <div class="hero-header">
+                <h1>Expressing places through wine</h1>
+                <a class="large button" href="#">Explore wines</a>
+            </div>
 
-        ></div>
-</div>
+            <div class="hero-footer">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/scroll-down.svg" alt="scroll down">
+                <span>Scroll down</span>
+            </div>
+        </div>
+    </div>
+    <div class="section section-padded">
+        <div class="row row-margin-bottom">
+            <div class="large-6 large-offset-3 columns">
+                <h2 class="center">Exploring unique wine</h2>
+                <p class="center">Collaborating with different vineyards year to year to explore new and interesting aspects of already discovered sites.  </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 columns">
+                <div class="image-crop image-crop_feature ">
+                    <img class="image-crop--image"
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg" >
+
+                    <div class="image-crop--description">
+                        <h2 class="center color-white">Exploring unique wine</h2>
+                        <p class="center">Collaborating with different vineyards year to year to explore new and interesting aspects of already discovered sites.  </p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="large-6 columns">
+
+                <div class="image-crop image-crop_feature ">
+                    <img class="image-crop--image"
+                         src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-b.jpg" >
+
+                    <div class="image-crop--description">
+                        <h2 class="center color-white">Exploring unique wine</h2>
+                        <p class="center">Collaborating with different vineyards year to year to explore new and interesting aspects of already discovered sites.  </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="section section-padded section-grey">
+        <div class="row row-margin-bottom">
+            <div class="large-6 large-offset-3 columns">
+                <h2 class="center">Featured wines</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-4 columns">
+                <?php get_template_part( 'template-parts/sample-content-product' );  ?>
+            </div>
+            <div class="large-4 columns">
+                <?php get_template_part( 'template-parts/sample-content-product' );  ?>
+            </div>
+            <div class="large-4 columns">
+                <?php get_template_part( 'template-parts/sample-content-product' );  ?>
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-4 columns">
+                <?php get_template_part( 'template-parts/sample-content-product' );  ?>
+            </div>
+            <div class="large-4 columns">
+                <?php get_template_part( 'template-parts/sample-content-product' );  ?>
+            </div>
+            <div class="large-4 columns">
+                <?php get_template_part( 'template-parts/sample-content-product' );  ?>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="section section-padded">
+        <div class="row row-margin-bottom">
+            <div class="large-6 large-offset-3 columns">
+                <h2 class="center">Latest news</h2>
+            </div>
+        </div>
+        <div class="row" data-equalizer>
+
+            <?php $my_query = new WP_Query( 'posts_per_page=3' ); ?>
+
+            <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
+                <div class="large-4 columns" >
+                    <?php get_template_part( 'template-parts/sample-content-news' );  ?>
+                </div>
+            <?php endwhile; ?>
+        </div>
+
+    </div>
+    <div class="section section-padded section-grey">
+        <div class="row row-margin-bottom">
+            <div class="large-6 large-offset-3 columns">
+                <h2 class="center">Join the club</h2>
+            </div>
+        </div>
+
+
+    </div>
  <div id="page" role="main">
 
  <?php do_action( 'foundationpress_before_content' ); ?>

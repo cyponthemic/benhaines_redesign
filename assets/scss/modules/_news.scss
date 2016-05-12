@@ -1,0 +1,24 @@
+.news{
+
+  &-archived{
+    margin-bottom: 30px;
+  }
+  &--description{
+    background:  map-get($ben-palette, 'cream');
+    color: black;
+    padding: 20px;
+    font-size: rem-calc(15);
+    h3{
+      font-size: rem-calc(22);
+      color: black;
+    }
+    p {
+
+    }
+  }
+
+
+  .image-crop{
+    margin-bottom: 0 !important;
+  }
+}

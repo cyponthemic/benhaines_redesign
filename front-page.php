@@ -35,8 +35,8 @@
         </div>
         <div class="row">
             <div class="large-6 columns">
-                <div class="image-crop image-crop_feature ">
-                    <img class="image-crop--image"
+                <div id="feature-a" class="image-crop image-crop_feature parallax-window" dataf-parallax="scroll" dataf-image-src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg">
+                    <img class="image-crop--image" style="display: none"
                         src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg" >
 
                     <div class="image-crop--description">
@@ -49,8 +49,8 @@
             </div>
             <div class="large-6 columns">
 
-                <div class="image-crop image-crop_feature ">
-                    <img class="image-crop--image"
+                <div id="feature-b" class="image-crop image-crop_feature parallax-window" dataf-parallax="scroll" dataf-image-src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg">
+                    <img class="image-crop--image" style="display: none"
                          src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-b.jpg" >
 
                     <div class="image-crop--description">
@@ -70,29 +70,30 @@
             </div>
         </div>
         <div class="row">
-            <div class="large-4 columns">
-                <?php get_template_part( 'template-parts/sample-content-product' );  ?>
-            </div>
-            <div class="large-4 columns">
-                <?php get_template_part( 'template-parts/sample-content-product' );  ?>
-            </div>
-            <div class="large-4 columns">
-                <?php get_template_part( 'template-parts/sample-content-product' );  ?>
 
 
-            </div>
+                <?php
+                $args = array(
+                    'post_type' => 'product',
+                    'posts_per_page' => 6
+                );
+                $loop = new WP_Query( $args );
+                if ( $loop->have_posts() ) {
+                    while ( $loop->have_posts() ) : $loop->the_post();
+                        echo '<div class="large-4 columns" >';
+                        wc_get_template_part( 'template-parts/sample-content-product' );
+                        echo "</div>";
+                    endwhile;
+                } else {
+                    echo __( 'No products found' );
+                }
+                wp_reset_postdata();
+                ?>
+
         </div>
         <div class="row">
-            <div class="large-4 columns">
-                <?php get_template_part( 'template-parts/sample-content-product' );  ?>
-            </div>
-            <div class="large-4 columns">
-                <?php get_template_part( 'template-parts/sample-content-product' );  ?>
-            </div>
-            <div class="large-4 columns">
-                <?php get_template_part( 'template-parts/sample-content-product' );  ?>
-
-
+            <div class="large-12 colums center">
+                <a class="large button hollow" href="#">see the shop</a>
             </div>
         </div>
     </div>
@@ -112,18 +113,39 @@
                 </div>
             <?php endwhile; ?>
         </div>
-
-    </div>
-    <div class="section section-padded section-grey">
-        <div class="row row-margin-bottom">
-            <div class="large-6 large-offset-3 columns">
-                <h2 class="center">Join the club</h2>
+        <div class="row">
+            <div class="large-12 colums center">
+                <a class="large button" href="#">More news</a>
             </div>
         </div>
 
 
     </div>
- <div id="page" role="main">
+    <div class="section section-padded section-grey">
+        <div class="row">
+            <div class="large-6 large-offset-3 columns">
+                <h2 class="center">Join the club</h2>
+            </div>
+        </div>
+        <div class="row row-margin-bottom">
+            <div class="large-10 large-offset-1 columns">
+
+                <p class="center">Collaborating with different vineyards year to year to explore new and interesting aspects of already discovered sites.  </p>
+            </div>
+        </div>
+        <div class="row row-margin-bottom">
+            <div class="medium-8 medium-offset-2 columns">
+                <?php echo do_shortcode('[mc4wp_form id="1427"]');?>
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="full-width instagram">
+        <?php echo do_shortcode('[instagram-feed]');?>
+    </div>
+ <div id="page" role="main" style="display: none">
 
  <?php do_action( 'foundationpress_before_content' ); ?>
  <?php while ( have_posts() ) : the_post(); ?>

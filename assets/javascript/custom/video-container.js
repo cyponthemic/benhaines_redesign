@@ -75,3 +75,17 @@ $(document).ready(function(){
 //<div class="video-container" id="heroVideoJs" style="height: 80vh"
 //data-vide-bg="<?php echo get_template_directory_uri(); ?>/assets/images/drone.mp4" data-vide-options="loop: false, muted: true, position: 0% 0%"
 //></div>
+
+
+$(document).ready(function(){
+    $('#feature-a').parallax({
+        imageSrc: templateUrl+'/assets/images/sample/feature-a.jpg',
+        zIndex: 9,
+        speed: 0.9
+    });
+    $('#feature-b').parallax({
+        imageSrc: templateUrl+'/assets/images/sample/feature-b.jpg',
+        zIndex: 9,
+        speed: 0.9
+    });
+});

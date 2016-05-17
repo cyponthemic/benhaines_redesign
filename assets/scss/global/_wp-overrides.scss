@@ -49,3 +49,26 @@ p.wp-caption-text{
     bottom: 0;
   }
 }
+.sb_instagram_header{
+  display: none;
+}
+
+
+#sb_instagram.sbi_col_6 #sbi_images .sbi_item {
+  width: 33.333333333333333333%;
+}
+
+@media screen and (min-width: 40em){
+  #sb_instagram.sbi_col_6 #sbi_images .sbi_item {
+    width: 25%;
+  }
+}
+@media screen and (min-width: 64em) {
+  #sb_instagram.sbi_col_6 #sbi_images .sbi_item {
+    width: 16.66%;
+  }
+}
+a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
+  height: auto !important;
+  padding-top: 100% !important;
+}

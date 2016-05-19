@@ -26,7 +26,8 @@
             var foundationMobileBreakpoint = 640;
         </script>
 <!--		TODO: enaue the fonts -->
-		<link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+
+
 		<?php wp_head(); ?>
 
 	</head>

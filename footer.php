@@ -39,8 +39,6 @@
 
     document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.12.3.js'><\/script>".replace("HOST", location.hostname));
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/2.1.3/parallax.min.js"  type="javascript">
 
-</script>
 </body>
 </html>

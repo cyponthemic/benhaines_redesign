@@ -6,7 +6,7 @@
     height: 100%;
     position: absolute;
     background: #fff;
-    opacity: 0.3;
+    opacity: 0;
   }
   .hero-header,
   .hero-footer{
@@ -16,6 +16,8 @@
   .hero-header{
     left: 50%;
     top: 40%;
+    @media only screen
+    and (orientation : landscape) { top: 50%;}
     transform: translate(-50%,-50%);
     max-width: 430px;
     width: 92%;
@@ -34,17 +36,22 @@
     transform: translate(-50%,50%);
     max-width: 430px;
     text-align: center;
-
-
+    //fixed for lanscape iphone 5
+    @media only screen
+    and (orientation : landscape) { display: none;}
     img {
-      width: 90px;
+      width: 50px;
+      @include breakpoint(medium) {
+        width: 90px;
+      }
+
       display: block;
       margin: auto;
     }
     span{
         text-transform: uppercase;
         color: map-get($foundation-palette, 'primary');
-
+        font-weight: 900;
     }
   }
 }

@@ -96,7 +96,7 @@
         <?php else: ?>
         <div class="row carousel-container">
 
-            <div class="carousel" style="position: relative">
+            <div class="carousel" style="position: static">
 
 
                     <?php

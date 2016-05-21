@@ -11,6 +11,11 @@
     left: auto;
   }
 }
+.carousel-no-arrows{
+  .carousel--arrow-nav{
+    display: none !important;
+  }
+}
 .carousel-container{
   position: relative;
 }

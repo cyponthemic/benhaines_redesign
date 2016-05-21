@@ -27,6 +27,7 @@ var PATHS = {
     'assets/components/foundation-sites/scss',
     'assets/components/motion-ui/src',
     'assets/components/fontawesome/scss',
+    'assets/components/slick-carousel/slick',
   ],
   javascript: [
     'assets/components/what-input/what-input.js',
@@ -56,6 +57,10 @@ var PATHS = {
 
     // Motion UI
     'assets/components/motion-ui/motion-ui.js',
+      // Parallax.js
+      'assets/components/parallax.js/parallax.js',
+      // Slick Carousel
+      'assets/components/slick-carousel/slick/slick.js',
 
     // Include your own custom scripts (located in the custom folder)
     'assets/javascript/custom/*.js',

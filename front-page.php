@@ -69,6 +69,7 @@
                 <h2 class="center">Featured wines</h2>
             </div>
         </div>
+        <?php if (!wp_is_mobile()): ?>
         <div class="row">
 
 
@@ -77,38 +78,51 @@
                     'post_type' => 'product',
                     'posts_per_page' => 6
                 );
+
                 $loop = new WP_Query( $args );
                 if ( $loop->have_posts() ) {
                     while ( $loop->have_posts() ) : $loop->the_post();
-                        echo '<div class="large-4 columns" >';
+                        echo '<div class="large-4 medium-6 columns" >';
                         wc_get_template_part( 'template-parts/sample-content-product' );
                         echo "</div>";
                     endwhile;
                 } else {
                     echo __( 'No products found' );
                 }
+
                 wp_reset_postdata();
                 ?>
         </div>
-        <div class="row carousel" style="display:none;s">
-                <?php
-                $args = array(
-                    'post_type' => 'product',
-                    'posts_per_page' => 6
-                );
-                $loop = new WP_Query( $args );
-                if ( $loop->have_posts() ) {
-                    while ( $loop->have_posts() ) : $loop->the_post();
-                        echo '<div class="slick-slide columns" >';
-                        wc_get_template_part( 'template-parts/sample-content-product' );
-                        echo "</div>";
-                    endwhile;
-                } else {
-                    echo __( 'No products found' );
-                }
-                wp_reset_postdata();
-                ?>
+        <?php else: ?>
+        <div class="row carousel-container">
+
+            <div class="carousel" style="">
+
+
+                    <?php
+                    $args = array(
+                        'post_type' => 'product',
+                        'posts_per_page' => 6
+                    );
+
+
+                    $loop = new WP_Query( $args );
+                    if ( $loop->have_posts()  ) {
+                        while ( $loop->have_posts() ) : $loop->the_post();
+                            echo '<div class="slick-slide columns" >';
+                            wc_get_template_part( 'template-parts/sample-content-product' );
+                            echo "</div>";
+                        endwhile;
+                    } else {
+                        echo __( 'No products found' );
+                    }
+
+                    wp_reset_postdata();
+
+                    ?>
+            </div>
         </div>
+        <?php endif; ?>
         <div class="row">
             <div class="large-12 colums center">
                 <a class="large button hollow" href="#">see the shop</a>

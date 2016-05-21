@@ -14,5 +14,4 @@ wpcs/
 .idea
 .idea/*
 assets/stylesheets/foundation.css
-
 assets/javascript/foundation.js

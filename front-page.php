@@ -35,6 +35,7 @@
         </div>
         <div class="row">
             <div class="large-6 columns">
+                <div class="small-inner">
                 <div id="feature-a" class="image-crop image-crop_feature parallax-window" dataf-parallax="scroll" dataf-image-src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg">
                     <img class="image-crop--image" style="display: none"
                         src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg" >
@@ -45,10 +46,10 @@
                     </div>
 
                 </div>
-
+                </div>
             </div>
             <div class="large-6 columns">
-
+                <div class="small-inner">
                 <div id="feature-b" class="image-crop image-crop_feature parallax-window" dataf-parallax="scroll" dataf-image-src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg">
                     <img class="image-crop--image" style="display: none"
                          src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-b.jpg" >
@@ -58,6 +59,7 @@
                         <p class="center">Collaborating with different vineyards year to year to explore new and interesting aspects of already discovered sites.  </p>
                     </div>
 
+                </div>
                 </div>
 
             </div>

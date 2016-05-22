@@ -11,11 +11,15 @@
     left: auto;
   }
 }
+.carousel-no-arrows{
+  .carousel--arrow-nav{
+    display: none !important;
+  }
+}
 .carousel-container{
   position: relative;
 }
 .slick-slider{
-  position: relative;
   margin-bottom: 50px;
 }
 .slick-dots {

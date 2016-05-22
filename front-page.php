@@ -35,6 +35,7 @@
         </div>
         <div class="row">
             <div class="large-6 columns">
+                <div class="small-inner">
                 <div id="feature-a" class="image-crop image-crop_feature parallax-window" dataf-parallax="scroll" dataf-image-src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg">
                     <img class="image-crop--image" style="display: none"
                         src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg" >
@@ -45,10 +46,10 @@
                     </div>
 
                 </div>
-
+                </div>
             </div>
             <div class="large-6 columns">
-
+                <div class="small-inner">
                 <div id="feature-b" class="image-crop image-crop_feature parallax-window" dataf-parallax="scroll" dataf-image-src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg">
                     <img class="image-crop--image" style="display: none"
                          src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-b.jpg" >
@@ -58,6 +59,7 @@
                         <p class="center">Collaborating with different vineyards year to year to explore new and interesting aspects of already discovered sites.  </p>
                     </div>
 
+                </div>
                 </div>
 
             </div>
@@ -96,7 +98,7 @@
         <?php else: ?>
         <div class="row carousel-container">
 
-            <div class="carousel" style="">
+            <div class="carousel" style="position: static">
 
 
                     <?php
@@ -135,6 +137,7 @@
                 <h2 class="center">Latest news</h2>
             </div>
         </div>
+        <?php if (!wp_is_mobile()): ?>
         <div class="row" data-equalizer>
 
             <?php $my_query = new WP_Query( 'posts_per_page=3' ); ?>
@@ -145,6 +148,19 @@
                 </div>
             <?php endwhile; ?>
         </div>
+        <?php else: ?>
+        <div class="row carousel-container" data-equalizer>
+            <div class="carousel carousel-no-arrows" style="position: static">
+            <?php $my_query = new WP_Query( 'posts_per_page=3' ); ?>
+
+            <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
+                <div class="large-4 columns" >
+                    <?php get_template_part( 'template-parts/sample-content-news' );  ?>
+                </div>
+            <?php endwhile; ?>
+            </div>
+        </div>
+        <?php endif; ?>
         <div class="row">
             <div class="large-12 colums center">
                 <a class="large button" href="#">More news</a>

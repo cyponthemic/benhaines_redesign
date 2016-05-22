@@ -31,7 +31,11 @@
 	margin-bottom: 30px;
 
 	&_feature{
-		@include aspect-ratio(569,352);
+
+        @include aspect-ratio(1,1);
+        @include breakpoint(medium){
+          @include aspect-ratio(569,352);
+        }
 	}
 	&_bottle{
 		@include aspect-ratio(115 , 248);
@@ -88,4 +92,10 @@
 		padding: 0 80px;
 	}
 
+}
+.small-inner {
+  padding: 0 25px;
+  @include breakpoint(medium){
+    padding: 0 0;
+  }
 }

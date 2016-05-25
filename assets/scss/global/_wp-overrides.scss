@@ -32,7 +32,17 @@ p.wp-caption-text{
 .center{
   text-align: center;
 }
-
+.fullwidth-small{
+  @media screen and (max-width: 40em){
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+.small-no-margin-bottom{
+  @media screen and (max-width: 40em){
+    margin-bottom: 0 !important;
+  }
+}
 @mixin aspect-ratio($width, $height) {
   position: relative;
   &:before {

@@ -34,11 +34,10 @@
             </div>
         </div>
         <div class="row">
-            <div class="large-6 columns">
-                <div class="small-inner">
-                <div id="feature-a" class="image-crop image-crop_feature parallax-window" dataf-parallax="scroll" dataf-image-src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg">
-                    <img class="image-crop--image" style="display: none"
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg" >
+            <div class="large-6 columns fullwidth-small">
+                <div class="">
+                <div id="feature-a" class="image-crop image-crop_feature parallax-window small-no-margin-bottom" dataf-parallax="scroll" dataf-image-src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg">
+
 
                     <div class="image-crop--description">
                         <h2 class="center color-white">Exploring unique wine</h2>
@@ -48,11 +47,10 @@
                 </div>
                 </div>
             </div>
-            <div class="large-6 columns">
-                <div class="small-inner">
-                <div id="feature-b" class="image-crop image-crop_feature parallax-window" dataf-parallax="scroll" dataf-image-src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg">
-                    <img class="image-crop--image" style="display: none"
-                         src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-b.jpg" >
+            <div class="large-6 columns fullwidth-small">
+                <div class="">
+                <div id="feature-b" class="image-crop image-crop_feature parallax-window small-no-margin-bottom" dataf-parallax="scroll" dataf-image-src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg">
+
 
                     <div class="image-crop--description">
                         <h2 class="center color-white">Exploring unique wine</h2>
@@ -98,7 +96,7 @@
         <?php else: ?>
         <div class="row carousel-container">
 
-            <div class="carousel" style="position: static">
+            <div class="carousel " style="position: static">
 
 
                     <?php
@@ -150,7 +148,7 @@
         </div>
         <?php else: ?>
         <div class="row carousel-container" data-equalizer>
-            <div class="carousel carousel-no-arrows" style="position: static">
+            <div class="carousel carousel-no-arrows carousel-with-dots" style="position: static">
             <?php $my_query = new WP_Query( 'posts_per_page=3' ); ?>
 
             <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>

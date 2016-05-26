@@ -6,14 +6,17 @@ assets/stylesheets/
 assets/components/
 assets/javascript/vendor/
 assets/javascript/custom/demosite.js
-!assets/stylesheets/foundation.map.css
+assets/stylesheets/foundation.map.css
 !assets/stylesheets/foundation.css
 !assets/javascript/foundation.js
+!foundation.css
 packaged/
 wpcs/
 .idea/
 .idea
 .idea/*
+
+
 
 
 

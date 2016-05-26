@@ -23,15 +23,18 @@
   margin-bottom: 50px;
 }
 .slick-dots {
-  display: none !important;
+
   position: absolute;
-  bottom: 10px;
+  top: 55%;
   left: 50%;
   transform: translateX(-50%);
   right: auto;
   margin: 0;
+  color: #fff;
   li {
     display: inline-block;
+    margin: 0 10px;
+    font-size: 20px;
     &:before{
       font-family: FontAwesome;
       content: "\f10c";

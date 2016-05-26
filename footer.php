@@ -14,8 +14,24 @@
 		<div id="footer-container">
 			<footer id="footer">
 				<?php do_action( 'foundationpress_before_footer' ); ?>
+				<?php if (!wp_is_mobile()):?>
 				<?php dynamic_sidebar( 'footer-widgets' ); ?>
+				<?php else: ?>
+				<ul class="accordion" data-accordion data-multi-expand="true">
+				<?php	//require_once( 'template-parts/accfooter.php' ); ?>
+				<?php dynamic_sidebar( 'footer-widgets-mobile' ); ?>
+				</ul>
+				<?php endif; ?>
 				<?php do_action( 'foundationpress_after_footer' ); ?>
+			</footer>
+			<footer id="legal" class="row" style="text-align: center">
+
+				<p>
+					<a>Terms & Conditions</a>&nbsp;&#124;&nbsp;<a>Copyright 2016 Ben Haines</a>
+				</p>
+				<p>
+					LIQUOR LICENCE NUMBER: 36121309
+				</p>
 			</footer>
 		</div>
 

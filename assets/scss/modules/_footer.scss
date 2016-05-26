@@ -2,10 +2,25 @@
 	max-width: 100%;
 	width: 100%;
 	margin: 0 auto;
-	border-top: 1px solid #ccc;
+	//border-top: 1px solid #ccc;
 	margin-top: rem-calc(60);
-
+	h6 { font-size: 28px}
+	.menu li > a {
+		color: map-get($ben-palette, 'primary-grey');
+		font-weight: 400;
+		padding-left: 0;
+	}
+	.menu .active > a {
+		color: map-get($ben-palette, 'primary-grey');
+	}
 	#footer {
+		i,
+		a{
+			color: map-get($ben-palette, 'primary-grey')!important;
+			&:hover{
+				color: map-get($ben-palette, 'secondary-text-grey')!important;
+			}
+		}
 		@include grid-row();
 		padding: rem-calc(30) 0;
 
@@ -13,6 +28,54 @@
 			list-style-type: none;
 			margin: 0;
 			padding: 0;
+
+			li {
+				display: block;
+			}
+		}
+
+		//woocomerce
+		.amount,
+		.attachment-shop_thumbnail {
+			display: none;
+		}
+		.product-title {
+
+			font-weight: 400;
+			padding-left: 0;
+		}
+		//social icons
+		ul.social-icons {
+			li {
+				display: inline-block;
+				font-size: 30px;
+				margin: 0 10px 0 4px;
+			}
+		}
+		.fa-ul{
+			margin-left: 33px;
+		}
+
+		.fa-li {
+			position: absolute;
+			left: -2.14286em;
+			width: 2.14286em;
+			top: 2.8px;
+			text-align: center;
+			font-size: 23px;
+
+
+
+		}
+	}
+	#legal{
+		p,
+		i,
+		a{
+			color: map-get($ben-palette, 'primary-grey')!important;
+			&:hover{
+				color: map-get($ben-palette, 'secondary-text-grey')!important;
+			}
 		}
 	}
 }

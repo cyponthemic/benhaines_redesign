@@ -24,6 +24,7 @@
             //            Global variables
             var templateUrl = '<?php echo get_template_directory_uri(); ?>';
             var foundationMobileBreakpoint = 640;
+			var foundationTabletBreakpoint = 768;
             var wordpressMobile = '<?php echo wp_is_mobile(); ?>';
         </script>
 <!--		TODO: enaue the fonts -->

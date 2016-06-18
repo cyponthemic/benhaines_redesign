@@ -16,26 +16,14 @@ Template Name: Sample Content Product
 
 
 
-<div class="news news_featured">
-	<div class="news--image">
-		<div class="image-crop image-crop_news" >
+<div class="news news_featured news_featured_hero">
 
-			<?php
-			echo '<a href="' . get_permalink( $_post->ID ) . '" title="' . esc_attr( $_post->post_title ) . '">';
-			echo get_the_post_thumbnail( $_post->ID, 'full', array( 'class' => 'image-crop--image' ) );
-			echo '</a>';
-			?>
-
-
-
-		</div>
-	</div>
-	<div class="news--description-holder" data-equalizer-watch>
+	<div class="news--description-holder news--description-holder_hero" data-equalizer-watch>
 		<div class="news--category">
 			<span class="news--category--title">Category:</span>
 			<span class="news--category--category">News</span>
 		</div>
-		<div class="news--title">
+		<div class="news--title news--title_hero">
 			<h3>
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			</h3>
@@ -44,7 +32,7 @@ Template Name: Sample Content Product
 			<p><?php the_excerpt(); ?></p>
 		</div>
 		<div class="news--cta">
-			<a class="medium button button-bold hollow" href="<?php the_permalink(); ?>">read more</a>
+			<a class="medium button button-bold" href="<?php the_permalink(); ?>">read more</a>
 		</div>
 	</div>
 </div>

@@ -35,11 +35,11 @@ function heroVideo(){
             dynamicHeight;
 
 
-
-        if(windowDim.w >= foundationMobileBreakpoint){
+        if(windowDim.w >= 1025){
 
             dynamicHeight = (windowDim.w*heroVideo.ratio.y)/heroVideo.ratio.x;
         }
+
         else {
             offset = $(heroVideo.container).offset();
             offset.top = $('#masthead').height();
@@ -76,16 +76,3 @@ $(document).ready(function(){
 //data-vide-bg="<?php echo get_template_directory_uri(); ?>/assets/images/drone.mp4" data-vide-options="loop: false, muted: true, position: 0% 0%"
 //></div>
 
-
-$(document).ready(function(){
-    $('#feature-a').parallax({
-        imageSrc: templateUrl+'/assets/images/sample/feature-a.jpg',
-        zIndex: 9,
-        speed: 0.9
-    });
-    $('#feature-b').parallax({
-        imageSrc: templateUrl+'/assets/images/sample/feature-b.jpg',
-        zIndex: 9,
-        speed: 0.9
-    });
-});

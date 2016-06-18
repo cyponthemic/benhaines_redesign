@@ -16,7 +16,7 @@
 // WP overrides
 @import "global/wp-admin"; // Fix issues with wp-admin bar positioning
 @import "global/wp-overrides"; // Override the default WordPress styling for some elements
-
+@import "global/helpers";
 // Third-party libraries
 @import 'font-awesome';
 @import 'motion-ui';
@@ -80,6 +80,7 @@
 @import "modules/footer";
 @import "modules/sidebar";
 @import "modules/hero-video";
+@import "modules/heros";
 @import "modules/news";
 // Components
 @import "components/buttons";
@@ -89,6 +90,7 @@
 @import "components/sections";
 @import "components/typo";
 @import "components/carousel";
+
 // Templates
 @import "templates/front";
 @import "templates/kitchen-sink";

@@ -26,7 +26,7 @@
             </div>
         </div>
     </div>
-    <div class="section section-padded">
+    <div class="section section-padded section-not-padded-mobile">
         <div class="row row-margin-bottom">
             <div class="large-6 large-offset-3 columns">
                 <h2 class="center">Exploring unique wine</h2>
@@ -34,8 +34,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="large-6 columns fullwidth-small">
-                <div class="">
+            <div class="large-6 columns">
+                <div class="small-inner">
                 <div id="feature-a" class="image-crop image-crop_feature parallax-window small-no-margin-bottom" dataf-parallax="scroll" dataf-image-src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg">
 
 
@@ -47,8 +47,8 @@
                 </div>
                 </div>
             </div>
-            <div class="large-6 columns fullwidth-small">
-                <div class="">
+            <div class="large-6 columns">
+                <div class="small-inner">
                 <div id="feature-b" class="image-crop image-crop_feature parallax-window small-no-margin-bottom" dataf-parallax="scroll" dataf-image-src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg">
 
 

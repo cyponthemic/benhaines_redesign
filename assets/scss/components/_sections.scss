@@ -5,6 +5,12 @@
   &-padded{
     padding: 50px 0;
   }
+  &-not-padded-mobile{
+    padding: 50px 0 10px 0;
+    @include breakpoint(medium){
+      padding: 50px 0;
+    }
+  }
   &-grey{
     background: #f5f5f5;
   }

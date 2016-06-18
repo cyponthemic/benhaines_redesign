@@ -14,7 +14,7 @@ Template Name: Sample Content Product
 
 
 
-<div class="product product-archived">
+<div class="product product_featured">
 		<div class="image-crop image-crop_bottle" >
 
 			<?php

@@ -5,8 +5,12 @@
   }
 
   h3 {
+
     margin-bottom: 20px;
-    color:  map-get($ben-palette, 'navy-blue');
+    a{
+      color:  map-get($ben-palette, 'navy-blue');
+    }
+
   }
   .image-crop_bottle {
     height: 60vh;

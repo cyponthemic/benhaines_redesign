@@ -3,7 +3,8 @@
 	width: 100%;
 	margin: 0 auto;
 	//border-top: 1px solid #ccc;
-	margin-top: rem-calc(60);
+
+	//margin-top: rem-calc(60);
 	h6 { font-size: 28px}
 	.menu li > a {
 		color: map-get($ben-palette, 'primary-grey');

@@ -60,16 +60,21 @@ function heroVideo(){
     };
 }
 $(document).ready(function(){
-    $(heroVideo.container).height(heroVideo.height());
 
-    $(heroVideo.container).find('div').first().css('z-index','1');
+    if (typeof initVideoBackground !== 'undefined') {
 
-    $(heroVideo.container).vide(heroVideo.vide.path, heroVideo.vide.options);
-
-    $(window).resize(function() {
 
         $(heroVideo.container).height(heroVideo.height());
-    });
+
+        $(heroVideo.container).find('div').first().css('z-index', '1');
+
+        $(heroVideo.container).vide(heroVideo.vide.path, heroVideo.vide.options);
+
+        $(window).resize(function () {
+
+            $(heroVideo.container).height(heroVideo.height());
+        });
+    }
 });
 
 //<div class="video-container" id="heroVideoJs" style="height: 80vh"

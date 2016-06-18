@@ -25,6 +25,9 @@
                 <span>Scroll down</span>
             </div>
         </div>
+        <script>
+            var initVideoBackground = true;
+        </script>
     </div>
     <div class="section section-padded section-not-padded-mobile">
         <div class="row row-margin-bottom">

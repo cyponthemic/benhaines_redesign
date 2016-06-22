@@ -141,22 +141,35 @@
         <?php if (!wp_is_mobile()): ?>
         <div class="row" data-equalizer>
 
-            <?php $my_query = new WP_Query( 'posts_per_page=3' ); ?>
+            <?php
+            $Postargs = array(
+                'posts_per_page' => 3,
+                'post__in'  => get_option( 'sticky_posts' ),
+                'ignore_sticky_posts' => 1
+            );
+            $my_query = new WP_Query( $Postargs );
+            ?>
 
             <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
                 <div class="large-4 columns" >
-                    <?php get_template_part( 'template-parts/sample-content-news' );  ?>
+                    <?php get_template_part( 'template-parts/sample-content-news_front-page' );  ?>
                 </div>
             <?php endwhile; ?>
         </div>
         <?php else: ?>
         <div class="row carousel-container" data-equalizer>
             <div class="carousel carousel-no-arrows carousel-with-dots" style="position: static">
-            <?php $my_query = new WP_Query( 'posts_per_page=3' ); ?>
+            <?php
+            $Postargs = array(
+                'posts_per_page' => 3,
+                'post__in'  => get_option( 'sticky_posts' ),
+                'ignore_sticky_posts' => 1
+            );
+            $my_query = new WP_Query( $Postargs ); ?>
 
             <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
                 <div class="large-4 columns" >
-                    <?php get_template_part( 'template-parts/sample-content-news' );  ?>
+                    <?php get_template_part( 'template-parts/sample-content-news_front-page' );  ?>
                 </div>
             <?php endwhile; ?>
             </div>

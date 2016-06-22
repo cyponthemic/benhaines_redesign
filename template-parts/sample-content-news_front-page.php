@@ -18,7 +18,7 @@ Template Name: Sample Content Product
 
 <div class="news news_featured">
 	<div class="news--image">
-		<div class="image-crop image-crop_news" >
+		<div class="image-crop image-crop_news <?php echo ( has_post_thumbnail() ? 'image-crop_news' : 'image-crop_no-image')?>" >
 
 			<?php
 			echo '<a href="' . get_permalink( $_post->ID ) . '" title="' . esc_attr( $_post->post_title ) . '">';
@@ -32,8 +32,7 @@ Template Name: Sample Content Product
 	</div>
 	<div class="news--description-holder" data-equalizer-watch>
 		<div class="news--category">
-			<span class="news--category--title">Category:</span>
-			<span class="news--category--category">News</span>
+			<?php do_action( 'bhr_category_name' ); ?>
 		</div>
 		<div class="news--title">
 			<h3>

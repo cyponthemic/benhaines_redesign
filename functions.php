@@ -47,6 +47,9 @@ require_once( 'library/sticky-posts.php' );
 /** Configure responsive image sizes */
 require_once( 'library/responsive-images.php' );
 
+/** Configure category displaying */
+require_once( 'library/categories.php' );
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
 
@@ -57,6 +60,14 @@ require_once( 'library/responsive-images.php' );
  * @return int (Maybe) modified excerpt length.
  */
 function wpdocs_custom_excerpt_length( $length ) {
-    return 30;
+
+    if(is_front_page())
+    {
+        return 30;
+    }
+    else
+    {
+        return 30;
+    }
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );

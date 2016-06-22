@@ -13,3 +13,10 @@
   }
 
 }
+body.archive .off-canvas-content,
+body.blog .off-canvas-content{
+  background: map-get($ben-palette, 'cream');
+}
+.site-header{
+  background: #fff;
+}

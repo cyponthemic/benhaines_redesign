@@ -45,6 +45,11 @@
       position: relative;
       z-index: 10;
     }
+    &_archived{
+      padding: 30px 30px;
+      margin-bottom: 30px;
+      background: #fff;
+    }
   }
   &--description{
     font-size: rem-calc(15);
@@ -65,4 +70,18 @@
 
   }
 
+}
+
+.category{
+  &-article,
+  &-post{
+    color: map-get($blog-palette, 'news');
+    font-weight: 900;
+  }
+  &-review{
+    color: map-get($blog-palette, 'news');
+  }
+  &-news{
+    color: map-get($blog-palette, 'news');
+  }
 }

@@ -20,8 +20,7 @@ Template Name: Sample Content Product
 
 	<div class="news--description-holder news--description-holder_hero" data-equalizer-watch>
 		<div class="news--category">
-			<span class="news--category--title">Category:</span>
-			<span class="news--category--category">News</span>
+			<?php do_action( 'bhr_category_name' ); ?>
 		</div>
 		<div class="news--title news--title_hero">
 			<h3>

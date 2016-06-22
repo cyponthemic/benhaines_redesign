@@ -12,17 +12,21 @@
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
+$template_post_type= get_post_type_object( 'review' );
+$template_post_type= get_post_type_object( get_post_type($post) );
+
+
 
 get_header(); ?>
 	<div class="section">
 		<?php
 
 			$args = array(
-				'posts_per_page' => 1,
-				'post__in'  => get_option( 'sticky_posts' ),
-				'ignore_sticky_posts' => 1
+				'post_type' => $template_post_type->name,
+				'posts_per_page' => 1
 			);
 			$my_query = new WP_Query( $args );
+			if (has_post_thumbnail()):
 			while ( $my_query->have_posts() ) : $my_query->the_post();
 
                 $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
@@ -45,13 +49,13 @@ get_header(); ?>
 
 			</div>
 		</div>
-			<?php endwhile; ?>
+			<?php endwhile; endif;?>
 	</div>
 <div id="page" role="main" >
     <article class="main-content">
         <div class="row row-margin-bottom">
 
-            <h1 class="">Latest from the vineyard</h1>
+            <h1 class="">Latest <?php echo $template_post_type->labels->name ?> </h1>
 
         </div>
     </article>
@@ -72,7 +76,7 @@ get_header(); ?>
 	<?php if ( have_posts() ) :
 
             $Postargs = array(
-                'post_type' => array( 'post', 'review', 'news' )
+                'post_type' => $template_post_type->name
             );
         $my_query = new WP_Query( $Postargs ); ?>
 

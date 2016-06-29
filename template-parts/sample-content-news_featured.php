@@ -16,7 +16,7 @@ Template Name: Sample Content Product
 
 
 
-<div class="news news_featured news_featured_hero">
+<div  <?php post_class('news news_featured news_featured_hero'); ?>>
 
 	<div class="news--description-holder news--description-holder_hero" data-equalizer-watch>
 		<div class="news--category">

@@ -16,7 +16,7 @@ Template Name: Sample Content Product
 
 
 
-<div class="news news_archived">
+<div  <?php post_class('news news_archived'); ?>>
 	<div class="news--image">
 		<div class="image-crop image-crop_news <?php echo ( has_post_thumbnail() ? 'image-crop_news' : 'image-crop_no-image')?>" >
 

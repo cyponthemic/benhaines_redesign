@@ -5,12 +5,23 @@
  * Date: 21/06/2016
  * Time: 7:34 PM
  */
+// Add sticky class in article title to style sticky posts differently
+
+function cpt_sticky_class($classes) {
+    if ( is_sticky() ) :
+        $classes[] = 'sticky-post';
+        return $classes;
+    endif;
+    return $classes;
+}
+add_filter('post_class', 'cpt_sticky_class');
 
 
 function change_post_object_label()
 {
     global $wp_post_types;
     $labels = &$wp_post_types['post']->labels;
+
     $labels->name = 'Articles';
     $labels->singular_name = 'Article';
     $labels->add_new = 'Add Article';
@@ -54,7 +65,7 @@ function listCategoryButton() {
             $name= $post_type->labels->name;
 
         //Add active class
-        if($template_post_type->name === $post_type->name){
+        if($template_post_type->name === $post_type->name && ! is_page( 'news-reviews' )){
             $isactive= ' active';
         }
         else{

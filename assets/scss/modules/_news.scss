@@ -85,3 +85,11 @@
     color: map-get($blog-palette, 'news');
   }
 }
+
+
+//News single
+body.single-post .main-content{
+  background: #fff;
+
+  padding: 30px 20px;
+}

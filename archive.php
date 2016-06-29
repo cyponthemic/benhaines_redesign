@@ -25,14 +25,19 @@ $template_post_type= get_post_type_object( get_post_type($post) );
 
 		$args = array(
 			'post_type' => $template_post_type->name,
-			'posts_per_page' => 1
+			'posts_per_page' => 1,
+			'post__in'  => get_option( 'sticky_posts' ),
+			'ignore_sticky_posts' => 1
 		);
 		$my_query = new WP_Query( $args );
-		if (has_post_thumbnail()):
-			while ( $my_query->have_posts() ) : $my_query->the_post();
 
+			while ( $my_query->have_posts() ) : $my_query->the_post();
+				if (has_post_thumbnail()):
 				$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
-				?>
+				else:
+					$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
+				endif;
+					?>
 				<div class="hero hero-background-image" data-parallax="scroll"
 					 data-image-src="<?php echo $featured_image[0]; ?>"
 					 data-z-index="9"
@@ -51,7 +56,7 @@ $template_post_type= get_post_type_object( get_post_type($post) );
 
 					</div>
 				</div>
-			<?php endwhile; endif;?>
+			<?php endwhile;?>
 	</div>
 	<div id="page" role="main" >
 		<article class="main-content">
@@ -78,7 +83,9 @@ $template_post_type= get_post_type_object( get_post_type($post) );
 			<?php if ( have_posts() ) :
 
 				$Postargs = array(
-					'post_type' => $template_post_type->name
+					'post_type' => $template_post_type->name,
+					'ignore_sticky_posts' => 1
+
 				);
 				$my_query = new WP_Query( $Postargs ); ?>
 

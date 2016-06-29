@@ -8,6 +8,21 @@
 
 
 .hollow{
+  &.black{
+    color: #000;
+    border-color: #000;
+    &:hover,
+    &:active{
+      color: lighten(#000, 50%) ;
+      border-color: lighten(#000, 50%) ;
+    }
+    &.active{
+      color: #fff;
+      background-color: lighten(#000, 70%);
+      border-color: lighten(#000, 50%) ;
+
+    }
+  }
   &.news{
       color: map-get($blog-palette, 'news');
       border-color:  map-get($blog-palette, 'news');
@@ -19,7 +34,7 @@
     &.active{
       color: #fff;
       background-color: map-get($blog-palette, 'news');
-
+      border-color:  map-get($blog-palette, 'news') !important;
     }
   }
   &.posts,
@@ -35,7 +50,7 @@
     &.active{
       color: #fff;
       background-color: map-get($blog-palette, 'articles');
-
+      border-color:  map-get($blog-palette, 'articles') !important;
     }
   }
   &.review,
@@ -50,6 +65,7 @@
     &.active{
       color: #fff;
       background-color: map-get($blog-palette, 'reviews');
+      border-color:  map-get($blog-palette, 'reviews') !important;
 
     }
   }

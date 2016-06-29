@@ -13,45 +13,51 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); ?>
+
+
+
+get_header();
+?>
 	<div class="section">
 		<?php
 
 		$args = array(
+			'post_type' => array('post','review','news'),
 			'posts_per_page' => 1,
 			'post__in'  => get_option( 'sticky_posts' ),
 			'ignore_sticky_posts' => 1
 		);
 		$my_query = new WP_Query( $args );
-		while ( $my_query->have_posts() ) : $my_query->the_post();
+		if (has_post_thumbnail()):
+			while ( $my_query->have_posts() ) : $my_query->the_post();
 
-			$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
-			?>
-			<div class="hero hero-background-image" data-parallax="scroll"
-				 data-image-src="<?php echo $featured_image[0]; ?>"
-				 data-z-index="9"
-				 data-speed="1.1"
-			>
-				<div class=" row">
-					<?php
+				$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
+				?>
+				<div class="hero hero-background-image" data-parallax="scroll"
+					 data-image-src="<?php echo $featured_image[0]; ?>"
+					 data-z-index="9"
+					 data-speed="1.1"
+				>
+					<div class=" row">
+						<?php
 
-					?>
+						?>
 
-					<?php  ?>
-					<div class="large-4 medium-6 small-10 float-right columns" >
-						<?php get_template_part( 'template-parts/sample-content-news_featured' );  ?>
+						<?php  ?>
+						<div class="large-4 medium-6 small-10 float-right columns" >
+							<?php get_template_part( 'template-parts/sample-content-news_featured' );  ?>
+						</div>
+
+
 					</div>
-
-
 				</div>
-			</div>
-		<?php endwhile; ?>
+			<?php endwhile; endif;?>
 	</div>
 	<div id="page" role="main" >
 		<article class="main-content">
 			<div class="row row-margin-bottom">
 
-				<h1 class="">Latest from the vineyard</h1>
+				<h1 class="">Latest news from the vineyard </h1>
 
 			</div>
 		</article>
@@ -72,7 +78,9 @@ get_header(); ?>
 			<?php if ( have_posts() ) :
 
 				$Postargs = array(
-					'post_type' => array( 'post')
+					'post_type' => array('post','review','news'),
+					'ignore_sticky_posts' => 1
+
 				);
 				$my_query = new WP_Query( $Postargs ); ?>
 

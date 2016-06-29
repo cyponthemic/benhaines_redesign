@@ -132,7 +132,7 @@
             </div>
         </div>
     </div>
-    <div class="section section-padded">
+    <div class="section section-padded feature-news-homepage">
         <div class="row row-margin-bottom">
             <div class="large-6 large-offset-3 columns">
                 <h2 class="center">Latest news</h2>
@@ -144,6 +144,7 @@
             <?php
             $Postargs = array(
                 'posts_per_page' => 3,
+                'post_type' => array('post','review','news'),
                 'post__in'  => get_option( 'sticky_posts' ),
                 'ignore_sticky_posts' => 1
             );
@@ -162,6 +163,7 @@
             <?php
             $Postargs = array(
                 'posts_per_page' => 3,
+                'post_type' => array('post','review','news'),
                 'post__in'  => get_option( 'sticky_posts' ),
                 'ignore_sticky_posts' => 1
             );

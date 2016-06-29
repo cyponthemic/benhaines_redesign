@@ -13,6 +13,8 @@
   }
 
 }
+body.single .off-canvas-content,
+body.page-id-1349 .off-canvas-content,
 body.archive .off-canvas-content,
 body.blog .off-canvas-content{
   background: map-get($ben-palette, 'cream');

@@ -15,6 +15,12 @@
     }
   }
   &--title{
+    h1 {
+      font-size: rem-calc(44);
+      margin-top: 0;
+      padding-top: 0;
+      color: map_get($ben-palette, 'navy-blue');
+    }
     h3 a{
       font-size: rem-calc(22);
       color: black;
@@ -24,6 +30,10 @@
         position: relative;
         padding-bottom: 15px;
         margin-bottom: 25px;
+      &_single{
+        padding-bottom: 4px;
+        margin-bottom: 15px;
+      }
       &:after{
         content: "";
         position: absolute;
@@ -44,6 +54,9 @@
       padding: 30px 30px;
       position: relative;
       z-index: 10;
+    }
+    &_hero_single{
+      padding: 15px 30px 30px;
     }
     &_archived{
       padding: 30px 30px;
@@ -70,6 +83,16 @@
 
   }
 
+}
+
+.news {
+
+  .single-post{
+    &--title-holder{
+      background: rgba(255,255,255,0.85);
+      padding: 25px;
+    }
+  }
 }
 
 .category{

@@ -3,7 +3,7 @@
 
   padding: 60px 0;
   &_single-page{
-    padding: 100px 0;
+    padding: 120px 0;
   }
   &--panel{
     background: #fff;
@@ -21,6 +21,11 @@ body.single .parallax-mirror{
     z-index:9;
     opacity: 0.5;
   }
+}
+
+.hover-mirror{
+  z-index: 15;
+  position: relative;
 }
 //TODO: hide sticky post form aarchive
 //.sticky-post{

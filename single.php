@@ -15,6 +15,9 @@ get_header(); ?>
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
+	<script>
+		var isBlogBH = true;
+	</script>
 	<div class="section">
 		<?php
 
@@ -26,47 +29,49 @@ get_header(); ?>
 				 data-z-index="9"
 				 data-speed="1.5"
 			>
-				<div class=" row">
-					<?php
+				<div class=" row news">
+					<div class="large-2 columns">
+						<div class="hover-mirror rounded-50">
+							<?php
+							$avatargs =  array(
+								'width' => 159,
+								'height' => 159,
+								'class' => 'rounded-50'
+							);
+							$alt = $current_user->user_firstname . '\'s Avatar';
+							echo get_avatar( get_the_author_meta( 'ID' ), 159, null, $alt, $avatargs  );
 
-					?>
+							?>
+						</div>
 
-					<?php  ?>
-					<div class="large-6 medium-8 small-10 large-offset-3 medium-offset-2 small-offset-1 columns" >
-						<h1 style="color: #fff" class="entry-title entry-title_hero"><?php the_title(); ?></h1>
 					</div>
+					<div class="large-8 medium-8 small-10 large-offset-0 medium-offset-2 small-offset-1 columns" >
 
+						<div class="news--description-holder news--description-holder_hero news--description-holder_hero_single" data-equalizer-watch>
+
+							<div class="news--title news--title_hero news--title_hero_single">
+								<h1>
+									<?php the_title(); ?>
+								</h1>
+							</div>
+							<div class="news--category">
+								<?php do_action( 'bhr_category_name' ); ?>
+							</div>
+						</div>
+
+					</div>
+					<div class="large-2 columns">
+					</div>
 
 				</div>
 			</div>
 
 	</div>
-	<div class="row" style="padding: 20px 0 5px; margin: auto">
-		<div class="large-8 columns" >
-			<?php foundationpress_entry_meta(); ?>
-			<br>
-			<?php
-			$tags = get_tags();
-			$html = '<div class="post_tags">';
-				foreach ( $tags as $tag ) {
-				$tag_link = get_tag_link( $tag->term_id );
 
-				$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='hollow button {$tag->slug}'>";
-					$html .= "{$tag->name}</a>";
-				}
-				$html .= '</div>';
-			echo $html;
-			?>
-		</div>
-		<div class="large-4 columns right align-right" style="text-align: right">
-			<a class="button primary hollow align-right">Categories <i class="fa fa-caret-down"></i></a>
-		</div>
 
-	</div>
-	<div class="row">
 
-	<div class="large-12 columns">
-	<article <?php post_class('main-content ') ?> id="post-<?php the_ID(); ?>">
+
+	<article <?php post_class('main-content row ') ?> id="post-<?php the_ID(); ?>">
 
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
 		<div class="entry-content">
@@ -79,8 +84,10 @@ get_header(); ?>
 		<?php comments_template(); ?>
 		<?php do_action( 'foundationpress_post_after_comments' ); ?>
 	</article>
-	</div>
-	</div>
+	<script>
+
+	</script>
+
 <?php endwhile;?>
 
 <?php do_action( 'foundationpress_after_content' ); ?>

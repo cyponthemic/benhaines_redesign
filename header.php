@@ -26,6 +26,7 @@
             var foundationMobileBreakpoint = 640;
 			var foundationTabletBreakpoint = 768;
             var wordpressMobile = '<?php echo wp_is_mobile(); ?>';
+
         </script>
 <!--		TODO: enaue the fonts -->
 

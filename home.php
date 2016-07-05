@@ -38,7 +38,7 @@ get_header(); ?>
 					?>
 
 					<?php  ?>
-					<div class="large-4 medium-6 small-10 float-right columns" >
+					<div class="large-4 medium-6 small-12 float-right columns" >
 						<?php get_template_part( 'template-parts/sample-content-news_featured' );  ?>
 					</div>
 
@@ -51,21 +51,12 @@ get_header(); ?>
 		<article class="main-content">
 			<div class="row row-margin-bottom">
 
-				<h1 class="">Latest articles</h1>
+				<h2 class="">Latest articles</h2>
 
 			</div>
 		</article>
 		<?php if (wp_is_mobile()): ?>
-			<ul class="accordion" data-accordion>
-				<li class="accordion-item" data-accordion-item>
-					<a href="#" class="accordion-title">Category filters</a>
-					<div class="accordion-content" data-tab-content>
-						<?php get_sidebar(); ?>
-					</div>
-				</li>
-
-			</ul>
-
+			<?php get_sidebar(); ?>
 		<?php endif; ?>
 		<article class="main-content">
 

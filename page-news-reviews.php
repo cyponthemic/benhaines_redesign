@@ -44,7 +44,7 @@ get_header();
 						?>
 
 						<?php  ?>
-						<div class="large-4 medium-6 small-10 float-right columns" >
+						<div class="large-4 medium-6 small-12 float-right columns" >
 							<?php get_template_part( 'template-parts/sample-content-news_featured' );  ?>
 						</div>
 

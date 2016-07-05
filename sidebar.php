@@ -8,7 +8,7 @@
 
 ?>
 <?php if (is_archive() OR is_home() OR is_page()):?>
-    <aside class="sidebar" style="">
+    <aside class="sidebar sticky-sidebar" style="">
         <?php
         do_action('foundationpress_before_sidebar');
         ?>
@@ -28,9 +28,6 @@
                 <?php endif;?>
 
                 <?php do_action( 'list_category_name'); ?>
-<!--                <a class="category--button hollow news  button" href="#">NEWS</a>-->
-<!--                <a class="category--button hollow reviews  button" href="#">REVIEWS</a>-->
-<!--                <a class="category--button hollow articles button" href="#">ARTICLES</a>-->
             </div>
         </div>
         <?php do_action('foundationpress_after_sidebar'); ?>

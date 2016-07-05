@@ -62,7 +62,7 @@ $template_post_type= get_post_type_object( get_post_type($post) );
 		<article class="main-content">
 			<div class="row row-margin-bottom">
 
-				<h1 class="">Latest <?php echo $template_post_type->labels->name ?> </h1>
+				<h2 class="">Latest <?php echo $template_post_type->labels->name ?> </h2>
 
 			</div>
 		</article>

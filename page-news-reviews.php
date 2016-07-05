@@ -57,7 +57,7 @@ get_header();
 		<article class="main-content">
 			<div class="row row-margin-bottom">
 
-				<h1 class="">Latest news from the vineyard </h1>
+				<h2 class="">Latest news from the vineyard </h2>
 
 			</div>
 		</article>

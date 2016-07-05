@@ -1,5 +1,7 @@
 .sidebar {
   //padding: 0 0 0 15px;
+  position: relative;
+  top: 0;
   h4{
     color: black;
     margin-bottom: 20px;
@@ -7,8 +9,11 @@
   @include breakpoint(small) {
     @include grid-column(12);
   }
-
   @include breakpoint(medium) {
+    @include grid-column(6);
+    margin-top: 0rem;
+  }
+  @include breakpoint(large) {
     @include grid-column(4);
     margin-top: 0rem;
   }

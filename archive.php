@@ -41,7 +41,7 @@ $template_post_type= get_post_type_object( get_post_type($post) );
 				<div class="hero hero-background-image" data-parallax="scroll"
 					 data-image-src="<?php echo $featured_image[0]; ?>"
 					 data-z-index="9"
-					 data-speed="1.1"
+					 data-speed="0.8"
 				>
 					<div class=" row">
 						<?php
@@ -62,22 +62,13 @@ $template_post_type= get_post_type_object( get_post_type($post) );
 		<article class="main-content">
 			<div class="row row-margin-bottom">
 
-				<h2 class="">Latest <?php echo $template_post_type->labels->name ?> </h2>
+				<h2 class="align-center-mobile">Latest <?php echo $template_post_type->labels->name ?> </h2>
+				<button class="hide-for-large button medium expanded secondary dropdown blog-filter-button" type="button" data-open="mobile-menu-2">Filter</button>
+
 
 			</div>
 		</article>
-		<?php if (wp_is_mobile()): ?>
-			<ul class="accordion" data-accordion>
-				<li class="accordion-item" data-accordion-item>
-					<a href="#" class="accordion-title">Category filters</a>
-					<div class="accordion-content" data-tab-content>
-						<?php get_sidebar(); ?>
-					</div>
-				</li>
 
-			</ul>
-
-		<?php endif; ?>
 		<article class="main-content">
 
 			<?php if ( have_posts() ) :
@@ -110,9 +101,11 @@ $template_post_type= get_post_type_object( get_post_type($post) );
 			<?php } ?>
 
 		</article>
-		<?php if (!wp_is_mobile()): ?>
-			<?php get_sidebar(); ?>
-		<?php endif; ?>
+		<div class="show-for-large">
+			<?php
+			get_sidebar('blog');
+			?>
+		</div>
 
 	</div>
 

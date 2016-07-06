@@ -29,8 +29,8 @@ get_header(); ?>
 			?>
 			<div class="hero hero-background-image" data-parallax="scroll"
 				 data-image-src="<?php echo $featured_image[0]; ?>"
-				 data-z-index="9"
-				 data-speed="1.5"
+				 data-z-index="1"
+				 data-speed="0.8"
 			>
 				<div class=" row">
 					<?php
@@ -51,13 +51,14 @@ get_header(); ?>
 		<article class="main-content">
 			<div class="row row-margin-bottom">
 
-				<h2 class="">Latest articles</h2>
+				<h2 class="align-center-mobile">Latest articles</h2>
+
+					<button class="hide-for-large button medium expanded secondary dropdown blog-filter-button" type="button" data-open="mobile-menu-2">Filter</button>
+
 
 			</div>
 		</article>
-		<?php if (wp_is_mobile()): ?>
-			<?php get_sidebar(); ?>
-		<?php endif; ?>
+
 		<article class="main-content">
 
 			<?php if ( have_posts() ) :
@@ -88,9 +89,13 @@ get_header(); ?>
 			<?php } ?>
 
 		</article>
-		<?php if (!wp_is_mobile()): ?>
-			<?php get_sidebar(); ?>
-		<?php endif; ?>
+		<div class="show-for-large">
+			<?php
+			get_sidebar('blog');
+			?>
+		</div>
+
+
 
 	</div>
 

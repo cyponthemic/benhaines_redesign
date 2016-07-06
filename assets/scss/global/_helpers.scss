@@ -18,3 +18,10 @@
 .rounded-50 img{
   border-radius: 50%;
 }
+
+.align-center-mobile{
+  text-align: center;
+  @include breakpoint(medium){
+    text-align: inherit;
+  }
+}

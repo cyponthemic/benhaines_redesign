@@ -10,11 +10,34 @@
     @include grid-column(12);
   }
   @include breakpoint(medium) {
-    @include grid-column(6);
+    @include grid-column(12);
     margin-top: 0rem;
   }
   @include breakpoint(large) {
     @include grid-column(4);
     margin-top: 0rem;
+  }
+}
+.off-canvas-sidebar{
+  background: #EBEBEB;
+  padding: 0;
+  .sidebar {
+    padding: 0;
+    margin-top: 15px;
+    .news-link,
+    .articles-link,
+    .reviews-link,
+    .category--intro{
+      font-size: 14px  !important;
+      line-height: 30px !important;
+      text-transform: none;
+    }
+    .category--button{
+      padding: 10px 0;
+      width: 100%;
+      font-size: 12px  !important;
+      line-height: 30px !important;
+      text-transform: uppercase;
+    }
   }
 }

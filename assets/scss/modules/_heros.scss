@@ -22,7 +22,27 @@ body.single .parallax-mirror{
     opacity: 0.5;
   }
 }
+.parallax-mirror{
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  //transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  .js-off-canvas-exit-cloned{
+    z-index: 9;
+    display: block;
+  }
+  &.offcanvas-open{
 
+    transform: translate(250px) !important;
+    &.left{
+    transform: translateX(-250px) !important;
+    }
+  }
+  &.offcanvas-close{
+
+    transform: translateX(0px) !important;
+  }
+
+
+}
 .hover-mirror{
   z-index: 15;
   position: relative;

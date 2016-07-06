@@ -70,4 +70,19 @@
     }
   }
 }
+.blog-filter-button{
+  margin-bottom: -40px;
+  float: right;
+  max-width: none;
+  text-align: center;
+  opacity: 0.5;
+
+  @include breakpoint(medium){
+    margin-bottom: -10px;
+    max-width: 200px;
+  }
+  @include breakpoint(large){
+    display: none;
+  }
+}
 

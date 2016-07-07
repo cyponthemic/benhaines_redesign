@@ -6,7 +6,7 @@ function heroVideo(){
     this.container = document.getElementById('heroVideoJs');
     this.vide = {};
     this.vide.path= {
-        mp4 : templateUrl+'/assets/images/drone.mp4',
+        mp4 : templateUrl+'/assets/images/drone-manon-720.mp4',
         poster : templateUrl+'/assets/images/drone.jpg'
     };
     this.vide.options = {

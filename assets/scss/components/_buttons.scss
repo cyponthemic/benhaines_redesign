@@ -23,6 +23,21 @@
 
     }
   }
+  &.white{
+    color: #fff;
+    border-color: #fff;
+    &:hover,
+    &:active{
+      color: darken(#fff, 50%) ;
+      border-color: darken(#fff, 50%) ;
+    }
+    &.active{
+      color: #fff;
+      background-color: darken(#000, 70%);
+      border-color: darken(#fff, 50%) ;
+
+    }
+  }
   &.news{
       color: map-get($blog-palette, 'news');
       border-color:  map-get($blog-palette, 'news');

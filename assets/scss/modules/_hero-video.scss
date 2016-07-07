@@ -6,7 +6,7 @@
     height: 100%;
     position: absolute;
     background: #fff;
-    opacity: 0;
+    opacity: 0.1;
   }
   .hero-header,
   .hero-footer{
@@ -27,6 +27,7 @@
       margin-bottom: 30px;
       line-height: 1.15;
       color:  map-get($ben-palette, 'navy-blue');
+      color: #fff;
     }
   }
   .hero-footer{

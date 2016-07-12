@@ -133,7 +133,7 @@
   font-size: 14px;
   margin-right: 7px;
   &:before {
-    content: "\f007";
+    //content: "\f007";
     position: relative;
     top: -2px;
   }
@@ -142,7 +142,7 @@
   font-size: 14px;
   margin-right: 7px;
   &:before {
-    content: "\f07a";
+    //content: "\f07a";
     position: relative;
     top: -2px;
   }
@@ -193,10 +193,10 @@
     top: 0%;
     right: 30px;
   }
-  .top-bar-left .bh-logo{
+  .top-bar-left svg{
     position: absolute;
-    top: 0%;
-    left: 30px;
+    top: 40px;
+    left: 20px;
   }
   ul#menu-main.desktop-menu{
     width: 100vw;
@@ -205,4 +205,4 @@
   }
 }
 
-#menu-account{display: none}
+

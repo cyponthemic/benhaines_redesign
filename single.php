@@ -30,8 +30,8 @@ get_header(); ?>
 				 data-speed="1.5"
 			>
 				<div class=" row news">
-					<div class="large-2 columns">
-						<div class="hover-mirror rounded-50">
+					<div class="large-2 large-offset-0 columns medium-4 medium-offset-4">
+						<div class="hover-mirror rounded-50 news-avatar">
 							<?php
 							$avatargs =  array(
 								'width' => 159,
@@ -77,16 +77,206 @@ get_header(); ?>
 		<div class="entry-content">
 		<?php the_content(); ?>
 		</div>
-		<footer>
+		<footer style="padding-top: 30px">
+			<div class=" row news">
+				<div class="large-2 large-offset-1 medium-4 medium-offset-0 small-6 small-offset-3 columns ">
+					<div class="hover-mirror rounded-50 news-avatar">
+						<?php
+						$avatargs =  array(
+							'width' => 159,
+							'height' => 159,
+							'class' => 'rounded-50'
+						);
+						$alt = $current_user->user_firstname . '\'s Avatar';
+						echo get_avatar( get_the_author_meta( 'ID' ), 159, null, $alt, $avatargs  );
+
+						?>
+					</div>
+
+				</div>
+				<div class="large-5 medium-6 small-12 small-offset-0  columns" >
+
+					<div class="" data-equalizer-watch>
+
+						<div class="align-center-mobile">
+							<h3>
+								<?php the_author(); ?>
+							</h3>
+						</div>
+						<div class="news--category align-center-mobile">
+							<?php $authorDesc = the_author_meta('description'); echo $authorDesc; ?>
+						</div>
+					</div>
+
+				</div>
+				<div class="large-4 large-offset-0 medium-8 medium-offset-4 columns small-12 small-offset-0 show-for-large show-for-medium " >
+
+					<div class="" data-equalizer-watch>
+
+						<div class="align-center-mobile">
+							<h3>
+								Share
+							</h3>
+						</div>
+						<div id="addthisTarget">
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
 			<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
 		</footer>
 		<?php do_action( 'foundationpress_post_before_comments' ); ?>
 		<?php comments_template(); ?>
 		<?php do_action( 'foundationpress_post_after_comments' ); ?>
 	</article>
-	<script>
 
-	</script>
+	<div class="section section-padded section-grey">
+		<div class="row">
+			<div class="large-6 large-offset-3 columns">
+				<h2 class="center">Join the club</h2>
+			</div>
+		</div>
+		<div class="row row-margin-bottom">
+			<div class="large-10 large-offset-1 columns">
+
+				<p class="center">Collaborating with different vineyards year to year to explore new and interesting aspects of already discovered sites.  </p>
+			</div>
+		</div>
+		<div class="row row-margin-bottom">
+			<div class="medium-8 medium-offset-2 columns">
+				<?php echo do_shortcode('[mc4wp_form id="1427"]');?>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div class="section section-padded feature-news-homepage">
+		<div class="row row-margin-bottom">
+			<div class="large-6 large-offset-3 columns">
+				<h2 class="center">Latest news</h2>
+			</div>
+		</div>
+		<?php if (!wp_is_mobile()): ?>
+			<div class="row" data-equalizer>
+
+				<?php
+				$Postargs = array(
+					'posts_per_page' => 3,
+					'post_type' => array('post','review','news'),
+					'post__in'  => get_option( 'sticky_posts' ),
+					'ignore_sticky_posts' => 1
+				);
+				$my_query = new WP_Query( $Postargs );
+				?>
+
+				<?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
+					<div class="large-4 columns" >
+						<?php get_template_part( 'template-parts/sample-content-news_front-page' );  ?>
+					</div>
+				<?php endwhile; ?>
+			</div>
+		<?php else: ?>
+			<div class="row carousel-container" data-equalizer>
+				<div class="carousel carousel-no-arrows carousel-with-dots" style="position: static">
+					<?php
+					$Postargs = array(
+						'posts_per_page' => 3,
+						'post_type' => array('post','review','news'),
+						'post__in'  => get_option( 'sticky_posts' ),
+						'ignore_sticky_posts' => 1
+					);
+					$my_query = new WP_Query( $Postargs ); ?>
+
+					<?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
+						<div class="large-4 columns" >
+							<?php get_template_part( 'template-parts/sample-content-news_front-page' );  ?>
+						</div>
+					<?php endwhile; ?>
+				</div>
+			</div>
+		<?php endif; ?>
+		<div class="row">
+			<div class="large-12 colums center">
+				<a class="large button" href="#">More news</a>
+			</div>
+		</div>
+
+
+	</div>
+
+	<div class="section section-padded section-grey">
+		<div class="row row-margin-bottom">
+			<div class="large-6 large-offset-3 columns">
+				<h2 class="center">Featured wines</h2>
+			</div>
+		</div>
+		<?php if (!wp_is_mobile()): ?>
+			<div class="row">
+
+
+				<?php
+				$args = array(
+					'post_type' => 'product',
+					'posts_per_page' => 3
+				);
+
+				$loop = new WP_Query( $args );
+				if ( $loop->have_posts() ) {
+					while ( $loop->have_posts() ) : $loop->the_post();
+						echo '<div class="large-4 medium-6 columns" >';
+						wc_get_template_part( 'template-parts/sample-content-product' );
+						echo "</div>";
+					endwhile;
+				} else {
+					echo __( 'No products found' );
+				}
+
+				wp_reset_postdata();
+				?>
+			</div>
+		<?php else: ?>
+			<div class="row carousel-container">
+
+				<div class="carousel " style="position: static">
+
+
+					<?php
+					$args = array(
+						'post_type' => 'product',
+						'posts_per_page' => 3
+					);
+
+
+					$loop = new WP_Query( $args );
+					if ( $loop->have_posts()  ) {
+						while ( $loop->have_posts() ) : $loop->the_post();
+							echo '<div class="slick-slide columns" >';
+							wc_get_template_part( 'template-parts/sample-content-product' );
+							echo "</div>";
+						endwhile;
+					} else {
+						echo __( 'No products found' );
+					}
+
+					wp_reset_postdata();
+
+					?>
+				</div>
+			</div>
+		<?php endif; ?>
+		<div class="row">
+			<div class="large-12 colums center">
+				<a class="large button hollow" href="#">see the shop</a>
+			</div>
+		</div>
+	</div>
+
+
 
 <?php endwhile;?>
 

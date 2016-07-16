@@ -7,6 +7,9 @@ var singlePageHelpers = function(){
 
     $(pHasImg).addClass('single-image');
 
+    $(".addthis_toolbox").detach().appendTo( "#addthisTarget" );
+
+
 }
 if (typeof isBlogBH !== 'undefined') {
     $(document).ready(singlePageHelpers());

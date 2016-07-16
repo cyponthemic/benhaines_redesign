@@ -6,25 +6,52 @@ body.single {
     @include grid-row();
   }
 
-  p{
-    @include grid-column(8);
-    @include grid-column-offset(2);
+  article p{
     float: left !important;
-    font-size: 21px;
-    line-height: 34px;
+    font-size: 18px;
+    line-height: 28px;
     font-weight: 400;
 
-    margin-bottom: 20px;
-    color: map_get($ben-palette, 'charcoal');
+    margin-bottom: 16px;
+    color: map_get($ben-palette, 'secondary-text-grey');
+
+    @include grid-column(10);
+    @include grid-column-offset(1);
+
+    @include breakpoint(medium) {
+      font-size: 21px;
+      line-height: 34px;
+      margin-bottom: 20px;
+      @include grid-column(8);
+      @include grid-column-offset(2);
+    }
+
+    @include breakpoint(large) {
+      font-size: 21px;
+      @include grid-column(8);
+      @include grid-column-offset(2);
+    }
+
+
   }
-  blockquote{
+  article blockquote{
     margin-top: 20px;
     margin-bottom: 40px;
 
     border-left: 3px solid map-get($foundation-palette, 'primary');
 
-    @include grid-column(10);
-    @include grid-column-offset(1);
+    @include grid-column(12);
+    @include grid-column-offset(0);
+
+    @include breakpoint(medium) {
+      @include grid-column(10);
+      @include grid-column-offset(1);
+    }
+
+    @include breakpoint(large) {
+      @include grid-column(10);
+      @include grid-column-offset(1);
+    }
     p{
       @include grid-column(12);
       @include grid-column-offset(0);
@@ -40,7 +67,7 @@ body.single {
       }
     }
   }
-  p.single-image{
+  article p.single-image{
     @include grid-column(12);
     @include grid-column-offset(0);
     margin-bottom: 40px;
@@ -48,7 +75,7 @@ body.single {
       width: 100%;
     }
   }
-  p.single-image-inline{
+  article p.single-image-inline{
     @include grid-column(8);
     @include grid-column-offset(2);
     margin-bottom: 40px;
@@ -56,13 +83,24 @@ body.single {
       width: 100%;
     }
   }
-  .gallery{
+  article .gallery{
 
     margin-top: 20px;
     margin-bottom: 40px;
     float: left !important;
-    @include grid-column(8);
-    @include grid-column-offset(2);
+
+    @include grid-column(12);
+    @include grid-column-offset(0);
+
+    @include breakpoint(medium) {
+      @include grid-column(12);
+      @include grid-column-offset(0);
+    }
+
+    @include breakpoint(large) {
+      @include grid-column(10);
+      @include grid-column-offset(1);
+    }
 
     figure{
       margin:0;
@@ -72,16 +110,35 @@ body.single {
       }
       figcaption{
         margin-top: 20px;
+        margin-bottom: 20px;
       }
     }
   }
-  .gallery-columns-2{
+  article .gallery-columns-2{
     figure{
-      @include grid-column(6);
+      @include grid-column(12);
+      @include grid-column-offset(0);
+
+      @include breakpoint(medium) {
+        @include grid-column(6);
+        @include grid-column-offset(0);
+      }
+
+      @include breakpoint(large) {
+        @include grid-column(6);
+        @include grid-column-offset(0);
+      }
     }
 
   }
 
 
+  article footer{
+    border-top: 0px solid  map_get($ben-palette, 'secondary-text-grey');
+  }
+
+  .at-icon-wrapper{
+    background-color:  map_get($ben-palette, 'primary-grey') !important;
+  }
 
 }

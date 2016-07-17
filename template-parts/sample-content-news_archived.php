@@ -34,6 +34,7 @@ Template Name: Sample Content Product
 		<div class="news--category">
 
 				<?php do_action( 'bhr_category_name' ); ?>
+				<span style="margin-left: 30px"><?php the_date(); ?></span>
 
 		</div>
 		<div class="news--title">

@@ -74,7 +74,7 @@
 		max-width: none;
 		transition: all .4s;
 		&:hover{
-			height: 200%;
+			height: 200% !important;
 			top: -90%;
 			transform: translate(-50%);
 			transition: all .4s;

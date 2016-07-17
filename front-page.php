@@ -15,12 +15,12 @@
  <?php get_template_part( 'template-parts/featured-image' ); ?>
     <div class="section">
         <div class="video-container" id="heroVideoJs">
-            <div class="hero-header">
+            <div class="hero-header after-video-loaded" >
                 <h1>Expressing places through wine</h1>
                 <a class="large button" href="#">Explore wines</a>
             </div>
 
-            <div class="hero-footer">
+            <div class="hero-footer after-video-loaded">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/scroll-down.svg" alt="scroll down">
                 <span>Scroll down</span>
             </div>
@@ -29,7 +29,7 @@
             var initVideoBackground = true;
         </script>
     </div>
-    <div class="section section-padded section-not-padded-mobile">
+    <div class="section section-padded section-not-padded-mobile after-video-loaded">
         <div class="row row-margin-bottom">
             <div class="large-6 large-offset-3 columns">
                 <h2 class="center">Exploring unique wine</h2>
@@ -66,7 +66,7 @@
             </div>
         </div>
     </div>
-    <div class="section section-padded section-grey">
+    <div class="section section-padded section-grey after-video-loaded">
         <div class="row row-margin-bottom">
             <div class="large-6 large-offset-3 columns">
                 <h2 class="center">Featured wines</h2>

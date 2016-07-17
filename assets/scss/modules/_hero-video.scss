@@ -1,12 +1,13 @@
 .video-container{
   position: relative;
+
   &:after{
     content: "";
     width: 100%;
     height: 100%;
     position: absolute;
-    background: #fff;
-    opacity: 0.1;
+    //background: #fff;
+   //opacity: 0.1;
   }
   .hero-header,
   .hero-footer{
@@ -55,4 +56,10 @@
         font-weight: 900;
     }
   }
+}
+
+.after-video-loaded{
+  opacity: 0;
+  transition: opacity .5s;
+  transition-delay: .5s;
 }

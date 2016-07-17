@@ -5,9 +5,31 @@ var heroVideo = new heroVideo();
 function heroVideo(){
     this.container = document.getElementById('heroVideoJs');
     this.vide = {};
+    this.vide.poster = function(){
+        var windowDim = {
+                w : $(window).width(),
+                h : $(window).height()
+        },
+        file = "cover-ben-desktop-large.jpg";
+
+        if (windowDim.w > 1200){
+            file = "cover-ben-desktop-large.jpg";
+        }
+        else if (windowDim.w > 992){
+            file = "cover-ben-desktop-reg.jpg";
+        }
+        else if (windowDim.w > 768){
+            file = "cover-ben-desktop-ipad.jpg";
+        }
+        else {
+            file = "cover-ben-desktop-mobile.jpg";
+        }
+        return file;
+
+    };
     this.vide.path= {
-        mp4 : templateUrl+'/assets/images/drone-manon-720.mp4',
-        poster : templateUrl+'/assets/images/drone.jpg'
+        mp4 : templateUrl+'/assets/images/drone-video-final.mp4',
+        poster : templateUrl+'/assets/images/covers/'+this.vide.poster()
     };
     this.vide.options = {
         volume: 0,
@@ -16,7 +38,7 @@ function heroVideo(){
         loop: true,
         autoplay: true,
         position: '50% 50%', // Similar to the CSS `background-position` property.
-        posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
+        posterType: 'jpg', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
         resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
         bgColor: '#B7B7B7', // Allow custom background-color for Vide div,
         className: '' // Add custom CSS class to Vide div
@@ -69,6 +91,9 @@ $(document).ready(function(){
         $(heroVideo.container).find('div').first().css('z-index', '1');
 
         $(heroVideo.container).vide(heroVideo.vide.path, heroVideo.vide.options);
+
+
+        $('.after-video-loaded').css('opacity', '1');
 
         $(window).resize(function () {
 

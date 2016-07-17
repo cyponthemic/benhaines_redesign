@@ -71,8 +71,8 @@ get_header();
 
 				$Postargs = array(
 					'post_type' => array('post','review','news'),
-					'ignore_sticky_posts' => 1
-
+					'ignore_sticky_posts' => 1,
+					'nopaging' => true
 				);
 				$my_query = new WP_Query( $Postargs ); ?>
 

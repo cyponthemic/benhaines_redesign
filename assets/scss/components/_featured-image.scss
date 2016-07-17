@@ -104,3 +104,12 @@
   }
 }
 
+
+.news_archived.type-review.review {
+	.image-crop_news:before {
+		display: block;
+		content: "";
+		width: 100%;
+		padding-top: 40%;
+	}
+}

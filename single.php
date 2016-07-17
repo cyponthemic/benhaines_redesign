@@ -30,6 +30,8 @@ get_header(); ?>
 				 data-speed="1.5"
 			>
 				<div class=" row news">
+					<?php $template_post_type = get_post_type($post); ?>
+					<?php if($template_post_type!=='review'): ?>
 					<div class="large-2 large-offset-0 columns medium-4 medium-offset-4">
 						<div class="hover-mirror rounded-50 news-avatar">
 							<?php
@@ -45,6 +47,7 @@ get_header(); ?>
 						</div>
 
 					</div>
+					<?php endif; ?>
 					<div class="large-8 medium-8 small-10 large-offset-0 medium-offset-2 small-offset-1 columns" >
 
 						<div class="news--description-holder news--description-holder_hero news--description-holder_hero_single" data-equalizer-watch>
@@ -78,6 +81,9 @@ get_header(); ?>
 		<?php the_content(); ?>
 		</div>
 		<footer style="padding-top: 30px">
+			<?php $template_post_type = get_post_type($post); ?>
+			<?php if($template_post_type!=='review'): ?>
+
 			<div class=" row news">
 				<div class="large-2 large-offset-1 medium-4 medium-offset-0 small-6 small-offset-3 columns ">
 					<div class="hover-mirror rounded-50 news-avatar">
@@ -126,6 +132,7 @@ get_header(); ?>
 				</div>
 
 			</div>
+			<?php endif; ?>
 			<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
 		</footer>
 		<?php do_action( 'foundationpress_post_before_comments' ); ?>

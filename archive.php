@@ -27,9 +27,9 @@ $template_post_type = get_post_type_object(get_post_type($post));
             'post__in' => get_option('sticky_posts'),
             'ignore_sticky_posts' => 1,
         );
-        $my_query = new WP_Query($args);
+        $my_query_featured = new WP_Query($args);
 
-        while ($my_query->have_posts()) : $my_query->the_post();
+        while ($my_query_featured->have_posts()) : $my_query_featured->the_post();
             if (has_post_thumbnail()):
                 $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
             else:
@@ -57,7 +57,7 @@ $template_post_type = get_post_type_object(get_post_type($post));
         <?php endwhile; ?>
     </div>
     <div id="page" role="main">
-        <article class="main-content">
+        <header class="main-content">
             <div class="row row-margin-bottom">
 
                 <h2 class="align-center-mobile">Latest <?php echo $template_post_type->labels->name ?> </h2>
@@ -67,23 +67,24 @@ $template_post_type = get_post_type_object(get_post_type($post));
 
 
             </div>
-        </article>
+        </header>
 
-        <article class="main-content">
+        <div class="main-content">
 
             <?php
             $Postargs = array(
                 'post_type' => $template_post_type->name,
-                'ignore_sticky_posts' => 1,
                 'post__not_in' => get_option('sticky_posts'),
-                'nopaging' => true
+                'ignore_sticky_posts' => 1,
+                'post_per_page' => 5,
+                'paged' => get_query_var( 'paged' )
 
             );
-            $my_query = new WP_Query($Postargs);
+            $my_query_posts = new WP_Query($Postargs);
             ?>
             <?php if (have_posts()) : ?>
 
-                <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                <?php while ($my_query_posts->have_posts()) : $my_query_posts->the_post(); ?>
 
                     <?php get_template_part('template-parts/sample-content-news_archived', get_post_format()); ?>
                 <?php endwhile; ?>
@@ -96,7 +97,7 @@ $template_post_type = get_post_type_object(get_post_type($post));
 
             <?php /* Display navigation to next/previous pages when applicable */ ?>
             <?php if (function_exists('foundationpress_pagination')) {
-                //foundationpress_pagination();
+                foundationpress_pagination();
             } else {
                 if (is_paged()) { ?>
                     <nav id="post-nav">
@@ -110,7 +111,7 @@ $template_post_type = get_post_type_object(get_post_type($post));
                 <?php }
             } ?>
 
-        </article>
+        </div>
         <div class="show-for-large">
             <?php
             get_sidebar('blog');

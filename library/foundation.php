@@ -10,7 +10,9 @@
 if (!function_exists('foundationpress_pagination')) :
     function foundationpress_pagination()
     {
-        global $wp_query;
+
+        global $my_query_posts;
+
 
         $big = 999999999; // This needs to be an unlikely integer
 
@@ -19,7 +21,7 @@ if (!function_exists('foundationpress_pagination')) :
         $paginate_links = paginate_links(array(
             'base' => str_replace($big, '%#%', html_entity_decode(get_pagenum_link($big))),
             'current' => max(1, get_query_var('paged')),
-            'total' => $wp_query->max_num_pages,
+            'total' => $my_query_posts->max_num_pages,
             'mid_size' => 5,
             'prev_next' => true,
             'prev_text' => __('&laquo;', 'foundationpress'),

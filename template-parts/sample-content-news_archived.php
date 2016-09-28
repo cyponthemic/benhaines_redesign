@@ -16,7 +16,7 @@ Template Name: Sample Content Product
 
 
 
-<div  <?php post_class('news news_archived'); ?>>
+<article  <?php post_class('news news_archived'); ?>>
     <div class="news--image">
         <div
             class="image-crop image-crop_news <?php echo(has_post_thumbnail() ? 'image-crop_news' : 'image-crop_no-image') ?>">
@@ -49,4 +49,4 @@ Template Name: Sample Content Product
             <a class="medium button button-bold hollow" href="<?php the_permalink(); ?>">read more</a>
         </div>
     </div>
-</div>
+</article>

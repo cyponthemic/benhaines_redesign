@@ -25,9 +25,9 @@ get_header();
             'post__in' => get_option('sticky_posts'),
             'ignore_sticky_posts' => 1
         );
-        $my_query = new WP_Query($args);
+        $my_query_featured = new WP_Query($args);
         if (has_post_thumbnail()):
-            while ($my_query->have_posts()) : $my_query->the_post();
+            while ($my_query_featured->have_posts()) : $my_query_featured->the_post();
 
                 $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
                 ?>
@@ -52,7 +52,7 @@ get_header();
             <?php endwhile; endif; ?>
     </div>
     <div id="page" role="main">
-        <article class="main-content">
+        <header class="main-content">
             <div class="row row-margin-bottom">
 
                 <h2 class="align-center-mobile">Latest news from the vineyard </h2>
@@ -62,22 +62,24 @@ get_header();
 
 
             </div>
-        </article>
+        </header>
 
 
-        <article class="main-content">
+        <div class="main-content">
 
             <?php if (have_posts()) :
 
                 $Postargs = array(
                     'post_type' => array('post', 'review', 'news'),
+                    'post__not_in' => get_option('sticky_posts'),
                     'ignore_sticky_posts' => 1,
-                    'nopaging' => true
+                    'post_per_page' => 5,
+                    'paged' => get_query_var( 'paged' )
                 );
-                $my_query = new WP_Query($Postargs); ?>
+                $my_query_posts = new WP_Query($Postargs); ?>
 
                 <?php /* Start the Loop */ ?>
-                <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                <?php while ($my_query_posts->have_posts()) : $my_query_posts->the_post(); ?>
 
                 <?php get_template_part('template-parts/sample-content-news_archived', get_post_format()); ?>
             <?php endwhile; ?>
@@ -91,6 +93,7 @@ get_header();
             <?php /* Display navigation to next/previous pages when applicable */ ?>
             <?php if (function_exists('foundationpress_pagination')) {
                 foundationpress_pagination();
+
             } else if (is_paged()) { ?>
                 <nav id="post-nav">
                     <div
@@ -100,7 +103,7 @@ get_header();
                 </nav>
             <?php } ?>
 
-        </article>
+        </div>
         <div class="show-for-large">
             <?php
             get_sidebar('blog');

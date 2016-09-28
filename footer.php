@@ -10,34 +10,35 @@
 
 ?>
 
-		</section>
-		<div id="footer-container">
-			<footer id="footer">
-				<?php do_action( 'foundationpress_before_footer' ); ?>
-				<?php if (!wp_is_mobile()):?>
-				<?php dynamic_sidebar( 'footer-widgets' ); ?>
-				<?php else: ?>
-				<ul class="accordion" data-accordion data-multi-expand="true">
-				<?php	//require_once( 'template-parts/accfooter.php' ); ?>
-				<?php dynamic_sidebar( 'footer-widgets-mobile' ); ?>
-				</ul>
-				<?php endif; ?>
-				<?php do_action( 'foundationpress_after_footer' ); ?>
-			</footer>
-			<footer id="legal" class="row" style="text-align: center">
+</section>
+<div id="footer-container">
+    <footer id="footer">
+        <?php do_action('foundationpress_before_footer'); ?>
+        <?php if (!wp_is_mobile()): ?>
+            <?php dynamic_sidebar('footer-widgets'); ?>
+        <?php else: ?>
+            <ul class="accordion" data-accordion data-multi-expand="true">
+                <?php //require_once( 'template-parts/accfooter.php' ); ?>
+                <?php dynamic_sidebar('footer-widgets-mobile'); ?>
+            </ul>
+        <?php endif; ?>
+        <?php do_action('foundationpress_after_footer'); ?>
+    </footer>
+    <footer id="legal" class="row" style="text-align: center">
 
-				<p>
-					<a>Terms & Conditions</a>&nbsp;&#124;&nbsp;<a>Copyright 2016 Ben Haines</a>
-				</p>
-				<p>
-					LIQUOR LICENCE NUMBER: 36121309
-				</p>
-			</footer>
-		</div>
+        <p>
+            <a>Terms & Conditions</a>&nbsp;&#124;&nbsp;<a>Copyright 2016 Ben Haines</a>
+        </p>
 
-		<?php do_action( 'foundationpress_layout_end' ); ?>
+        <p>
+            LIQUOR LICENCE NUMBER: 36121309
+        </p>
+    </footer>
+</div>
 
-<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'offcanvas' ) : ?>
+<?php do_action('foundationpress_layout_end'); ?>
+
+<?php if (get_theme_mod('wpt_mobile_menu_layout') == 'offcanvas') : ?>
 		</div><!-- Close off-canvas wrapper inner -->
 	</div><!-- Close off-canvas wrapper -->
 </div><!-- Close off-canvas content wrapper -->
@@ -47,7 +48,7 @@
 
 
 <?php wp_footer(); ?>
-<?php do_action( 'foundationpress_before_closing_body' ); ?>
+<?php do_action('foundationpress_before_closing_body'); ?>
 
 
 

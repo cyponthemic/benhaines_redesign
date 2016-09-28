@@ -40,7 +40,7 @@ $template_post_type = get_post_type_object(get_post_type($post));
                  data-image-src="<?php echo $featured_image[0]; ?>"
                  data-z-index="9"
                  data-speed="0.8"
-            >
+                >
                 <div class=" row">
                     <?php
 
@@ -75,7 +75,7 @@ $template_post_type = get_post_type_object(get_post_type($post));
             $Postargs = array(
                 'post_type' => $template_post_type->name,
                 'ignore_sticky_posts' => 1,
-                'post__not_in'  => get_option( 'sticky_posts' ),
+                'post__not_in' => get_option('sticky_posts'),
                 'nopaging' => true
 
             );
@@ -96,7 +96,7 @@ $template_post_type = get_post_type_object(get_post_type($post));
 
             <?php /* Display navigation to next/previous pages when applicable */ ?>
             <?php if (function_exists('foundationpress_pagination')) {
-               //foundationpress_pagination();
+                //foundationpress_pagination();
             } else {
                 if (is_paged()) { ?>
                     <nav id="post-nav">

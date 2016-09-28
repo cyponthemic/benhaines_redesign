@@ -7,13 +7,15 @@
  */
 // Add sticky class in article title to style sticky posts differently
 
-function cpt_sticky_class($classes) {
-    if ( is_sticky() ) :
+function cpt_sticky_class($classes)
+{
+    if (is_sticky()) :
         $classes[] = 'sticky-post';
         return $classes;
     endif;
     return $classes;
 }
+
 add_filter('post_class', 'cpt_sticky_class');
 
 
@@ -34,46 +36,49 @@ function change_post_object_label()
     $labels->not_found = 'No Articles found';
     $labels->not_found_in_trash = 'No Articles found in Trash';
 }
-add_action( 'init', 'change_post_object_label' );
-add_action( 'admin_menu', 'change_post_menu_label' );
-function displayCategory() {
-    $post_type = get_post_type_object( get_post_type($post) );
+
+add_action('init', 'change_post_object_label');
+add_action('admin_menu', 'change_post_menu_label');
+function displayCategory()
+{
+    $post_type = get_post_type_object(get_post_type($post));
     echo '<span class="news--category--title">Category:&nbsp;</span>';
-    echo '<a href="'. get_post_type_archive_link($post_type->name).'">';
-    echo '<span class="news--category--category '.$post_type->name.'">';
-    echo $post_type->labels->name ;
+    echo '<a href="' . get_post_type_archive_link($post_type->name) . '">';
+    echo '<span class="news--category--category ' . $post_type->name . '">';
+    echo $post_type->labels->name;
     echo '</span>';
     echo '</a>';
 
 }
 
-add_action( 'bhr_category_name', 'displayCategory' );
+add_action('bhr_category_name', 'displayCategory');
 
-function listCategoryButton() {
-    $lists = array('post','news','review');
-    $template_post_type= get_post_type_object( get_post_type($post) );
+function listCategoryButton()
+{
+    $lists = array('post', 'news', 'review');
+    $template_post_type = get_post_type_object(get_post_type($post));
 
     foreach ($lists as $value) {
-        $post_type = get_post_type_object( $value );
+        $post_type = get_post_type_object($value);
         //define post on home
-        if(is_home()){
-            $template_post_type= get_post_type_object( 'post' );
+        if (is_home()) {
+            $template_post_type = get_post_type_object('post');
 
         }
         //Change post to article
 
-            $name= $post_type->labels->name;
+        $name = $post_type->labels->name;
 
         //Add active class
-        if($template_post_type->name === $post_type->name && ! is_page( 'news-reviews' )){
-            $isactive= ' active';
+        if ($template_post_type->name === $post_type->name && !is_page('news-reviews')) {
+            $isactive = ' active';
+        } else {
+            $isactive = ' ';
         }
-        else{
-            $isactive= ' ';
-        }
-        echo '<a class="category--button hollow button  '.$value.$isactive.'" href="'. get_post_type_archive_link($post_type->name).'">'.$name.'</a>';
+        echo '<a class="category--button hollow button  ' . $value . $isactive . '" href="' . get_post_type_archive_link($post_type->name) . '">' . $name . '</a>';
     }
 }
-add_action( 'list_category_name', 'listCategoryButton' );
+
+add_action('list_category_name', 'listCategoryButton');
 
 

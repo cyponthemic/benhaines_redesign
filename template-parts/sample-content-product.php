@@ -27,7 +27,7 @@ Template Name: Sample Content Product
 
     </div>
 
-    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?>&nbsp;|&nbsp;$<?php echo $price[0]; ?></a></h3>
+    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
     <a class="medium button button-bold" href="<?php the_permalink(); ?>">Discover</a>
 </div>
 

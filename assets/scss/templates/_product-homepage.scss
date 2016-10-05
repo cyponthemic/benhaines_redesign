@@ -5,8 +5,9 @@
   }
 
   h3 {
-
+    font-size: 22px;
     margin-bottom: 20px;
+    white-space: nowrap;
     a{
       color:  map-get($ben-palette, 'navy-blue');
     }
@@ -17,5 +18,14 @@
     @include breakpoint(medium){
       height: 50vh;
     }
+  }
+}
+
+body.woocommerce-page{
+  .product-archived:last-child:not(:first-child){
+    float: left;
+  }
+  .product-archived{
+    margin-bottom: 50px;
   }
 }

@@ -20,20 +20,37 @@ if (!defined('ABSPATH')) {
 }
 
 get_header('shop'); ?>
-
-<?php
-/**
- * woocommerce_before_main_content hook.
- *
- * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
- * @hooked woocommerce_breadcrumb - 20
- */
-do_action('woocommerce_before_main_content');
-?>
-
+<section class="section section-white ">
+    <div class="row">
+        <div class="small-12 large-12 columns" role="main">
+            <?php
+            /**
+             * woocommerce_before_main_content hook.
+             *
+             * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+             * @hooked woocommerce_breadcrumb - 20
+             */
+            do_action('woocommerce_before_main_content');
+            ?>
+        </div>
+    </div>
+</section>
 <?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
+    <section class="section section-white section-padded section-not-padded-mobile">
+        <div class="row">
+            <div class="small-12 large-12 columns" role="main">
+                <h1 class="page-title color-black align-center"><?php woocommerce_page_title(); ?></h1>
+            </div>
+            <div class="small-12 large-6 large-offset-3 columns end" role="main">
+                <p class="nocta-bene">
+                    NB. Minimum order is three bottles. Free freight for orders of 12 bottles or more.
+                    Orders of less than 12 bottles will incur a flat rate delivery charge of $15.00.
+                    See all Terms & Conditions
+                </p>
+            </div>
+        </div>
+    </section>
 
-    <h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
 
 <?php endif; ?>
 
@@ -48,17 +65,21 @@ do_action('woocommerce_archive_description');
 ?>
 
 <?php if (have_posts()) : ?>
-
-    <?php
-    /**
-     * woocommerce_before_shop_loop hook.
-     *
-     * @hooked woocommerce_result_count - 20
-     * @hooked woocommerce_catalog_ordering - 30
-     */
-    do_action('woocommerce_before_shop_loop');
-    ?>
-
+    <section class="section section-white">
+        <div class="row">
+            <div class="small-12 large-12 columns" role="main">
+                <?php
+                /**
+                 * woocommerce_before_shop_loop hook.
+                 *
+                 * @hooked woocommerce_result_count - 20
+                 * @hooked woocommerce_catalog_ordering - 30
+                 */
+                do_action('woocommerce_before_shop_loop');
+                ?>
+            </div>
+        </div>
+    </section>
     <?php woocommerce_product_loop_start(); ?>
 
     <?php woocommerce_product_subcategories(); ?>
@@ -101,7 +122,7 @@ do_action('woocommerce_after_main_content');
  *
  * @hooked woocommerce_get_sidebar - 10
  */
-do_action('woocommerce_sidebar');
+//do_action('woocommerce_sidebar');
 ?>
 
 <?php get_footer('shop'); ?>

@@ -7,7 +7,13 @@
  */
 
 get_header(); ?>
+<?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
+    <section class="section section-padded section-not-padded-mobile    ">
+        <h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
+    </section>
 
+
+<?php endif; ?>
     <div class="row">
         <div class="small-12 large-12 columns" role="main">
 

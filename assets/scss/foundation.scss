@@ -13,6 +13,7 @@
 // Foundation mixins & browser resets
 @import '../components/foundation-sites/scss/foundation';
 
+
 // WP overrides
 @import "global/wp-admin"; // Fix issues with wp-admin bar positioning
 @import "global/wp-overrides"; // Override the default WordPress styling for some elements
@@ -20,6 +21,7 @@
 // Third-party libraries
 @import 'font-awesome';
 @import 'motion-ui';
+
 
 // Foundation global styles
 @include foundation-global-styles;
@@ -75,6 +77,8 @@
   Add your scss files below to structure your project styles
 */
 
+
+
 // Modules
 @import "modules/navigation";
 @import "modules/footer";
@@ -104,3 +108,8 @@
 @import "templates/woocommerce";
 
 
+//Woocommerce
+@import '../components/bourbon/app/assets/stylesheets/_bourbon';
+@import "wc/woocommerce.scss";
+@import "wc/woocommerce-layout.scss";
+@import "wc/woocommerce-smallscreen.scss";

@@ -6,6 +6,11 @@
  * Time: 2:41 PM
  */
 
+//Remove the woocommerce style || it's all in the scss
+
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
+
 /**
  * Override the thumbnail function
  */
@@ -39,6 +44,7 @@ if (!function_exists('woocommerce_template_loop_product_thumbnail_custom')) {
         echo '</div>';
     }
 }
+
 /**
  * Override the title function
  */

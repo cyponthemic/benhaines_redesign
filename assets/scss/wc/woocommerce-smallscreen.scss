@@ -6,7 +6,7 @@
 /**
  * Imports
  */
-@import "bourbon";
+//@import "bourbon";
 @import "mixins";
 @import "variables";
 
@@ -120,8 +120,7 @@
 	 */
 	div.product,
 	#content div.product {
-		div.images,
-		div.summary {
+		div.images{
 			float: none;
 			width: 100%;
 		}

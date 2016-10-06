@@ -229,7 +229,7 @@
 		display: block;
 		content: "";
 		@include animation( spin 1s ease-in-out infinite );
-		background: url(../images/icons/loader.svg) center center;
+		background: url(../../wc_assets/images/icons/loader.svg) center center;
 		background-size: cover;
 		line-height: 1;
 		text-align: center;

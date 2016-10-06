@@ -1,12 +1,8 @@
-.woocommerce-page .woocommerce-message{
-  position: fixed;
-  width: 420px;
-  left: 0px;
-  top: 20%;
-  background: white;
-  z-index: 12;
-  border-top: 0;
-  border-right: 3px solid #8fae1b;
+.woocommerce-breadcrumb{
+  display: none !important;
+}
+body.woocommerce-page .woocommerce-message{
+  margin: 20px auto 50px !important;
   &:before {
     content: "\f00c";
     font-family: FontAwesome;
@@ -24,6 +20,7 @@
   text-align: center;
   padding: 30px 0;
   border-right: 1px solid #D2BB92;
+
   &:last-child{
     border-right: 0;
   }
@@ -32,8 +29,15 @@
     font-weight: bold;
   }
   .bh-add-to-cart__span{
-    font-size: 10px;
     text-transform: uppercase;
+    @include breakpoint(medium) {
+      font-weight: normal;
+      font-size: 10px;
+    }
+    @include breakpoint(small) {
+      font-weight: bold;
+      font-size: 14px;
+    }
   }
   .bh-add-to-cart__span--bottle{
     display: block;
@@ -57,12 +61,25 @@
 }
 
 .bh-add-to-cart-wrapper{
-  width: 270px;
+  @include breakpoint(medium) {
+    width: 270px;
+    margin-top: 0px;
+  }
+  @include breakpoint(small) {
+    width: 100%;
+    margin-top: 20px;
+  }
+  &--h3{
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: $body-font-family;
+  }
 }
 .bh-add-to-cart{
   width: 100%;
   display: flex;
-  border: 1px dashed #D2BB92;
+  border: 1px solid #D2BB92;
 }
 .bh-add-to-cart--price{
   display: flex;
@@ -72,6 +89,6 @@
     flex: 1;
     color: #D2BB92 !important;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 14px !important;
   }
 }

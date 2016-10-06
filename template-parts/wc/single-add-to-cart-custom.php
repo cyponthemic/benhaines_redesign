@@ -1,4 +1,5 @@
 <div class="bh-add-to-cart-wrapper">
+    <h3 class="bh-add-to-cart-wrapper--h3 ">Add to cart</h3>
     <div id="add-to-cart-directive" class="bh-add-to-cart">
         <a class="add-to-cart-custom" data-value="1" id="add-btl-1" >
             <span class="bh-add-to-cart__qty">1</span>

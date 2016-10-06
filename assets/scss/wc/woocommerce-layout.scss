@@ -6,7 +6,7 @@
 /**
  * Imports
  */
-@import "bourbon";
+//@import "bourbon";
 @import "mixins";
 @import "variables";
 
@@ -92,10 +92,7 @@
 			}
 		}
 
-		div.summary {
-			float: right;
-			width: 48%;
-		}
+
 
 		.woocommerce-tabs {
 			clear: both;

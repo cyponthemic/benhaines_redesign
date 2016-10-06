@@ -7,7 +7,7 @@
 /**
  * Imports
  */
-@import "bourbon";
+//@import "bourbon";
 @import "mixins";
 @import "variables";
 @import "animation";
@@ -225,9 +225,7 @@ p.demo_store {
 			}
 		}
 
-		div.summary {
-			margin-bottom: 2em;
-		}
+		
 
 		div.social {
 			text-align: right;
@@ -607,27 +605,27 @@ p.demo_store {
 	button.button,
 	input.button,
 	#respond input#submit {
-		font-size: 100%;
-		margin: 0;
-		line-height: 1;
-		cursor: pointer;
-		position: relative;
-		font-family: inherit;
-		text-decoration: none;
-		overflow: visible;
-		padding: .618em 1em;
-		font-weight: 700;
-		border-radius: 3px;
-		left: auto;
-		color: $secondarytext;
-		background-color: $secondary;
-		border: 0;
-		white-space: nowrap;
-		display: inline-block;
-		background-image: none;
-		box-shadow: none;
-		-webkit-box-shadow: none;
-		text-shadow: none;
+//		font-size: 100%;
+//		margin: 0;
+//		line-height: 1;
+//		cursor: pointer;
+//		position: relative;
+//		font-family: inherit;
+//		text-decoration: none;
+//		overflow: visible;
+//		padding: .618em 1em;
+//		font-weight: 700;
+//		border-radius: 3px;
+//		left: auto;
+//		color: $secondarytext;
+//		background-color: $secondary;
+//		border: 0;
+//		white-space: nowrap;
+//		display: inline-block;
+//		background-image: none;
+//		box-shadow: none;
+//		-webkit-box-shadow: none;
+//		text-shadow: none;
 
 		&.loading {
 			opacity: 0.25;
@@ -1811,34 +1809,34 @@ p.demo_store {
 				background-position: right;
 
 				&.visa {
-					background-image: url(../images/icons/credit-cards/visa.png);
+					background-image: url(../../wc_assets/images/icons/credit-cards/visa.png);
 				}
 
 				&.mastercard {
-					background-image: url(../images/icons/credit-cards/mastercard.png);
+					background-image: url(../../wc_assets/images/icons/credit-cards/mastercard.png);
 				}
 
 				&.laser {
-					background-image: url(../images/icons/credit-cards/laser.png);
+					background-image: url(../../wc_assets/images/icons/credit-cards/laser.png);
 				}
 
 				&.dinersclub {
-					background-image: url(../images/icons/credit-cards/diners.png);
+					background-image: url(../../wc_assets/images/icons/credit-cards/diners.png);
 				}
 
 				&.maestro {
-					background-image: url(../images/icons/credit-cards/maestro.png);
+					background-image: url(../../wc_assets/images/icons/credit-cards/maestro.png);
 				}
 
 				&.jcb {
-					background-image: url(../images/icons/credit-cards/jcb.png);
+					background-image: url(../../wc_assets/images/icons/credit-cards/jcb.png);
 				}
 
 				&.amex {
-					background-image: url(../images/icons/credit-cards/amex.png);
+					background-image: url(../../wc_assets/images/icons/credit-cards/amex.png);
 				}
 				&.discover {
-					background-image: url(../images/icons/credit-cards/discover.png);
+					background-image: url(../../wc_assets/images/icons/credit-cards/discover.png);
 				}
 			}
 

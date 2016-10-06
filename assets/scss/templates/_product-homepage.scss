@@ -6,7 +6,7 @@
 
   h3 {
     font-size: 22px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     white-space: nowrap;
     a{
       color:  map-get($ben-palette, 'navy-blue');
@@ -19,6 +19,31 @@
       height: 50vh;
     }
   }
+  span.price{
+    display: inline-block !important;
+    padding: 0.85em 1em !important;
+    margin: 0 0 1rem 0 !important;
+    font-size: 0.9rem !important;
+    .amount{
+      font-size: 0.9rem !important;
+      display: inline-block;
+      text-align: center;
+      line-height: 1;
+      cursor: pointer;
+      -webkit-appearance: none;
+      transition: background-color 0.25s ease-out, color 0.25s ease-out;
+      vertical-align: middle;
+      border: 1px solid transparent;
+      border-radius: 0;
+      padding: 0.85em 1em;
+      margin: 0 0 1rem 0;
+      font-size: 0.9rem;
+      font-weight: bold;
+      background-color: transparent;
+      color:  map-get($ben-palette, 'navy-blue');
+    }
+
+  }
 }
 
 body.woocommerce-page{
@@ -27,5 +52,66 @@ body.woocommerce-page{
   }
   .product-archived{
     margin-bottom: 50px;
+  }
+}
+
+body.single.single-product{
+  .image-crop_bottle {
+    height: 50vh;
+    @include breakpoint(medium){
+      height: 80vh;
+    }
+  }
+}
+
+.woocommerce-page div.product div.summary{
+
+  padding-top: 200px;
+  .product_title{
+    font-size: 30px;
+    color:  map-get($ben-palette, 'secondary-text-grey');
+    position: relative;
+
+    @include breakpoint(small) {
+      left:0;
+      width:100%;
+      text-align:center;
+    }
+    @include breakpoint(medium) {
+      left: -75px;
+      width: calc(100% + 75px);
+      text-align: left;
+    }
+  }
+  p.price .amount{
+    color: map-get($ben-palette, 'secondary-text-grey') !important;
+    font-family: $body-font-family;
+    font-size: 25px;
+    font-weight: bold;
+
+  }
+  p.price{
+    @include breakpoint(small) {
+      text-align:center;
+    }
+    @include breakpoint(medium) {
+      text-align: left;
+    }
+  }
+  @include breakpoint(small) {
+    @include grid-column(12);
+    @include grid-column-offset(0);
+    padding-top: 20px;
+
+  }
+  @include breakpoint(medium) {
+    @include grid-column(6);
+    @include grid-column-offset(1);
+    padding-top: 20vh;
+  }
+
+  @include breakpoint(large) {
+    @include grid-column(6);
+    @include grid-column-offset(0);
   }
 }

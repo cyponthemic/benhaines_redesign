@@ -13,7 +13,7 @@ var del         = require('del');
 
 // Enter URL of your local server here
 // Example: 'http://localwebsite.dev'
-var URL = 'http://localhost:8888/wpgit/';
+var URL = 'http://localhost/wpgit/';
 
 // Check for --production flag
 var isProduction = !!(argv.production);
@@ -28,6 +28,7 @@ var PATHS = {
     'assets/components/motion-ui/src',
     'assets/components/fontawesome/scss',
     'assets/components/slick-carousel/slick',
+    'assets/components/bourbon/app/assets/stylesheets/_bourbon.scss'
   ],
   javascript: [
     'assets/components/what-input/what-input.js',

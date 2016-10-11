@@ -8,6 +8,12 @@
     font-size: 22px;
     margin-bottom: 10px;
     white-space: nowrap;
+    @include breakpoint(small){
+      white-space: normal;
+    }
+    @include breakpoint(medium){
+      white-space: nowrap;
+    }
     a{
       color:  map-get($ben-palette, 'navy-blue');
     }
@@ -63,7 +69,14 @@ body.single.single-product{
     }
   }
 }
-
+#bh-featured-product{
+  .image-crop_bottle {
+    height: 50vh;
+    @include breakpoint(medium){
+      height: 80vh;
+    }
+  }
+}
 .woocommerce-page div.product div.summary{
 
   padding-top: 200px;

@@ -15,4 +15,4 @@
  * @version     2.0.0
  */
 ?>
-<div class="row" style="margin-top: 150px;">
+<div class="row">

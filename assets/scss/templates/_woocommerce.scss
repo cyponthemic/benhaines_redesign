@@ -9,10 +9,26 @@ body.woocommerce-page .woocommerce-message{
     color: #8fae1b;
   }
 }
-.single-product #add-to-cart-form .single_add_to_cart_button,
-.single-product #add-to-cart-form .quantity{
-  display: none;
+body.woocommerce-page.post-type-archive  .woocommerce-message{
+  margin: 20px auto 50px !important;
+  position: fixed;
+  top:140px;
+  left: 50%;
+  transform: translateX(-50%);
+  &:before {
+    content: "\f00c";
+    font-family: FontAwesome;
+    color: #8fae1b;
+  }
 }
+#bh-featured-product,
+.single-product{
+  #add-to-cart-form .single_add_to_cart_button,
+  #add-to-cart-form .quantity{
+    display: none;
+  }
+}
+
 .add-to-cart-custom{
   flex: 1;
   display: flex;

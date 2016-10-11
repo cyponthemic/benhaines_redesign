@@ -20,21 +20,7 @@ if (!defined('ABSPATH')) {
 }
 
 get_header('shop'); ?>
-<section class="section section-white ">
-    <div class="row">
-        <div class="small-12 large-12 columns" role="main">
-            <?php
-            /**
-             * woocommerce_before_main_content hook.
-             *
-             * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-             * @hooked woocommerce_breadcrumb - 20
-             */
-            do_action('woocommerce_before_main_content');
-            ?>
-        </div>
-    </div>
-</section>
+
 <?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
     <section class="section section-white section-padded section-not-padded-mobile">
         <div class="row">
@@ -50,79 +36,42 @@ get_header('shop'); ?>
             </div>
         </div>
     </section>
-
-
 <?php endif; ?>
 
-<?php
-/**
- * woocommerce_archive_description hook.
- *
- * @hooked woocommerce_taxonomy_archive_description - 10
- * @hooked woocommerce_product_archive_description - 10
- */
-do_action('woocommerce_archive_description');
-?>
 
-<?php if (have_posts()) : ?>
-    <section class="section section-white">
-        <div class="row">
-            <div class="small-12 large-12 columns" role="main">
-                <?php
-                /**
-                 * woocommerce_before_shop_loop hook.
-                 *
-                 * @hooked woocommerce_result_count - 20
-                 * @hooked woocommerce_catalog_ordering - 30
-                 */
-                do_action('woocommerce_before_shop_loop');
-                ?>
-            </div>
+<section class="section section-padded">
+    <div class="row">
+        <?php wc_bh_first_loop(); ?>
+    </div>
+</section>
+<section class="section section-white section-padded section-not-padded-mobile" id="bh-featured-product">
+            <?php wc_bh_feature_loop(); ?>
+</section>
+<section class="section section-padded">
+    <div class="row">
+        <?php wc_bh_second_loop(); ?>
+    </div>
+
+</section>
+
+<section class="section section-white section-padded section-not-padded-mobile">
+    <div class="row">
+        <div class="small-12 large-12 columns" role="main">
+            <h1 class="page-title color-black align-center">Museum Wines</h1>
         </div>
-    </section>
-    <?php woocommerce_product_loop_start(); ?>
+        <div class="small-12 large-6 large-offset-3 columns end" role="main">
+            <p class="nocta-bene">
+                NB. These wines are not avaible on the website. Order on request only.</br>
+                Please contact ben@ben.com.au
+            </p>
+        </div>
+    </div>
+</section>
+<section class="section section-padded">
+    <div class="row">
+        <?php wc_bh_museum_loop(); ?>
+    </div>
 
-    <?php woocommerce_product_subcategories(); ?>
-
-    <?php while (have_posts()) : the_post(); ?>
-
-        <?php wc_get_template_part('content', 'product'); ?>
-
-    <?php endwhile; // end of the loop. ?>
-
-    <?php woocommerce_product_loop_end(); ?>
-
-    <?php
-    /**
-     * woocommerce_after_shop_loop hook.
-     *
-     * @hooked woocommerce_pagination - 10
-     */
-    do_action('woocommerce_after_shop_loop');
-    ?>
-
-<?php elseif (!woocommerce_product_subcategories(array('before' => woocommerce_product_loop_start(false), 'after' => woocommerce_product_loop_end(false)))) : ?>
-
-    <?php wc_get_template('loop/no-products-found.php'); ?>
-
-<?php endif; ?>
-
-<?php
-/**
- * woocommerce_after_main_content hook.
- *
- * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
- */
-do_action('woocommerce_after_main_content');
-?>
-
-<?php
-/**
- * woocommerce_sidebar hook.
- *
- * @hooked woocommerce_get_sidebar - 10
- */
-//do_action('woocommerce_sidebar');
-?>
+</section>
 
 <?php get_footer('shop'); ?>

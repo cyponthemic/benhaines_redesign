@@ -5,11 +5,10 @@
  * Date: 16/07/2016
  * Time: 2:41 PM
  */
-
-//Remove the woocommerce style || it's all in the scss
-
-add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
-
+/**
+ *Remove the woocommerce style || it's all in the scss
+ */
+add_filter('woocommerce_enqueue_styles', '__return_empty_array');
 
 /**
  * Override the thumbnail function
@@ -48,13 +47,13 @@ if (!function_exists('woocommerce_template_loop_product_thumbnail_custom')) {
 /**
  * Override the title function
  */
-remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
-add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title_custom', 10 );
+remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title_custom', 10);
 
 if (!function_exists('woocommerce_template_loop_product_title_custom')) {
 
     /**
-        Display title
+     * Display title
      */
     function woocommerce_template_loop_product_title_custom()
     {

@@ -37,6 +37,9 @@ if (post_password_required()) {
 <section class="section section-white">
     <div class="row">
         <div class="small-12 large-12 columns" role="main">
+            <a class="medium button button-bold" href="/shop">Back to the shop</a>
+        </div>
+        <div class="small-12 large-12 columns" role="main">
             <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>"
                  id="product-<?php the_ID(); ?>" <?php post_class('row'); ?>>
                 <div class="large-4 large-offset-2  medium-5 medium-offset-0 small-12 small-offset-0 columns">

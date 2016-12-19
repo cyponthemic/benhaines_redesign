@@ -11,7 +11,7 @@
     @include breakpoint(small){
       white-space: normal;
     }
-    @include breakpoint(medium){
+    @include breakpoint(large){
       white-space: nowrap;
     }
     a{
@@ -76,6 +76,13 @@ body.single.single-product{
       height: 80vh;
     }
   }
+  
+  .shop-feature-product-link{
+    color: #000;
+    &:hover{
+      color:  map-get($ben-palette, 'secondary-text-grey');
+    }
+  }
 }
 .woocommerce-page div.product div.summary{
 
@@ -94,6 +101,11 @@ body.single.single-product{
       left: -75px;
       width: calc(100% + 75px);
       text-align: left;
+    }
+  }
+  @include breakpoint(medium){
+    [itemprop="description"]{
+       max-width: 340px;
     }
   }
   p.price .amount{

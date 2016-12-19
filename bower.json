@@ -10,6 +10,7 @@
     "motion-ui": "~1.2.0",
     "fontawesome": "~4.5.0",
     "parallax.js": "^1.4.2",
-    "slick-carousel": "^1.6.0"
+    "slick-carousel": "^1.6.0",
+    "bourbon": "^4.2.7"
   }
 }

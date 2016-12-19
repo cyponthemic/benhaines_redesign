@@ -35,7 +35,7 @@ body.woocommerce-page.post-type-archive  .woocommerce-message{
   flex-direction: column;
   text-align: center;
   padding: 30px 0;
-  border-right: 1px solid #D2BB92;
+  border-right: 1px solid #000;
 
   &:last-child{
     border-right: 0;
@@ -43,9 +43,11 @@ body.woocommerce-page.post-type-archive  .woocommerce-message{
   .bh-add-to-cart__qty{
     font-size: 21px;
     font-weight: bold;
+    color: #000;
   }
   .bh-add-to-cart__span{
     text-transform: uppercase;
+    color: #000;
     @include breakpoint(medium) {
       font-weight: normal;
       font-size: 10px;
@@ -95,7 +97,7 @@ body.woocommerce-page.post-type-archive  .woocommerce-message{
 .bh-add-to-cart{
   width: 100%;
   display: flex;
-  border: 1px solid #D2BB92;
+  border: 1px solid #000;
 }
 .bh-add-to-cart--price{
   display: flex;
@@ -103,7 +105,7 @@ body.woocommerce-page.post-type-archive  .woocommerce-message{
   padding: 10px 0;
   span.price{
     flex: 1;
-    color: #D2BB92 !important;
+    color: #000 !important;
     font-weight: bold;
     font-size: 14px !important;
   }

@@ -48,7 +48,7 @@ if (0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns']) {
     $classes[] = 'last';
 }
 ?>
-<div <?php post_class("columns large-4 medium-6 small-12 product product-archived"); ?>>
+<div <?php post_class("columns large-4 medium-4 small-12 product product-archived"); ?>>
     <?php
     /**
      * woocommerce_before_shop_loop_item hook.

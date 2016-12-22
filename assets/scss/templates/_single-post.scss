@@ -1,12 +1,12 @@
 body.single {
 
 
-  article .entry-content{
-   padding-top: 5rem;
+  .entry-content.rich-text-editor{
+    padding-top: 5rem;
     @include grid-row();
   }
 
-  article p{
+  .entry-content.rich-text-editor p{
     float: left !important;
     font-size: 18px;
     line-height: 28px;
@@ -34,7 +34,28 @@ body.single {
 
 
   }
-  article blockquote{
+  .entry-content.rich-text-editor {
+     h1,h2,h3,h4{
+
+
+      float: left !important;
+
+      @include grid-column(10);
+      @include grid-column-offset(1);
+
+      @include breakpoint(medium) {
+        @include grid-column(8);
+        @include grid-column-offset(2);
+      }
+
+      @include breakpoint(large) {
+        @include grid-column(8);
+        @include grid-column-offset(2);
+      }
+     }
+
+  }
+  .entry-content.rich-text-editor blockquote{
     margin-top: 20px;
     margin-bottom: 40px;
 
@@ -67,7 +88,7 @@ body.single {
       }
     }
   }
-  article p.single-image{
+  .entry-content.rich-text-editor p.single-image{
     @include grid-column(12);
     @include grid-column-offset(0);
     margin-bottom: 40px;
@@ -75,7 +96,7 @@ body.single {
       width: 100%;
     }
   }
-  article p.single-image-inline{
+  .entry-content.rich-text-editor p.single-image-inline{
     @include grid-column(8);
     @include grid-column-offset(2);
     margin-bottom: 40px;
@@ -83,7 +104,7 @@ body.single {
       width: 100%;
     }
   }
-  article .gallery{
+  .entry-content.rich-text-editor .gallery{
 
     margin-top: 20px;
     margin-bottom: 40px;
@@ -114,7 +135,7 @@ body.single {
       }
     }
   }
-  article .gallery-columns-2{
+  .entry-content.rich-text-editor .gallery-columns-2{
     figure{
       @include grid-column(12);
       @include grid-column-offset(0);

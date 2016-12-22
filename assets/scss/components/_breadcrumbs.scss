@@ -1,0 +1,21 @@
+.woocommerce .woocommerce-breadcrumb{
+  line-height: 65px;
+  color: map-get($ben-palette, 'gold');
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 30px;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.breadcrumbs__header{
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+.woocommerce .woocommerce-breadcrumb>a {
+  color: #D2BB92;
+  &:hover{
+
+  }
+}

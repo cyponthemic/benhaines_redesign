@@ -34,11 +34,8 @@ if (post_password_required()) {
     return;
 }
 ?>
-<section class="section section-white">
+<section class="section section-white section-padded">
     <div class="row">
-        <div class="small-12 large-12 columns" role="main">
-            <a class="medium button button-bold" href="/shop">Back to the shop</a>
-        </div>
         <div class="small-12 large-12 columns" role="main">
             <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>"
                  id="product-<?php the_ID(); ?>" <?php post_class('row'); ?>>
@@ -69,25 +66,31 @@ if (post_password_required()) {
                      */
                     do_action('woocommerce_single_product_summary');
                     ?>
-
                 </div>
-                <!-- .summary -->
-
-                <?php
-                /**
-                 * woocommerce_after_single_product_summary hook.
-                 *
-                 * @hooked woocommerce_output_product_data_tabs - 10
-                 * @hooked woocommerce_upsell_display - 15
-                 * @hooked woocommerce_output_related_products - 20
-                 */
-                do_action('woocommerce_after_single_product_summary');
-                ?>
 
                 <meta itemprop="url" content="<?php the_permalink(); ?>"/>
 
             </div>
             <!-- #product-<?php the_ID(); ?> -->
+        </div>
+    </div>
+</section>
+<section class="section section-grey section-padded--bottom">
+    <div class="row">
+        <div class="small-12 large-12 columns" role="main">
+            <?php
+            /**
+             * woocommerce_after_single_product_summary hook.
+             *
+             * @hooked woocommerce_output_product_data_tabs - 10
+             * @hooked woocommerce_upsell_display - 15
+             * @hooked woocommerce_output_related_products - 20
+             */
+            //do_action('woocommerce_after_single_product_summary');
+            ?>
+            <div class="entry-content rich-text-editor">
+                <?php the_content(); ?>
+            </div>
         </div>
     </div>
 </section>

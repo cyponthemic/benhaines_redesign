@@ -111,5 +111,7 @@
 //Woocommerce
 @import '../components/bourbon/app/assets/stylesheets/_bourbon';
 @import "wc/woocommerce.scss";
+@import "components/breadcrumbs";
 @import "wc/woocommerce-layout.scss";
 @import "wc/woocommerce-smallscreen.scss";
+

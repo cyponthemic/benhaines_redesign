@@ -79,7 +79,7 @@ get_header(); ?>
     <article <?php post_class('main-content row ') ?> id="post-<?php the_ID(); ?>">
 
         <?php do_action('foundationpress_post_before_entry_content'); ?>
-        <div class="entry-content">
+        <div class="entry-content rich-text-editor">
             <?php the_content(); ?>
         </div>
         <footer style="padding-top: 30px">

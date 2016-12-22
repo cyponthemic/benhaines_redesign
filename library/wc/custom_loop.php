@@ -224,12 +224,47 @@ if (!function_exists('wc_bh_museum_loop')) {
     }
 }
 
-$args = array( 'post_type' => 'product', 'posts_per_page' => 30, 'orderby' => 'date', 'order' => 'DESC',
-    'meta_query' => array(
-        array(
-            'key' => '_stock_status',
-            'value' => 'outofstock',
-            'compare' => '='
-        )
-    )
-);
+//$args = array( 'post_type' => 'product', 'posts_per_page' => 30, 'orderby' => 'date', 'order' => 'DESC',
+//    'meta_query' => array(
+//        array(
+//            'key' => '_stock_status',
+//            'value' => 'outofstock',
+//            'compare' => '='
+//        )
+//    )
+//);
+
+if (!function_exists('wc_bh_category_loop')) {
+
+    /**
+    Display title
+     */
+    function wc_bh_category_loop()
+    {
+        wp_reset_postdata();
+
+        $cate = get_queried_object();
+        $cateID = $cate->slug;
+
+        // Products per page
+        $per_page = 24;
+
+        $args = array(
+            'post_type' => 'product',
+            'product_cat' => $cateID
+
+        );
+
+
+        // Set the query
+        $products = new WP_Query( $args );
+        // Standard loop
+        if ( $products->have_posts() ) :
+            while ( $products->have_posts() ) : $products->the_post();
+                wc_get_template_part('content', 'product');
+            endwhile;
+            wp_reset_postdata();
+        endif;
+    }
+}
+

@@ -38,7 +38,9 @@ get_header('shop'); ?>
     </section>
 <?php endif; ?>
 
-
+<?php
+if(!is_product_category()):
+?>
 <section class="section section-padded">
     <div class="row">
         <?php wc_bh_first_loop(); ?>
@@ -53,7 +55,30 @@ get_header('shop'); ?>
     </div>
 
 </section>
+<?php
+else:
+?>
+<section class="section section-padded">
+    <div class="row">
+        <?php
+        wc_bh_category_loop();
+        ?>
+    </div>
+</section>
 
+<section class="section section-white section-padded">
+    <div class="row">
+        <div class="small-12 large-12 columns" role="main" style="text-align: center;" >
+        <a class="large button align-center " href="<?php echo home_url( '/shop/' ); ?>">Explore more wines</a>
+        </div>
+    </div>
+</section>
+<?php
+endif;
+?>
+<?php
+if(!is_product_category()):
+?>
 <section class="section section-white section-padded section-not-padded-mobile">
     <div class="row">
         <div class="small-12 large-12 columns" role="main">
@@ -73,5 +98,7 @@ get_header('shop'); ?>
     </div>
 
 </section>
-
+<?php
+    endif;
+?>
 <?php get_footer('shop'); ?>

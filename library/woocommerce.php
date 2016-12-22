@@ -65,3 +65,4 @@ if (!function_exists('woocommerce_template_loop_product_title_custom')) {
     }
 }
 
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);

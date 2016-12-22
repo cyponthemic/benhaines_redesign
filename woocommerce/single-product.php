@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' ); ?>
-<section class="section section-white ">
+<section class="section section-white breadcrumbs__header">
     <div class="row">
         <div class="small-12 large-12 columns" role="main">
 	<?php
@@ -31,8 +31,10 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_breadcrumb - 20
 		 */
 		do_action( 'woocommerce_before_main_content' );
+
 	?>
-        </div>
+
+		</div>
     </div>
 </section>
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -56,7 +58,7 @@ get_header( 'shop' ); ?>
 		 *
 		 * @hooked woocommerce_get_sidebar - 10
 		 */
-		do_action( 'woocommerce_sidebar' );
+		//do_action( 'woocommerce_sidebar' );
 	?>
 
 <?php get_footer( 'shop' ); ?>

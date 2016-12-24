@@ -26,12 +26,13 @@ if ( ! $messages ){
 ?>
 
 <?php foreach ( $messages as $message ) : ?>
+<section class="section section-white message__header">
     <div class="row">
-        <div class="columns">
+        <div class="small-12 large-12 columns" role="main">
             <div class="woocommerce-message">
-                <a class="fa fa-times" href="#" onclick="woocomerceCustomBH.closeNotice()"></a>
                 <?php echo wp_kses_post( $message ); ?>
             </div>
         </div>
     </div>
+</section>
 <?php endforeach; ?>

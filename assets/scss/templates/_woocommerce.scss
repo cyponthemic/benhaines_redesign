@@ -1,24 +1,6 @@
 
-body.woocommerce-page .woocommerce-message{
-  margin: 20px auto 50px !important;
-  &:before {
-    content: "\f00c";
-    font-family: FontAwesome;
-    color: #8fae1b;
-  }
-}
-body.woocommerce-page.post-type-archive  .woocommerce-message{
-  margin: 20px auto 50px !important;
-  position: fixed;
-  top:140px;
-  left: 50%;
-  transform: translateX(-50%);
-  &:before {
-    content: "\f00c";
-    font-family: FontAwesome;
-    color: #8fae1b;
-  }
-}
+
+
 #bh-featured-product,
 .single-product{
   #add-to-cart-form .single_add_to_cart_button,

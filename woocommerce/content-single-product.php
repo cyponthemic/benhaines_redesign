@@ -89,8 +89,49 @@ if (post_password_required()) {
             //do_action('woocommerce_after_single_product_summary');
             ?>
             <div class="entry-content rich-text-editor">
-                <?php the_content(); ?>
+
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 medium-3 columns" data-sticky-container role="main">
+            <nav class="production-description-sticky columns sticky" data-sticky data-margin-top="3" data-top-anchor="production-description-content:top">
+                <ul class="vertical menu production-description-nav" data-magellan>
+                    <li><a class="production-description-nav__link" href="#first">About the wine</a></li>
+                    <?php if( get_field('about_vineyard')): ?>
+                    <li><a class="production-description-nav__link" href="#second">About the vineyard</a></li>
+                    <?php endif; ?>
+                    <?php if( get_field('technical_stuffs')): ?>
+                    <li><a class="production-description-nav__link" href="#third">Technical stuffs</a></li>
+                    <?php endif; ?>
+                </ul>
+            </nav>
+
+        </div>
+        <div class="small-12 medium-6 columns" role="main" id="production-description-content">
+            <div class="sections">
+
+                <section id="first" data-magellan-target="first" class="entry-content section section-padded--bottom">
+                    <h3>About the wine</h3>
+                    <?php the_content(); ?>
+                </section>
+
+                <?php if( get_field('about_vineyard')): ?>
+                <section id="second" data-magellan-target="second" class="entry-content  section section-padded">
+                    <h3>About the vineyard</h3>
+                    <?php the_field('about_vineyard'); ?>
+                </section>
+                <?php endif; ?>
+                <?php if( get_field('technical_stuffs')): ?>
+                <section id="third" data-magellan-target="third" class="entry-content section section-padded">
+                    <h3>Technical stuffs</h3>
+                    <?php the_field('technical_stuffs'); ?>
+                </section>
+                <?php endif; ?>
+            </div>
+        </div>
+        <div class="small-12 medium-3 columns" role="main">
+            <br>
         </div>
     </div>
 </section>

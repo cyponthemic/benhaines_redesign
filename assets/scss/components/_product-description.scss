@@ -1,0 +1,18 @@
+.production-description-nav{
+  &__link{
+    color: black;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    &.active{
+      color: #D2BB92;
+    }
+  }
+}
+
+#wpadminbar{
+  display: none;
+}
+
+.production-description-sticky {
+}

@@ -37,6 +37,11 @@ if ( ! is_ajax() ) {
 			?>
 		</ul>
 	<?php endif; ?>
+	<div class="form-row review-order">
+		<?php wc_get_template( 'checkout/recap' , array()); ?>
+	</div>
+
+
 	<div class="form-row place-order">
 		<noscript>
 			<?php _e( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'woocommerce' ); ?>

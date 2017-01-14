@@ -66,3 +66,9 @@ if (!function_exists('woocommerce_template_loop_product_title_custom')) {
 }
 
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+
+remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
+remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+
+add_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 10 );
+add_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 20 );

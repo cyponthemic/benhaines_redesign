@@ -1,0 +1,69 @@
+<div class="small-12 columns ti-your-order">
+    <?php
+    do_action( 'woocommerce_review_order_before_cart_contents' );
+    ?>
+    <div class="row collapse ti-items-total">
+        <div class="small-6 columns ti-items-quantity">
+            <?php echo WC()->cart->get_cart_contents_count() ?> items
+        </div>
+        <div class="small-6 columns text-right ti-items-cost">
+            <span data-ng-show="!orderTracker.active()" class=""><?php echo WC()->cart->get_cart_total(); ?></span>
+            <span data-ng-show="orderTracker.active()" class="busy ng-hide"><span class="loading-cost"></span></span>
+        </div>
+    </div>
+
+    <div class="row collapse ti-totals-discount ng-hide" data-ng-show="discount.applied_code || totals.discount_total">
+        <div class="small-7 columns">
+            <span data-ng-show="discount.applied_code" class="ng-hide"></span>
+            <span data-ng-show="!discount.applied_code">Discount</span>
+        </div>
+        <div class="small-5 columns text-right">
+            <span data-ng-show="!orderTracker.active()" class="">-$0.00</span>
+            <span data-ng-show="orderTracker.active()" class="busy ng-hide"><span class="loading-cost"></span></span>
+        </div>
+    </div>
+
+    <div class="row collapse ti-totals-discount ng-hide" data-ng-show="totals.credit_total">
+        <div class="small-7 columns">
+            Credit
+        </div>
+        <div class="small-5 columns text-right">
+            <span data-ng-show="!orderTracker.active()" class="">-$0.00</span>
+            <span data-ng-show="orderTracker.active()" class="busy ng-hide"><span class="loading-cost"></span></span>
+        </div>
+    </div>
+    <div class="row collapse ti-delivery-summary">
+        <div class="small-7 columns ti-delivery-method">
+            Delivery
+            <span data-ng-show="shipment_details.selected_delivery_option.expectation &amp;&amp; !orderTracker.active()" class="expected-delivery">
+By Thursday
+</span>
+            <span data-ng-show="orderTracker.active() || !shipment_details.selected_delivery_option.expectation" class="busy ng-hide"><span class="loading-when"></span></span>
+        </div>
+        <div class="small-5 columns text-right ti-delivery-cost">
+            <span data-ng-show="!orderTracker.active()" class="">$7.95</span>
+            <span data-ng-show="orderTracker.active()" class="busy ng-hide"><span class="loading-cost"></span></span>
+        </div>
+    </div>
+    <div class="row collapse ti-delivery-summary" data-ng-show="canReturn()">
+        <div class="small-3 columns ti-delivery-method">
+            Returns
+        </div>
+        <div class="small-9 columns text-right ti-delivery-cost">
+            <span data-ng-show="!orderTracker.active()" class="">FREE FOR 100 DAYS</span>
+            <span data-ng-show="orderTracker.active()" class="busy ng-hide"><span class="loading-cost"></span></span>
+        </div>
+    </div>
+    <div class="row collapse ti-total-cost">
+        <div class="small-3 columns ti-delivery-method">
+            Total
+        </div>
+        <div class="small-9 column text-right">
+            <span class="">
+                <?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> - <?php echo WC()->cart->get_cart_total(); ?>
+            </span><br>
+            <span data-ng-show="!orderTracker.active() &amp;&amp; payment.method === 'pbi' &amp;&amp; totals.grand_total > 0" class="ng-hide">(4 payments of $12.49)</span>
+            <span data-ng-show="orderTracker.active()" class="ng-hide"><span class="loading-cost"></span></span>
+        </div>
+    </div>
+</div>

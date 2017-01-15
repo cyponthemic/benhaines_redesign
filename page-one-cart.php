@@ -15,7 +15,7 @@ get_header(); ?>
 
 <?php get_template_part('template-parts/featured-image'); ?>
 
-    <div id="page" role="main">
+    <div id="page" role="main" ng-app="BH" ng-checkout-login>
         <div class="row">
             <div id="cart" role="main" class="columns large-4">
                 <h2>Cart</h2>

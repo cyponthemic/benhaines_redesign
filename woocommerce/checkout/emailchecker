@@ -1,0 +1,32 @@
+<?php
+if (! is_user_logged_in() ):
+?>
+    <div ng-if="!clc.isReturning">
+        <p>
+            Please enter your email address to continue to delivery and payment.
+        </p>
+        <input ng-prevent-form-on-enter
+               type="text"
+               id="check-email"
+               value="<?php echo $_POST['email']?>"
+               ng-model="clc.emailAddress"
+               ng-keyup="$event.keyCode == 13 ? clc.checkAddress() : null"
+               on-enter="console.log('pute');">
+        <a class="button check-username" ng-click="clc.checkAddress()">Continue</a>
+    </div>
+    <div ng-if="clc.isReturning">
+        <?php
+            woocommerce_login_form_custom(
+                array(
+                    'message'  => __( 'Thank you for returning to the shop, please enter your password to continue', 'woocommerce' ),
+                    'redirect' => wc_get_page_permalink( 'checkout' ),
+                    'hidden'   => false
+                )
+            );
+
+        ?>
+    </div>
+        <?php
+        endif;
+        ?>
+

@@ -35,3 +35,26 @@ function bh_check_email_address_callback() {
 
     wp_die(); // this is required to terminate immediately and return a proper response
 }
+
+
+if ( ! function_exists( 'woocommerce_login_form_custom' ) ) {
+
+    /**
+     * Output the WooCommerce Login Form.
+     *
+     * @subpackage  Forms
+     * @param array $args
+     */
+    function woocommerce_login_form_custom( $args = array() ) {
+
+        $defaults = array(
+            'message'  => '',
+            'redirect' => '',
+            'hidden'   => false
+        );
+
+        $args = wp_parse_args( $args, $defaults  );
+
+        wc_get_template( 'global/form-login-custom.php', $args );
+    }
+}

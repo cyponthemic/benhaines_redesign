@@ -72,3 +72,16 @@ remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_paymen
 
 add_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 10 );
 //add_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 20 );
+
+if (!function_exists('bh_hide_if_not_logged_in')) {
+
+    /**
+     * Display title
+     */
+    function bh_hide_if_not_logged_in()
+    {
+        if (! is_user_logged_in() ):
+            echo 'hide  ';
+        endif;
+    }
+}

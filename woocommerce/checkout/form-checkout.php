@@ -42,9 +42,9 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 <?php  //bh_hide_if_not_logged_in(); ?>
 <form ng-app="BH" name="checkout" method="post" class="checkout woocommerce-checkout row" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 	<div class="columns large-6">
-		<div ng-checkout-login>
-			<button class="button check-username">Check username</button>
-			<input type="text" id="site-address-input">
+		<div ng-controller="checkout">
+			<button class="button check-username" ng-click="checkAdress()">Check username</button>
+			<input type="text" ng-model="">
 
 		</div>
 

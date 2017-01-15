@@ -36,5 +36,25 @@
         return directive;
     }
 
+    angular.module('BH').controller('checkout', function($scope, $http) {
+        $scope.checkAdress = function() {
+            $http({
+                method: 'POST',
+                url: ajaxurl,
+                params: {
+                    'action': 'bh_check_email_address',
+                    'email': 'alex.chavet@gmail.com'
+                }
+            }).then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                console.log('Success: ',response);
+            }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                console.log('Error',response);
+            });
+        };
+    });
 
 })();

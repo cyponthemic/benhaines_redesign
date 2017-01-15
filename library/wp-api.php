@@ -24,12 +24,14 @@ add_action( 'wp_ajax_nopriv_bh_check_email_address', 'bh_check_email_address_cal
 function bh_check_email_address_callback() {
     global $wpdb; // this is how you get access to the database
 
-    $whatever = $_POST['whatever'];
-    if(username_exists($whatever)){
-        echo $whatever;
+    $email = $_REQUEST['email'];
+
+    if(email_exists($email)){
+        echo 'true';
     }
     else{
-        echo 'Nope sorry';
+        echo 'false';
     }
+
     wp_die(); // this is required to terminate immediately and return a proper response
 }

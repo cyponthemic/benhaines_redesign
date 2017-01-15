@@ -35,11 +35,22 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 	if (! is_user_logged_in() ):
 	echo 'tes pas logge mate';
 	endif;
+
 ?>
+
+
 <?php  //bh_hide_if_not_logged_in(); ?>
-<form name="checkout" method="post" class="checkout woocommerce-checkout row" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
+<form ng-app="BH" name="checkout" method="post" class="checkout woocommerce-checkout row" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 	<div class="columns large-6">
-		<?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
+		<div ng-checkout-login>
+			<button class="button check-username">Check username</button>
+			<input type="text" id="site-address-input">
+
+		</div>
+
+		<?php
+
+		if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
 
 			<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 

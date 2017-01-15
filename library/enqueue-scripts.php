@@ -42,7 +42,15 @@ if (!function_exists('foundationpress_scripts')) :
         if (is_singular() && comments_open() && get_option('thread_comments')) {
             wp_enqueue_script('comment-reply');
         }
+        // If checkout load angular
+        if (is_checkout()) {
+            wp_enqueue_script('angular', get_template_directory_uri() . '/assets/angular/angular.min.js', array('jquery'), '1.6.1', true);
+            wp_enqueue_script('app', get_template_directory_uri() . '/assets/angular/app.js', array(), '1.6.1', true);
+            wp_enqueue_script('ng-login', get_template_directory_uri() . '/assets/angular/ng-login.js', array(), '1.6.1', true);
 
+
+
+        }
     }
 
     add_action('wp_enqueue_scripts', 'foundationpress_scripts');

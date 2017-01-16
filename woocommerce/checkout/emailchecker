@@ -1,20 +1,34 @@
 <?php
 if (! is_user_logged_in() ):
 ?>
-    <div ng-if="!clc.isReturning">
+    <input type="hidden" ng-init="clc.emailAddressPostData = '<?php echo $_POST['username']?>' ; ">
+    Debug
+    post <?php echo $_POST['username']?>
+
+    {{clc.emailAddressPostData === ''}}
+    {{!clc.isReturning}}
+    {{!clc.isReturning && clc.emailAddressPostData === undefined}}
+
+    <div ng-cloak="" ng-if="!clc.isReturning && !clc.emailChecked && clc.emailAddressPostData === ''">
         <p>
+
             Please enter your email address to continue to delivery and payment.
         </p>
-        <input ng-prevent-form-on-enter
-               type="text"
-               id="check-email"
-               value="<?php echo $_POST['email']?>"
-               ng-model="clc.emailAddress"
-               ng-keyup="$event.keyCode == 13 ? clc.checkAddress() : null"
-               on-enter="console.log('pute');">
-        <a class="button check-username" ng-click="clc.checkAddress()">Continue</a>
+        <form id="formEmailChecker">
+            <input ng-prevent-form-on-enter
+                   type="text"
+                   id="check-email"
+                   required
+                   ng-value="clc.getEmailAddressFromPost()"
+                   ng-model="clc.emailAddress"
+                   ng-keyup="$event.keyCode == 13 && clc.emailAddress ? clc.checkAddress() : null"  >
+            <a class="button check-username"
+               ng-disabled="clc.emailAddress === undefined"
+               ng-click="clc.checkAddress()"
+            >Continue</a>
+        </form>
     </div>
-    <div ng-if="clc.isReturning">
+    <div ng-cloak="" ng-if="clc.isReturning && clc.emailChecked">
         <?php
             woocommerce_login_form_custom(
                 array(

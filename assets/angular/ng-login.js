@@ -32,8 +32,16 @@
         clc.test = 'zob';
         clc.emailChecked = false;
         clc.isReturning = false;
+
+        clc.getEmailAddressFromPost = function (){
+            if(clc.emailAddressPostData !== ''){
+                return clc.emailAddressPostData;
+            }
+            else {
+                return clc.emailAddress;
+            }
+        }
         clc.checkAddress = function () {
-            console.log('click');
             $http({
                 method: 'POST',
                 url: ajaxurl,
@@ -55,6 +63,30 @@
                 clc.isReturning = false;
             });
         }
+        clc.submitLogin = function() {
+            // Posting data to php file
+            $http({
+                method  : 'POST',
+                url     :  ajaxurl,
+                dataType: 'json',
+                data: {
+                    'action': 'form-submission', //calls wp_ajax_nopriv_ajaxlogin
+                    'username': clc.username,
+                    'password': clc.password,
+                    'security': $('form#login #security').val()
+                }
+            }).then(function successCallback(data) {
+                // this callback will be called asynchronously
+                // when the response is available
+                console.log('Success submit', data);
+
+            }, function errorCallback(data) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                console.log('Error', data);
+            });
+        };
+
     }
 
 })();

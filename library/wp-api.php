@@ -1,5 +1,23 @@
 <?php
-//Ajax email checker
+add_action( 'admin_footer', 'bh_check_email_address_javascript' ); // Write our JS below here
+
+function bh_check_email_address_javascript() { ?>
+    <script type="text/javascript" >
+        jQuery(document).ready(function($) {
+
+            var data = {
+                'action': 'bh_check_email_address',
+                'whatever': 'alexchavet'
+            };
+
+            // since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
+            jQuery.post(ajaxurl, data, function(response) {
+                console.log('Got this from the server: ' + response);
+            });
+        });
+    </script> <?php
+}
+
 add_action( 'wp_ajax_bh_check_email_address', 'bh_check_email_address_callback' );
 add_action( 'wp_ajax_nopriv_bh_check_email_address', 'bh_check_email_address_callback' );
 
@@ -8,7 +26,7 @@ function bh_check_email_address_callback() {
 
     $email = $_REQUEST['email'];
 
-    if(email_exists($email) || username_exists($email)){
+    if(email_exists($email)){
         echo 'true';
     }
     else{
@@ -18,7 +36,7 @@ function bh_check_email_address_callback() {
     wp_die(); // this is required to terminate immediately and return a proper response
 }
 
-//Load custom form
+
 if ( ! function_exists( 'woocommerce_login_form_custom' ) ) {
 
     /**
@@ -39,13 +57,4 @@ if ( ! function_exists( 'woocommerce_login_form_custom' ) ) {
 
         wc_get_template( 'global/form-login-custom.php', $args );
     }
-}
-
-//ajax loading
-add_action( 'wp_ajax_nopriv_form-submission', 'submit_form' );
-add_action( 'wp_ajax_form-submission', 'submit_form' );
-
-function submit_form(){
-    echo $_REQUEST['extras'];
-    wp_die();
 }

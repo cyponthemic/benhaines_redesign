@@ -22,6 +22,12 @@ get_header(); ?>
                 <?php echo do_shortcode('[woocommerce_cart]') ?>
             </div>
             <div id="checkout" role="main" class="columns large-8">
+                <div class="loading-spiner-holder" data-loading-spinner >
+                    <div class="loading-spiner">
+                        Loading baby
+                    </div>
+                </div>
+
                 <h2>Delivery</h2>
                 <?php echo do_shortcode('[woocommerce_checkout]') ?>
             </div>

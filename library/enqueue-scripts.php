@@ -44,9 +44,18 @@ if (!function_exists('foundationpress_scripts')) :
         }
         // If checkout load angular
         if (is_checkout()) {
-            wp_enqueue_script('angular', get_template_directory_uri() . '/assets/angular/angular.min.js', array('jquery'), '1.6.1', true);
-            wp_enqueue_script('app', get_template_directory_uri() . '/assets/angular/app.js', array(), '1.6.1', true);
-            wp_enqueue_script('ng-login', get_template_directory_uri() . '/assets/angular/ng-login.js', array(), '1.6.1', true);
+            //wp_enqueue_script('angular', get_template_directory_uri() . '/assets/angular/angular.min.js', array('jquery'), '1.6.1', true);
+            //wp_enqueue_script('app', get_template_directory_uri() . '/assets/angular/app.js', array(), '1.6.1', true);
+
+            wp_register_script('angular', get_template_directory_uri() . '/assets/angular/angular.min.js', array('jquery'), '1.6.1', true );
+            wp_enqueue_script('angular');
+
+            wp_register_script('app', get_template_directory_uri() . '/assets/angular/app.js', array('angular'), '1.6.1', true);
+            wp_enqueue_script('app');
+
+
+            wp_register_script('ng-login', get_template_directory_uri() . '/assets/angular/ng-login.js',  array('app') );
+            wp_enqueue_script('ng-login');
 
 
 

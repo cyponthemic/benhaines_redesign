@@ -38,8 +38,26 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 
 
 
-<?php wc_get_template( 'checkout/emailchecker' , array()); ?>
-<form  name="checkout" method="post" class="checkout woocommerce-checkout row <?php  bh_hide_if_not_logged_in(); ?>" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
+<?php
+if (is_user_logged_in()) :
+	?>
+	<div ng-init="clc.isLoggedIn = true"></div>
+	<?php
+else:
+	?>
+	<div class="row" ng-hide="clc.isLoggedIn">
+		<div class="columns large-6">
+
+				<?php wc_get_template( 'checkout/emailchecker' , array()); ?>
+
+		</div>
+	</div>
+
+	<?php
+endif;
+?>
+
+<form ng-show="clc.isLoggedIn" name="checkout" method="post" class="checkout woocommerce-checkout row" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 	<div class="columns large-6">
 
 		<?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>

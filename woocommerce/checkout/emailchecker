@@ -15,7 +15,10 @@ if (! is_user_logged_in() ):
                ng-model="clc.emailAddress"
                placeholder="example@domain.com"
                >
-        <button class="button check-username" ><i loading-spinner="" class="fa fa-spinner fa-spin fa-fw"></i>Continue</button>
+        <button class="button check-username" >
+            <i loading-spinner="" class="fa fa-spinner fa-spin fa-fw loading-spinner-button"></i>
+            <span>Continue</span>
+        </button>
         <span class="error" ng-show="checkAddressForm.input.$error.required">
             Required!
         </span>

@@ -16,29 +16,23 @@
             controllerAs: 'clc',
             bindToController: true
         };
-
         function link(scope, element, attrs) {
-            console.log('ngCheckoutLoaded')
+
         }
-
         return directive;
-
-
     }
 
     ngCheckoutLoginController.$inject = ['$scope', '$http'];
 
     function ngCheckoutLoginController($scope, $http) {
         var clc = this;
-        clc.test = 'zob';
         clc.emailChecked = false;
-        clc.emailFormat =  /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
         clc.isReturning = false;
         clc.isLoggedIn = false;
-        clc.title = "Login/Register"
+        clc.emailFormat =  /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
+        clc.title = "Login/Register";
         clc.message = "Please enter your email address to continue to delivery and payment.";
         clc.checkAddress = function () {
-            console.log('click');
             $http({
                 method: 'POST',
                 url: ajaxurl,
@@ -76,7 +70,7 @@
             if(clc.isReturning) {
                 $http({
                     method: 'POST',
-                    url: 'http://localhost:8888/wp-git/wp-admin/admin-ajax.php',
+                    url: ajaxurl,
                     params: {
                         'action': 'ajaxlogin', //calls wp_ajax_nopriv_ajaxlogin
                         'username': $('form#login #username').val(),
@@ -99,7 +93,7 @@
             }else{
                 $http({
                     method: 'POST',
-                    url: 'http://localhost:8888/wp-git/wp-admin/admin-ajax.php',
+                    url: ajaxurl,
                     params: {
                         'action': 'ajaxregister', //calls wp_ajax_nopriv_ajaxlogin
                         'username': $('form#login #username').val(),
@@ -144,16 +138,19 @@
         };
 
         function link(scope, element, attrs) {
+            var timeout = null;
             $(element).keydown(function (event) {
                 if (event.keyCode == 13) {
-                    event.preventDefault();
-                    return false;
+                    //event.preventDefault();
+                    timeout = setTimeout(function(){
+                        return true;
+                    }, 1000);
+
                 }
             });
         }
 
         return directive;
-
 
     }
 

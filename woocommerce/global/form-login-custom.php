@@ -37,7 +37,7 @@ if ( is_user_logged_in() ) {
 	<input id="password" type="password" name="password" ng-model="clc.loginPassword">
 
 	<button class="button submit_button" type="submit" value="Login" name="submit">
-		<i loading-spinner="" class="fa fa-spinner fa-spin fa-fw http-spinner"></i>
+		<i loading-spinner="" class="fa fa-spinner fa-spin fa-fw loading-spinner-button"></i>
 		<span ng-hide="clc.isReturning">Create Account</span>
 		<span ng-show="clc.isReturning">Login</span>
 	</button>

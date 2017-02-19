@@ -36,7 +36,11 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 
 ?>
 
-
+<div class="loading-spinner-holder" data-loading-spinner >
+	<div class="loading-spinner">
+		<i class="fa fa-spinner fa-spin fa-5x fa-fw"></i>
+	</div>
+</div>
 
 <?php
 if (is_user_logged_in()) :
@@ -64,8 +68,13 @@ endif;
 
 			<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
-			<div class="col2-set" id="customer_details">
+			<div class="col2-set" id="customer_details" data-ng-billing>
+
 				<div class="col-1">
+					<ul class="tabs tabs--selector" data-tabs id="deliver-to">
+						<li class="tabs-title is-active" ><a ng-click="blc.displayCompany(false)" aria-selected="true" >Home</a></li>
+						<li class="tabs-title"><a ng-click="blc.displayCompany(true)" >Work</a></li>
+					</ul>
 					<?php do_action( 'woocommerce_checkout_billing' ); ?>
 				</div>
 

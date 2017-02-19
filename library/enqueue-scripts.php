@@ -44,8 +44,10 @@ if (!function_exists('foundationpress_scripts')) :
         }
         // If checkout load angular
         if (is_checkout()) {
-            //wp_enqueue_script('angular', get_template_directory_uri() . '/assets/angular/angular.min.js', array('jquery'), '1.6.1', true);
-            //wp_enqueue_script('app', get_template_directory_uri() . '/assets/angular/app.js', array(), '1.6.1', true);
+            //AIzaSyAIosKRFR_wV5a54OkiZWh7oeV5kU81VZ8
+            wp_register_script('googleplace', '//maps.googleapis.com/maps/api/js?key=AIzaSyCuMSEEhbxrve6SREN_OwPHVpZBPcEQyjQ&libraries=places', array('jquery'), 'places', true );
+            wp_enqueue_script('googleplace');
+
 
             wp_register_script('angular', get_template_directory_uri() . '/assets/angular/angular.min.js', array('jquery'), '1.6.1', true );
             wp_enqueue_script('angular');
@@ -57,6 +59,14 @@ if (!function_exists('foundationpress_scripts')) :
             wp_register_script('ng-login', get_template_directory_uri() . '/assets/angular/ng-login.js',  array('app') );
             wp_enqueue_script('ng-login');
 
+            wp_register_script('ng-googleplace-factory', get_template_directory_uri() . '/assets/angular/ng-googleplace-factory.js',  array('app') );
+            wp_enqueue_script('ng-googleplace-factory');
+
+            wp_register_script('ng-googleplace', get_template_directory_uri() . '/assets/angular/ng-googleplace.js',  array('app') );
+            wp_enqueue_script('ng-googleplace');
+
+            wp_register_script('ng-billing', get_template_directory_uri() . '/assets/angular/ng-billing.js',  array('app') );
+            wp_enqueue_script('ng-billing');
 
 
         }

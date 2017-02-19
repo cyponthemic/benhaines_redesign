@@ -17,7 +17,11 @@
             bindToController: true
         };
         function link(scope, element, attrs) {
-            console.log('billing running')
+            $('.flex-billing_gg_address').after(
+                function () {
+                    return '<div class="flex-field flex-field__display-address"><a class="" ng-click="blc.toggleFullAddress()"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;Enter your address manually</a></div>';
+                }
+            )
         }
         return directive;
     }

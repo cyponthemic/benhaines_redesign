@@ -97,6 +97,7 @@ function custom_override_checkout_fields( $fields ) {
     $fields2['billing']['billing_fullname'] = $fields['billing']['billing_fullname'];
     $fields2['billing']['billing_first_name'] = $fields['billing']['billing_first_name'];
     $fields2['billing']['billing_last_name'] = $fields['billing']['billing_last_name'];
+    $fields2['billing']['billing_company'] = $fields['billing']['billing_company'];
     $fields2['billing']['billing_gg_address'] = $fields['billing']['billing_gg_address'];
     $fields2['billing']['billing_phone'] = $fields['billing']['billing_phone'];
     $fields2['billing']['billing_email'] = $fields['billing']['billing_email'];
@@ -114,8 +115,3 @@ function custom_override_checkout_fields( $fields ) {
     return $checkout_fields;
 }
 
-add_action( 'woocommerce_after_checkout_billing_form', 'my_custom_checkout_field_display_admin_order_meta', 10, 1 );
-
-function my_custom_checkout_field_display_admin_order_meta($order){
-    echo '<div class="flex-field flex-field__display-address"><a class=\'\' ng-click=\'blc.toggleFullAddress()\'><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;Enter your address manually</a></div>';
-}

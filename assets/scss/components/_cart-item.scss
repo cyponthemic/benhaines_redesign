@@ -1,0 +1,28 @@
+.bh-cart{
+  display: flex;
+
+  &__image-container{
+    position: relative;
+    width: 40%;
+  }
+  &__product-remove{
+    position: absolute;
+    top:10px;
+    right: 10px;
+  }
+  &__section{
+    position: relative;
+    width: 55%;
+    margin-left: 5%;
+  }
+  &__product-name{
+    font-size: 12px;
+    a{
+      color: #000;
+    }
+  }
+  &__product-price{
+    font-size: 12px;
+    font-weight: bold;
+  }
+}

@@ -27,7 +27,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 <form action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
-
+	<h4 class="checkout-step-label">Items</h4>
 <div class="shop_table shop_table_responsive cart" cellspacing="0">
 
 	<div>
@@ -45,17 +45,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 
 					<div class="bh-cart__image-container">
-						<div class="bh-cart__product-remove">
-							<?php
-							echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-								'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
-								esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
-								__( 'Remove this item', 'woocommerce' ),
-								esc_attr( $product_id ),
-								esc_attr( $_product->get_sku() )
-							), $cart_item_key );
-							?>
-						</div>
+
 						<?php
 							$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
@@ -91,7 +81,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 							?>
 						</div>
 
-						<div class="product-quantity" data-title="<?php _e( 'Quantity', 'woocommerce' ); ?>">
+						<div class="bh-cart__product-quantity" data-title="<?php _e( 'Quantity', 'woocommerce' ); ?>">
+							<span class="bh-cart__labels">Quantity</span>
 							<?php
 							if ( $_product->is_sold_individually() ) {
 								$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -105,6 +96,18 @@ do_action( 'woocommerce_before_cart' ); ?>
 							}
 
 							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item );
+							?>
+						</div>
+						<div class="bh-cart__product-remove">
+							<span class="bh-cart__labels">Remove</span>
+							<?php
+							echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
+								'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+								esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
+								__( 'Remove this item', 'woocommerce' ),
+								esc_attr( $product_id ),
+								esc_attr( $_product->get_sku() )
+							), $cart_item_key );
 							?>
 						</div>
 

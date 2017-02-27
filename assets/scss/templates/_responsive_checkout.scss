@@ -1,0 +1,14 @@
+@media screen and (max-width: 63.9375em) {
+  .page-template-page-one-cart-php #page .woocommerce{
+    width: 100%;
+    max-width: 25em;
+    float: none;
+    margin: auto;
+  }
+  .checkout-section .checkout-step{
+    display: block;
+  }
+  .woocommerce .cart .button, .woocommerce .cart input.button {
+    width: 100%;
+  }
+}

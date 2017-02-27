@@ -95,7 +95,7 @@
 @import "components/typo";
 @import "components/carousel";
 @import "components/categories";
-@import "components/cart-item";
+
 
 // Templates
 @import "templates/front";
@@ -107,7 +107,7 @@
 @import "templates/product-homepage";
 @import "templates/wc-override";
 @import "templates/woocommerce";
-@import "templates/cart";
+
 
 
 //Woocommerce
@@ -119,3 +119,7 @@
 @import "wc/woocommerce-layout.scss";
 @import "wc/woocommerce-smallscreen.scss";
 
+@import "templates/cart";
+@import "templates/payment";
+@import "components/cart-item";
+@import "templates/responsive_checkout";

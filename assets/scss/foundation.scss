@@ -96,6 +96,7 @@
 @import "components/carousel";
 @import "components/categories";
 
+
 // Templates
 @import "templates/front";
 @import "templates/kitchen-sink";
@@ -108,6 +109,7 @@
 @import "templates/woocommerce";
 
 
+
 //Woocommerce
 @import '../components/bourbon/app/assets/stylesheets/_bourbon';
 @import "wc/woocommerce.scss";
@@ -117,3 +119,8 @@
 @import "wc/woocommerce-layout.scss";
 @import "wc/woocommerce-smallscreen.scss";
 
+@import "templates/cart";
+@import "templates/payment";
+@import "components/cart-item";
+@import "templates/responsive_checkout";
+@import "templates/oder_received";

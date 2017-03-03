@@ -22,8 +22,8 @@ Template Name: Sample Content Product
             class="image-crop image-crop_news <?php echo(has_post_thumbnail() ? 'image-crop_news' : 'image-crop_no-image') ?>">
 
             <?php
-            echo '<a href="' . get_permalink($_post->ID) . '" title="' . esc_attr($_post->post_title) . '">';
-            echo get_the_post_thumbnail($_post->ID, 'full', array('class' => 'image-crop--image'));
+            echo '<a href="' . get_permalink($post->ID) . '" title="' . esc_attr($post->post_title) . '">';
+            echo get_the_post_thumbnail($post->ID, 'full', array('class' => 'image-crop--image'));
             echo '</a>';
             ?>
 

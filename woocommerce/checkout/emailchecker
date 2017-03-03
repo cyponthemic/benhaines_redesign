@@ -1,0 +1,45 @@
+<?php
+if (! is_user_logged_in() ):
+?>
+    <div ng-if="!clc.isReturning && !clc.emailChecked">
+        <h3>{{clc.title}}</h3>
+        <p>
+            {{clc.message}}
+        </p>
+        <form ng-submit="clc.checkAddress()" name="checkAddressForm">
+        <input type="email"
+               required
+               id="check-email"
+               ng-pattern="clc.emailFormat"
+               value="<?php echo $_POST['email']?>"
+               ng-model="clc.emailAddress"
+               placeholder="example@domain.com"
+               >
+        <button class="button check-username" >
+            <i loading-spinner="" class="fa fa-spinner fa-spin fa-fw loading-spinner-button"></i>
+            <span>Continue</span>
+        </button>
+        <span class="error" ng-show="checkAddressForm.input.$error.required">
+            Required!
+        </span>
+        <span class="error" ng-show="checkAddressForm.input.$error.email">
+            Not valid email!
+        </span>
+        </form>
+    </div>
+    <div ng-if="clc.emailChecked">
+        <?php
+            woocommerce_login_form_custom(
+                array(
+                    'message'  => __( 'Thank you for returning to the shop, please enter your password to continue', 'woocommerce' ),
+                    'redirect' => wc_get_page_permalink( 'checkout' ),
+                    'hidden'   => false
+                )
+            );
+
+        ?>
+    </div>
+        <?php
+        endif;
+        ?>
+

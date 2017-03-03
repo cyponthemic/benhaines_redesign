@@ -1,0 +1,36 @@
+.woocommerce-checkout #payment, #add_payment_method #payment{
+  background: #fff;
+}
+.woocommerce-checkout #payment ul.payment_methods, #add_payment_method #payment ul.payment_methods{
+  background: #fff;
+}
+.form-row.review-order{
+  background: #fff;
+}
+.form-row.place-order{
+  background: #fff;
+  padding: 0 !important;
+}
+.woocommerce table.shop_table{
+  background: #fff;
+  border: none !important;
+  th,td{
+    background: #fff;
+
+    vertical-align: top;
+    @extend .cart-labels;
+    @extend .cart-labels-small;
+    border: none !important;
+    color: #000;
+    label{
+      color: #000 !important;
+    }
+    .woocommerce-shipping-calculator{
+      display: none;
+    }
+  }
+}
+.woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit.alt {
+  background-color: #d2bb92;
+  color: white;
+}

@@ -19,8 +19,8 @@ Template Name: Sample Content Product
 
         <?php
         $price = get_post_meta(get_the_ID(), '_regular_price');
-        echo '<a href="' . get_permalink($_post->ID) . '" title="' . esc_attr($_post->post_title) . '">';
-        echo get_the_post_thumbnail($_post->ID, 'full', array('class' => 'image-crop--bottle-shot'));
+        echo '<a href="' . get_permalink($post->ID) . '" title="' . esc_attr($post->post_title) . '">';
+        echo get_the_post_thumbnail($post->ID, 'full', array('class' => 'image-crop--bottle-shot'));
         echo '</a>';
         ?>
 

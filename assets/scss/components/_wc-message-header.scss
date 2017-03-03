@@ -33,14 +33,32 @@ body.woocommerce-page .woocommerce-message .button{
   margin: 15px 0;
 }
 body.woocommerce-page.post-type-archive  .woocommerce-message{
-  margin: 20px auto 50px !important;
-  position: fixed;
-  top:140px;
-  left: 50%;
-  transform: translateX(-50%);
-  &:before {
-    content: "\f00c";
-    font-family: FontAwesome;
-    color: #8fae1b;
+
+}
+@media screen and (max-width: 63.9375em) {
+
+
+  body.woocommerce-page .woocommerce-message .button {
+    float: none;
+    display: block;
+    max-width: 50%;
+    margin: 15px 25% 1em !important;
+  }
+  body.woocommerce-page .woocommerce-message {
+    border-top: none;
+    padding: 0em 2em 1em 0px !important;
+    display: block;
+    line-height: 24px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 30px;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    text-transform: none;
+    margin-bottom: 0;
+    &:before{
+      display: none;
+    }
   }
 }

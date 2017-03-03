@@ -56,6 +56,12 @@ require_once('library/woocommerce.php');
 /** Configure woocommerce loops */
 require_once('library/wc/custom_loop.php');
 
+/** Configure Cart Ajax  */
+require_once('library/wp-api.php');
+
+/** Configure Cart fields  */
+require_once('library/custom-fields-cart.php');
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
 

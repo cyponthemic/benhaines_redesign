@@ -41,6 +41,7 @@ add_action('init', 'change_post_object_label');
 add_action('admin_menu', 'change_post_menu_label');
 function displayCategory()
 {
+    global $post;
     $post_type = get_post_type_object(get_post_type($post));
     echo '<span class="news--category--title">Category:&nbsp;</span>';
     echo '<a href="' . get_post_type_archive_link($post_type->name) . '">';
@@ -55,7 +56,9 @@ add_action('bhr_category_name', 'displayCategory');
 
 function listCategoryButton()
 {
+    global $post;
     $lists = array('post', 'news', 'review');
+
     $template_post_type = get_post_type_object(get_post_type($post));
 
     foreach ($lists as $value) {

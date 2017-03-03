@@ -30,7 +30,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<h4 class="checkout-step-label">Items</h4>
 <div class="shop_table shop_table_responsive cart" cellspacing="0">
 
-	<div>
+	<ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
 		<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
 		<?php
@@ -41,7 +41,22 @@ do_action( 'woocommerce_before_cart' ); ?>
 			if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 				$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 				?>
-				<div class="bh-cart <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+				<li class="accordion-item" data-accordion-item>
+				<a href="#" class="accordion-title" data-content="cart-<?php echo $product_id;?>">
+					<span>
+						<?php echo $cart_item['quantity']; ?>&nbsp;<small>x</small>
+
+					</span>
+					<span>
+						<?php echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;';?>
+					</span>
+					<span>
+						<small>=</small>&nbsp;<?php echo WC_Cart::get_product_subtotal( $_product, $cart_item['quantity'] ); ?>
+					</span>
+
+				</a>
+				<div class="accordion-content" data-tab-content id="cart-<?php echo $product_id;?>">
+					<div class="bh-cart <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>"0>
 
 
 					<div class="bh-cart__image-container">
@@ -119,25 +134,38 @@ do_action( 'woocommerce_before_cart' ); ?>
 					</div>
 
 				</div>
+				</div>
+				</li>
 				<?php
 			}
 		}
 
 		do_action( 'woocommerce_cart_contents' );
 		?>
+		</ul>
 		<tr>
 			<td colspan="6" class="actions">
+				<div style="text-align: right">
+					<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
+				</div>
 
 				<?php if ( wc_coupons_enabled() ) { ?>
 					<div class="coupon">
 
-						<label for="coupon_code"><?php _e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'woocommerce' ); ?>" />
-
+						<label for="coupon_code"><?php _e( 'Coupon:', 'woocommerce' ); ?></label>
+						<div class="flex-form">
+							<input type="text" ng-model="couponCode" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
+						</div>
+						<div style="text-align: right">
+						<input type="submit"
+							   ng-model="couponButton"
+							   ng-disabled="couponCode === undefined"
+							   class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'woocommerce' ); ?>" />
+						</div>
 						<?php do_action( 'woocommerce_cart_coupon' ); ?>
 					</div>
 				<?php } ?>
 
-				<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
 
 				<?php do_action( 'woocommerce_cart_actions' ); ?>
 
@@ -146,7 +174,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 		</tr>
 
 		<?php do_action( 'woocommerce_after_cart_contents' ); ?>
-	</div>
+
 </div>
 
 <?php do_action( 'woocommerce_after_cart_table' ); ?>

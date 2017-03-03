@@ -34,6 +34,7 @@ function customDiv($field){
 <div class="woocommerce-billing-fields">
 
 	<?php do_action( 'woocommerce_before_checkout_billing_form', $checkout ); ?>
+	<div id="toggleFullAddress" class="flex-field flex-field__display-address"><a class="" ng-click="blc.toggleFullAddress()"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;Enter your address manually</a></div>
 	<?php foreach ( $checkout->checkout_fields['billing'] as $key => $field ) : ?>
 		<div class="flex-field flex-<?php echo $key;?>" <?php customDiv($field);?>>
 			<?php

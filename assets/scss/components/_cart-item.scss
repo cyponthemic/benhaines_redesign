@@ -56,9 +56,14 @@
     }
 
   }
+  .shop_table .accordion-title{
+    @extend .cart-labels;
+    color: #333 !important;
+  }
 
-
-
+  .flex-form{
+    display: flex;
+  }
 }
 
 

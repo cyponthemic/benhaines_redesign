@@ -17,11 +17,10 @@
             bindToController: true
         };
         function link(scope, element, attrs) {
+            var toggle = $('#toggleFullAddress').detach();
             $('.flex-billing_gg_address').after(
-                function () {
-                    return '<div class="flex-field flex-field__display-address"><a class="" ng-click="blc.toggleFullAddress()"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;Enter your address manually</a></div>';
-                }
-            )
+                toggle
+            );
         }
         return directive;
     }
@@ -30,12 +29,20 @@
 
     function ngBillingController($scope, $http, GoogleplaceService) {
         var blc = this;
+
+        // Private functions
+        function init() {
+            //check if address is filled
+            console.log('init fields',blc.fields);
+        }
+
         blc.company = false;
         blc.showAddress = false;
         blc.displayCompany = function(cond){
             blc.company = cond;
             console.log('c',cond, cond === true);
         };
+
         blc.fields ={
 
         };
@@ -74,6 +81,7 @@
 
             });
         }
+        init();
         // Watch for event from another module.
         $scope.$on('broadcast.google.updateAddress', function (event, args) {
             blc.setAddress(args);

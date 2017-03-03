@@ -26,7 +26,12 @@
                 }
             };
             var autocomplete = new google.maps.places.Autocomplete(element[0], options);
-
+            $(document).on('keydown', element[0], function(e) {
+                if (e.which == 13) {
+                    $(element[0]).show();
+                    return false;
+                }
+            });
             google.maps.event.addListener(autocomplete, 'place_changed', function() {
                 //var place = autocomplete.getPlace();
                 GoogleplaceService.updateAddress(autocomplete);

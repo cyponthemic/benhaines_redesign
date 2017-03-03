@@ -57,6 +57,7 @@ if (!function_exists('woocommerce_template_loop_product_title_custom')) {
      */
     function woocommerce_template_loop_product_title_custom()
     {
+        global $post;
         echo '<h3>';
         echo '<a href="' . get_permalink($post->ID) . '" title="' . esc_attr($post->post_title) . '">';
         echo get_the_title();

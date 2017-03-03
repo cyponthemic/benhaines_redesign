@@ -55,7 +55,7 @@ global $post, $woocommerce, $product;
     <?php
     $price = get_post_meta(get_the_ID(), '_regular_price');
 
-    echo get_the_post_thumbnail($_post->ID, 'full', array('class' => 'image-crop--bottle-shot'));
+    echo get_the_post_thumbnail($post->ID, 'full', array('class' => 'image-crop--bottle-shot'));
 
     ?>
 

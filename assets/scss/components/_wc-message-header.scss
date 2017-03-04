@@ -1,9 +1,28 @@
 body.woocommerce-page .woocommerce-message{
   margin: 0px auto 0px !important;
+  position: fixed;
+  z-index: 9999999;
+  top: 100px;
+  width: 90%;
+  max-width: 530px;
+  padding: 3em 3em 2em !important;
+  text-align: left !important;
+  left: 50%;
+  transform: translate(-50%);
+  span{
+    line-height: 1.7px;
+    font-weight: 400;
+    font-size: 14px;
+  }
   &:before {
-    content: "\f00c";
-    font-family: FontAwesome;
-    color: #8fae1b;
+    display: none;
+  }
+  .fa.fa-close{
+    position: absolute;
+    right:18px;
+    top: 18px;
+    font-size: 18px;
+    color: map_get($ben-palette, 'charcoal');
   }
 }
 .breadcrumbs__header+.message__header{
@@ -15,22 +34,16 @@ body.woocommerce-page .woocommerce-message{
 }
 body.woocommerce-page .woocommerce-message{
   border-top: none;
-  padding: 0em 2em 0em 60px !important;
-  line-height: 65px;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 30px;
-    font-weight: 400;
-    font-size: 14px;
-    text-transform: uppercase;
-    margin-bottom: 0;
 }
 body.woocommerce-page .woocommerce-message:before{
   left: 32px;
   top: 0;
 }
 body.woocommerce-page .woocommerce-message .button{
-  margin: 15px 0;
+  margin: 30px 0 0;
+  float: right;
+  display: block;
+  max-width: 150px;
 }
 body.woocommerce-page.post-type-archive  .woocommerce-message{
 
@@ -41,12 +54,11 @@ body.woocommerce-page.post-type-archive  .woocommerce-message{
   body.woocommerce-page .woocommerce-message .button {
     float: none;
     display: block;
-    max-width: 50%;
-    margin: 15px 25% 1em !important;
+    max-width: 150px;
+    margin: 15px auto 0 !important;
   }
   body.woocommerce-page .woocommerce-message {
     border-top: none;
-    padding: 0em 2em 1em 0px !important;
     display: block;
     line-height: 24px;
     padding-top: 0;
@@ -61,4 +73,16 @@ body.woocommerce-page.post-type-archive  .woocommerce-message{
       display: none;
     }
   }
+}
+
+.js-notice-exit{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  content: "";
+  top:0;
+  left:0;
+  background: #333;
+  opacity: 0.7;
+  z-index: 99999;
 }

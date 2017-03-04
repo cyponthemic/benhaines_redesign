@@ -42,34 +42,35 @@ if (!function_exists('foundationpress_scripts')) :
         if (is_singular() && comments_open() && get_option('thread_comments')) {
             wp_enqueue_script('comment-reply');
         }
-        // If checkout load angular
-        if (is_checkout()) {
-            //AIzaSyAIosKRFR_wV5a54OkiZWh7oeV5kU81VZ8
-            wp_register_script('googleplace', '//maps.googleapis.com/maps/api/js?key=AIzaSyCuMSEEhbxrve6SREN_OwPHVpZBPcEQyjQ&libraries=places', array('jquery'), 'places', true );
-            wp_enqueue_script('googleplace');
+
+        wp_register_script('googleplace', '//maps.googleapis.com/maps/api/js?key=AIzaSyCuMSEEhbxrve6SREN_OwPHVpZBPcEQyjQ&libraries=places', array('jquery'), 'places', true );
+        wp_enqueue_script('googleplace');
 
 
-            wp_register_script('angular', get_template_directory_uri() . '/assets/angular/angular.min.js', array('jquery'), '1.6.1', true );
-            wp_enqueue_script('angular');
+        wp_register_script('angular', get_template_directory_uri() . '/assets/angular/angular.min.js', array('jquery'), '1.6.1', true );
+        wp_enqueue_script('angular');
 
-            wp_register_script('app', get_template_directory_uri() . '/assets/angular/app.js', array('angular'), '1.6.1', true);
-            wp_enqueue_script('app');
-
-
-            wp_register_script('ng-login', get_template_directory_uri() . '/assets/angular/ng-login.js',  array('app') );
-            wp_enqueue_script('ng-login');
-
-            wp_register_script('ng-googleplace-factory', get_template_directory_uri() . '/assets/angular/ng-googleplace-factory.js',  array('app') );
-            wp_enqueue_script('ng-googleplace-factory');
-
-            wp_register_script('ng-googleplace', get_template_directory_uri() . '/assets/angular/ng-googleplace.js',  array('app') );
-            wp_enqueue_script('ng-googleplace');
-
-            wp_register_script('ng-billing', get_template_directory_uri() . '/assets/angular/ng-billing.js',  array('app') );
-            wp_enqueue_script('ng-billing');
+        wp_register_script('app', get_template_directory_uri() . '/assets/angular/app.js', array('angular'), '1.6.1', true);
+        wp_enqueue_script('app');
 
 
-        }
+        wp_register_script('ng-login', get_template_directory_uri() . '/assets/angular/ng-login.js',  array('app') );
+        wp_enqueue_script('ng-login');
+
+        wp_register_script('ng-googleplace-factory', get_template_directory_uri() . '/assets/angular/ng-googleplace-factory.js',  array('app') );
+        wp_enqueue_script('ng-googleplace-factory');
+
+        wp_register_script('ng-googleplace', get_template_directory_uri() . '/assets/angular/ng-googleplace.js',  array('app') );
+        wp_enqueue_script('ng-googleplace');
+
+        wp_register_script('ng-billing', get_template_directory_uri() . '/assets/angular/ng-billing.js',  array('app') );
+        wp_enqueue_script('ng-billing');
+
+        wp_register_script('ng-notice', get_template_directory_uri() . '/assets/angular/ng-notice.js',  array('app') );
+        wp_enqueue_script('ng-notice');
+
+
+
     }
 
     add_action('wp_enqueue_scripts', 'foundationpress_scripts');

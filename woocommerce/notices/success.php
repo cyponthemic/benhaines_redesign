@@ -26,13 +26,15 @@ if ( ! $messages ){
 ?>
 
 <?php foreach ( $messages as $message ) : ?>
-<section class="section section-white message__header">
-    <div class="row">
-        <div class="small-12 large-12 columns" role="main">
-            <div class="woocommerce-message">
+<!--<section class="section section-white message__header">-->
+<!--    <div class="row">-->
+<!--        <div class="small-12 large-12 columns" role="main">-->
+            <div class="woocommerce-message" data-ng-notice>
+                <span>
                 <?php echo wp_kses_post( $message ); ?>
+                </span>
             </div>
-        </div>
-    </div>
-</section>
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 <?php endforeach; ?>

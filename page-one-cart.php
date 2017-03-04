@@ -15,7 +15,7 @@ get_header(); ?>
 
 <?php get_template_part('template-parts/featured-image'); ?>
 
-    <div id="page" role="main" ng-app="BH" ng-checkout-login>
+    <div id="page" role="main" ng-checkout-login>
 
         <section class="checkout-notice">
             <div class="row">

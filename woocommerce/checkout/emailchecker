@@ -2,19 +2,25 @@
 if (! is_user_logged_in() ):
 ?>
     <div ng-if="!clc.isReturning && !clc.emailChecked">
-        <h3>{{clc.title}}</h3>
+        <h3 class="checkout-step">{{clc.title}}</h3>
         <p>
             {{clc.message}}
         </p>
-        <form ng-submit="clc.checkAddress()" name="checkAddressForm">
-        <input type="email"
-               required
-               id="check-email"
-               ng-pattern="clc.emailFormat"
-               value="<?php echo $_POST['email']?>"
-               ng-model="clc.emailAddress"
-               placeholder="example@domain.com"
-               >
+        <form ng-submit="clc.checkAddress()" name="checkAddressForm" autocomplete="off">
+
+        <label for="check-email">
+            Your email
+        </label>
+            <input type="email"
+                   required
+                   id="check-email"
+                   ng-pattern="clc.emailFormat"
+                   ng-model="clc.emailAddress"
+                   placeholder="example@domain.com"
+                   ng-model-options="{ getterSetter: true }"
+            >
+
+
         <button class="button check-username" >
             <i loading-spinner="" class="fa fa-spinner fa-spin fa-fw loading-spinner-button"></i>
             <span>Continue</span>

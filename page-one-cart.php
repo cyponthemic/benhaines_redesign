@@ -53,6 +53,6 @@ get_header(); ?>
                 <?php echo do_shortcode('[woocommerce_checkout]') ?>
             </div>
         </div>
-    </div>=
+    </div>
 
 <?php get_footer();?>

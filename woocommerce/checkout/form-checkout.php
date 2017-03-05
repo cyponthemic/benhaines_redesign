@@ -45,7 +45,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 <?php
 if (is_user_logged_in()) :
 	?>
-	<div ng-init="clc.isLoggedIn = true"></div>
+	<div ng-init="clc.isLoggedIn = <?php echo is_user_logged_in(); ?>"></div>
 	<?php
 else:
 	?>

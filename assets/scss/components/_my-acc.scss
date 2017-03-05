@@ -1,0 +1,45 @@
+.my-acc{
+  &__right-sidebar{
+    padding-top: 95px;
+  }
+  &__inner{
+    background: white;
+    padding: 2em;
+
+    a:not(.button) {
+      //color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      text-decoration: underline;
+      line-height: inherit;
+      cursor: pointer;
+    }
+  }
+  &__menu.vertical{
+    @extend .cart-labels;
+    @extend .cart-labels-small;
+    font-size: 14px;
+    font-weight: 500;
+    li{
+      margin-bottom: 15px;
+      width: auto;
+      display: inline-block;
+    }
+    li>a{
+      padding-left: 0;
+      padding-bottom: 5px;
+      width: auto;
+      display: inline-block;
+      color: #5d6d74;
+    }
+    li.is-active{
+      border-bottom: 2px solid #000;
+      &>a{
+        color: #000;
+      }
+    }
+  }
+  table.order{
+    font-size: 12px;
+  }
+}

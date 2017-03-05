@@ -27,13 +27,21 @@ if ( is_user_logged_in() ) {
 ?>
 
 
-<form id="login"
+<form id="login" autocomplete="off"
 	  ng-submit="clc.loginForm()"
 	  class="" <?php if ( $hidden ) echo 'style="display:none;"'; ?>>
-	<h3>{{clc.title}}</h3>
+	<p><strong>{{clc.title}}</strong></p>
 	<p class="status">{{clc.message}}</p>
-	<input id="username" type="text" name="username" ng-value="clc.emailAddress" ng-model="clc.loginEmail"
-		   style="display: none">
+	<label for="email">
+		Your email
+	</label>
+	<input id="email" type="email" name="email"
+		   ng-init="clc.loginEmail = clc.emailAddress"
+		   ng-model="clc.loginEmail"
+		   style="display: block">
+	<label for="password">
+		Your password
+	</label>
 	<input id="password" type="password" name="password" ng-model="clc.loginPassword">
 
 	<button class="button submit_button" type="submit" value="Login" name="submit">

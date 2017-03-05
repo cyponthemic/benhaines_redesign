@@ -86,3 +86,4 @@ if (!function_exists('bh_hide_if_not_logged_in')) {
         endif;
     }
 }
+

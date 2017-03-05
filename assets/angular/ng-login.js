@@ -49,7 +49,7 @@
                     clc.emailChecked = true;
                     clc.isReturning = true;
                     console.log('Success: ', response, response.data === 'true');
-                    clc.title = "Welcome Back";
+                    clc.title = "Welcome back";
                     clc.message = "Please enter your password to continue to delivery and payment.";
                 }else{
                     console.log('Else', response, response.data === 'true');
@@ -73,7 +73,7 @@
                     url: ajaxurl,
                     params: {
                         'action': 'ajaxlogin', //calls wp_ajax_nopriv_ajaxlogin
-                        'username': $('form#login #username').val(),
+                        'username': $('form#login #email').val(),
                         'password': $('form#login #password').val(),
                         'security': $('form#login #security').val()
                     },
@@ -96,7 +96,7 @@
                     url: ajaxurl,
                     params: {
                         'action': 'ajaxregister', //calls wp_ajax_nopriv_ajaxlogin
-                        'username': $('form#login #username').val(),
+                        'username': $('form#login #email').val(),
                         'password': $('form#login #password').val(),
                         'security': $('form#login #security').val()
                     },

@@ -31,6 +31,12 @@
   input.input-checkbox{
     margin: 0 3px;
   }
+  input+.fa.fa-check{
+    display: none;
+  }
+  input.ng-valid.ng-not-empty.ng-dirty+.fa.fa-check{
+    display: block;
+  }
 }
 #checkout .woocommerce{
   position: relative;

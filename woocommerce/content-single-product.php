@@ -40,15 +40,15 @@ if (post_password_required()) {
             <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>"
                  id="product-<?php the_ID(); ?>" <?php post_class('row'); ?>>
                 <div class="large-4 large-offset-2  medium-5 medium-offset-0 small-12 small-offset-0 columns">
-                <?php
-                /**
-                 * woocommerce_before_single_product_summary hook.
-                 *
-                 * @hooked woocommerce_show_product_sale_flash - 10
-                 * @hooked woocommerce_show_product_images - 20
-                 */
-                do_action('woocommerce_before_single_product_summary');
-                ?>
+                    <?php
+                    /**
+                     * woocommerce_before_single_product_summary hook.
+                     *
+                     * @hooked woocommerce_show_product_sale_flash - 10
+                     * @hooked woocommerce_show_product_images - 20
+                     */
+                    do_action('woocommerce_before_single_product_summary');
+                    ?>
                 </div>
                 <div class="bh-single-summary columns summary entry-summary">
 
@@ -95,38 +95,70 @@ if (post_password_required()) {
     </div>
     <div class="row">
         <div class="small-12 medium-3 columns" data-sticky-container role="main">
-            <nav class="production-description-sticky columns sticky" data-sticky data-margin-top="3" data-top-anchor="production-description-content:top">
-                <ul class="vertical menu production-description-nav" data-magellan>
-                    <li><a class="production-description-nav__link" href="#first">About the wine</a></li>
-                    <?php if( get_field('about_vineyard')): ?>
-                    <li><a class="production-description-nav__link" href="#second">About the vineyard</a></li>
-                    <?php endif; ?>
-                    <?php if( get_field('technical_stuffs')): ?>
-                    <li><a class="production-description-nav__link" href="#third">Technical stuffs</a></li>
-                    <?php endif; ?>
-                </ul>
-            </nav>
+            <?php
+            // check if the repeater field has rows of data
+            if (have_rows('sections')): ?>
+                <nav class="production-description-sticky columns sticky" data-sticky data-margin-top="3"
+                     data-top-anchor="production-description-content:top">
+                    <ul class="vertical menu production-description-nav" data-magellan>
+                        <?php while (have_rows('sections')) : the_row(); ?>
+                            <?php $sectiontitle = get_sub_field('section_title'); ?>
+                            <li>
+                                <a class="production-description-nav__link"
+                                   href="#<?php echo wd_slugify_accents($sectiontitle); ?>">
+                                    <?php echo $sectiontitle; ?>
+                                </a>
+                            </li>
+                        <?php endwhile; ?>
+                    </ul>
+                </nav>
+            <?php else :
 
+                // no rows found
+
+            endif;
+            ?>
         </div>
+
         <div class="small-12 medium-6 columns" role="main" id="production-description-content">
+            <?php
+            // check if the repeater field has rows of data
+            if (have_rows('sections')): ?>
+                <div class="sections">
+                    <?php while (have_rows('sections')) : the_row();
+                            $sectiontitle = get_sub_field('section_title');
+                            $sectionbody = get_sub_field('section_body');
+                    ?>
+                    <section id="<?php echo wd_slugify_accents($sectiontitle);; ?>" data-magellan-target="<?php echo wd_slugify_accents($sectiontitle);; ?>" class="entry-content section section-padded--bottom">
+                        <h3><?php echo $sectiontitle; ?></h3>
+                        <p><?php echo $sectionbody; ?></p>
+                    </section>
+                    <?php endwhile; ?>
+                </div>
+            <?php else :
+
+                // no rows found
+
+            endif;
+            ?>
             <div class="sections">
 
                 <section id="first" data-magellan-target="first" class="entry-content section section-padded--bottom">
                     <h3>About the wine</h3>
-                    <?php the_content(); ?>
+                    <h3>About the wine</h3>
                 </section>
 
-                <?php if( get_field('about_vineyard')): ?>
-                <section id="second" data-magellan-target="second" class="entry-content  section section-padded">
-                    <h3>About the vineyard</h3>
-                    <?php the_field('about_vineyard'); ?>
-                </section>
+                <?php if (get_field('about_vineyard')): ?>
+                    <section id="second" data-magellan-target="second" class="entry-content  section section-padded">
+                        <h3>About the vineyard</h3>
+                        <?php the_field('about_vineyard'); ?>
+                    </section>
                 <?php endif; ?>
-                <?php if( get_field('technical_stuffs')): ?>
-                <section id="third" data-magellan-target="third" class="entry-content section section-padded">
-                    <h3>Technical stuffs</h3>
-                    <?php the_field('technical_stuffs'); ?>
-                </section>
+                <?php if (get_field('technical_stuffs')): ?>
+                    <section id="third" data-magellan-target="third" class="entry-content section section-padded">
+                        <h3>Technical stuffs</h3>
+                        <?php the_field('technical_stuffs'); ?>
+                    </section>
                 <?php endif; ?>
             </div>
         </div>

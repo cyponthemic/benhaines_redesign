@@ -23,7 +23,7 @@ Template Name: Sample Content Product
 
             <?php
             echo '<a href="' . get_permalink($post->ID) . '" title="' . esc_attr($post->post_title) . '">';
-            echo get_the_post_thumbnail($post->ID, 'full', array('class' => 'image-crop--image'));
+            echo get_the_post_thumbnail($post->ID, 'fp-large', array('class' => 'image-crop--image'));
             echo '</a>';
             ?>
 

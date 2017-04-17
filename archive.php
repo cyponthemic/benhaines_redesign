@@ -31,9 +31,9 @@ $template_post_type = get_post_type_object(get_post_type($post));
 
         while ($my_query_featured->have_posts()) : $my_query_featured->the_post();
             if (has_post_thumbnail()):
-                $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
+                $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'fp-hero');
             else:
-                $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
+                $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'fp-hero');
             endif;
             ?>
             <div class="hero hero-background-image" data-parallax="scroll"

@@ -22,7 +22,7 @@ get_header(); ?>
         <?php
 
 
-        $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
+        $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'fp-hero');
         ?>
         <div class="hero hero-background-image hero_single-page" data-parallax="scroll"
              data-image-src="<?php echo $featured_image[0]; ?>"

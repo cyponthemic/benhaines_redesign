@@ -28,7 +28,7 @@ function heroVideo(){
 
     };
     this.vide.path= {
-        mp4 : templateUrl+'/assets/images/drone-video-final.mp4',
+        mp4 : 'https://s3-ap-southeast-2.amazonaws.com/benhaineswine/drone-video-final.mp4',
         poster : templateUrl+'/assets/images/covers/'+this.vide.poster()
     };
     this.vide.options = {

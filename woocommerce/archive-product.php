@@ -42,14 +42,14 @@ get_header('shop'); ?>
 if(!is_product_category()):
 ?>
 <section class="section section-padded">
-    <div class="row">
+    <div class="row archive-product-row">
         <?php wc_bh_first_loop(); ?>
     </div>
 </section>
 <section class="section section-white section-padded section-not-padded-mobile" id="bh-featured-product">
             <?php wc_bh_feature_loop(); ?>
 </section>
-<section class="section section-padded">
+<section class="section section-padded" style="display:none">
     <div class="row">
         <?php wc_bh_second_loop(); ?>
     </div>

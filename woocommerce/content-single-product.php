@@ -141,26 +141,6 @@ if (post_password_required()) {
 
             endif;
             ?>
-            <div class="sections">
-
-                <section id="first" data-magellan-target="first" class="entry-content section section-padded--bottom">
-                    <h3>About the wine</h3>
-                    <h3>About the wine</h3>
-                </section>
-
-                <?php if (get_field('about_vineyard')): ?>
-                    <section id="second" data-magellan-target="second" class="entry-content  section section-padded">
-                        <h3>About the vineyard</h3>
-                        <?php the_field('about_vineyard'); ?>
-                    </section>
-                <?php endif; ?>
-                <?php if (get_field('technical_stuffs')): ?>
-                    <section id="third" data-magellan-target="third" class="entry-content section section-padded">
-                        <h3>Technical stuffs</h3>
-                        <?php the_field('technical_stuffs'); ?>
-                    </section>
-                <?php endif; ?>
-            </div>
         </div>
         <div class="small-12 medium-3 columns" role="main">
             <br>

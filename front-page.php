@@ -90,7 +90,7 @@ get_header(); ?>
                 <?php
                 $args = array(
                     'post_type' => 'product',
-                    'posts_per_page' => 6
+                    'posts_per_page' => 3
                 );
 
                 $loop = new WP_Query($args);
@@ -116,7 +116,7 @@ get_header(); ?>
                     <?php
                     $args = array(
                         'post_type' => 'product',
-                        'posts_per_page' => 6
+                        'posts_per_page' => 3
                     );
 
 

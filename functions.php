@@ -65,6 +65,7 @@ require_once('library/wp-api.php');
 /** Configure Cart fields  */
 require_once('library/custom-fields-cart.php');
 
+require_once('library/meta.php');
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
 
@@ -85,5 +86,3 @@ function wpdocs_custom_excerpt_length($length)
 }
 
 add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);
-
-

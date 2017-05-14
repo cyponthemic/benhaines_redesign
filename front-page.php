@@ -36,7 +36,7 @@ get_header(); ?>
                 <h2 class="center">Exploring unique wine</h2>
 
                 <p class="center">Collaborating with different vineyards year to year to explore new and interesting
-                    aspects of already discovered sites. </p>
+                    aspects of new or already discovered sites. </p>
             </div>
         </div>
         <div class="row">

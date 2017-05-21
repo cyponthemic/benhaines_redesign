@@ -16,13 +16,38 @@ function heroVideo(){
             file = "cover-ben-desktop-large.jpg";
         }
         else if (windowDim.w > 992){
-            file = "cover-ben-desktop-reg.jpg";
+            file = "cover-ben-desktop-reg-low.jpg";
         }
-        else if (windowDim.w > 768){
-            file = "cover-ben-desktop-ipad.jpg";
+        else if (windowDim.w > 500){
+            file = "cover-ben-ipad.jpg";
         }
         else {
-            file = "cover-ben-desktop-mobile.jpg";
+            file = "cover-ben-mobile.jpg";
+        }
+        return file;
+
+    };
+    this.vide.focal = function(){
+        var windowDim = {
+                w : $(window).width(),
+                h : $(window).height()
+        },
+        file = file = "50% 0%";
+
+        if (windowDim.w > 1200){
+            file = "50% 70%";
+        }
+        else if (windowDim.w > 1023){
+            file = "50% 0%";
+        }
+        else if (windowDim.w > 992){
+            file = "50% 100%";
+        }
+        else if (windowDim.w > 500){
+            file = "50% 0%";
+        }
+        else {
+            file = "50% 0%";
         }
         return file;
 
@@ -37,7 +62,7 @@ function heroVideo(){
         muted: true,
         loop: true,
         autoplay: true,
-        position: '50% 50%', // Similar to the CSS `background-position` property.
+        position: this.vide.focal(), // Similar to the CSS `background-position` property.
         posterType: 'jpg', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
         resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
         bgColor: '#B7B7B7', // Allow custom background-color for Vide div,
@@ -90,13 +115,16 @@ $(document).ready(function(){
 
         $(heroVideo.container).find('div').first().css('z-index', '1');
 
-        $(heroVideo.container).vide(heroVideo.vide.path, heroVideo.vide.options);
+        $(heroVideo.container).vide(
+          heroVideo.vide.path,
+          heroVideo.vide.options);
 
 
         $('.after-video-loaded').css('opacity', '1');
 
         $(window).resize(function () {
-
+            $('#heroVideoJs>div:first-child').css('background-position',heroVideo.vide.focal());
+            $('#heroVideoJs>div:first-child').css('background-image','url('+templateUrl+'/assets/images/covers/'+heroVideo.vide.poster()+')');
             $(heroVideo.container).height(heroVideo.height());
         });
     }
@@ -105,4 +133,3 @@ $(document).ready(function(){
 //<div class="video-container" id="heroVideoJs" style="height: 80vh"
 //data-vide-bg="<?php echo get_template_directory_uri(); ?>/assets/images/drone.mp4" data-vide-options="loop: false, muted: true, position: 0% 0%"
 //></div>
-

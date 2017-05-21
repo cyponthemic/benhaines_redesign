@@ -15,9 +15,9 @@ if (!function_exists('foundationpress_scripts')) :
 
         // Enqueue Google Fonts.
 
-
+        wp_enqueue_style('google-fonts-gara-2', 'https://fonts.googleapis.com/css?family=Cormorant+Garamond');
         wp_enqueue_style('google-fonts-lato', 'https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900');
-        wp_enqueue_style('google-fonts-gara', 'https://fonts.googleapis.com/css?family=EB+Garamond:400,100,300,700,900');
+        //wp_enqueue_style('google-fonts-gara', 'https://fonts.googleapis.com/css?family=EB+Garamond:400,100,300,700,900');
 
         // Enqueue the main Stylesheet.
         //wp_enqueue_style( 'slick-stylesheet', get_template_directory_uri() . '/assets/components/slick/slick.min.css', array(), '2.6.1', 'all' );

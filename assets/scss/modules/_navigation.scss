@@ -1,11 +1,11 @@
 /* Navigation breakpoints */
 
 .desktop-menu, .top-bar-left {
- @include show-for(medium);
+ @include show-for(large);
 }
 
 #mobile-menu, .title-bar {
-  @include hide-for(medium);
+  @include hide-for(large);
 }
 
 /* Mobile menu */
@@ -184,25 +184,23 @@
   flex-wrap: wrap;
 }
 
-@media screen and (min-width: 666px) and  (max-width: 992px){
-  .main-navigation{
-    padding-top: 70px ;
-  }
-  .top-bar-right{
-    position: absolute;
-    top: 0%;
-    right: 30px;
-  }
-  .top-bar-left svg{
-    position: absolute;
-    top: 20px;
-    left: 5px;
-  }
-  ul#menu-main.desktop-menu{
-    width: 100vw;
-    justify-content: space-around;
-    padding-right: 30px;
-  }
-}
-
-
+// @media screen and (min-width: 666px) and  (max-width: 992px){
+//   .main-navigation{
+//     padding-top: 70px ;
+//   }
+//   .top-bar-right{
+//     position: absolute;
+//     top: 0%;
+//     right: 30px;
+//   }
+//   .top-bar-left svg{
+//     position: absolute;
+//     top: 20px;
+//     left: 5px;
+//   }
+//   ul#menu-main.desktop-menu{
+//     width: 100vw;
+//     justify-content: space-around;
+//     padding-right: 30px;
+//   }
+// }

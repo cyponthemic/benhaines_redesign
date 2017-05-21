@@ -34,7 +34,6 @@
             var wordpressMobile = '<?php echo wp_is_mobile(); ?>';
 
         </script>
-        <!--		TODO: enaue the fonts -->
 
 
         <?php wp_head(); ?>
@@ -52,9 +51,7 @@
 <?php do_action('foundationpress_layout_start'); ?>
 
     <header id="masthead" class="site-header contain-to-grid" role="banner" style="padding: 5px 0px 7px;">
-        <div class="title-bar" data-responsive-toggle="site-navigation">
-
-
+        <div class="title-bar" data-responsive-toggle="site-navigation" data-hide-for="large">
             <div class="title-bar-title">
                 <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
 

@@ -17,7 +17,7 @@ get_header(); ?>
         <div class="video-container" id="heroVideoJs">
             <div class="hero-header after-video-loaded">
                 <h1>Expressing places through wine</h1>
-                <a class="large button" href="#">Explore wines</a>
+                <a class="large button" href="shop">Explore wines</a>
             </div>
 
             <div class="hero-footer after-video-loaded">

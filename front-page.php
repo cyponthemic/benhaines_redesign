@@ -42,36 +42,12 @@ get_header(); ?>
         <div class="row">
             <div class="large-6 columns">
                 <div class="small-inner">
-                    <div id="feature-a" class="image-crop image-crop_feature parallax-window small-no-margin-bottom"
-                         dataf-parallax="scroll"
-                         dataf-image-src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg">
-
-
-                        <div class="image-crop--description">
-                            <h2 class="center color-white">Exploring unique wine</h2>
-
-                            <p class="center">Collaborating with different vineyards year to year to explore new and
-                                interesting aspects of already discovered sites. </p>
-                        </div>
-
-                    </div>
+                    <?php displayHPFeatureImage('feature-a','hp_left_image','hp_left_image_link') ?>
                 </div>
             </div>
             <div class="large-6 columns">
                 <div class="small-inner">
-                    <div id="feature-b" class="image-crop image-crop_feature parallax-window small-no-margin-bottom"
-                         dataf-parallax="scroll"
-                         dataf-image-src="<?php echo get_template_directory_uri(); ?>/assets/images/sample/feature-a.jpg">
-
-
-                        <div class="image-crop--description">
-                            <h2 class="center color-white">Exploring unique wine</h2>
-
-                            <p class="center">Collaborating with different vineyards year to year to explore new and
-                                interesting aspects of already discovered sites. </p>
-                        </div>
-
-                    </div>
+                    <?php displayHPFeatureImage('feature-b','hp_right_image','hp_right_image_link') ?>
                 </div>
 
             </div>

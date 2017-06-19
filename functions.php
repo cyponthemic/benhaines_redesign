@@ -68,6 +68,8 @@ require_once('library/custom-fields-cart.php');
 require_once('library/meta.php');
 
 require_once('library/feature-image-hp.php');
+
+require_once('library/cuztomizer.php');
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
 

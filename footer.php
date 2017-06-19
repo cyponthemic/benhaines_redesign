@@ -27,7 +27,13 @@
     <footer id="legal" class="row" style="text-align: center">
 
         <p>
-            <a>Terms & Conditions</a>&nbsp;&#124;&nbsp;<a>Copyright 2016 Ben Haines</a>
+            <a href="<?php echo get_permalink( get_theme_mod('bh_footer_links') ); ?>">
+              Terms & Conditions
+            </a>
+              &nbsp;&#124;&nbsp;
+            <a>
+              Copyright 2017 Ben Haines
+            </a>
         </p>
 
         <p>

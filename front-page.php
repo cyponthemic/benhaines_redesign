@@ -166,7 +166,7 @@ get_header(); ?>
         <?php endif; ?>
         <div class="row">
             <div class="large-12 colums center">
-                <a class="large button" href="#">More news</a>
+                <a class="large button" href="<?php echo home_url( '/news-reviews/' );?> ">More news</a>
             </div>
         </div>
 

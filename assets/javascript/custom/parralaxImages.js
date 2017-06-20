@@ -4,12 +4,12 @@
 
 $(document).ready(function(){
     $('#feature-a').parallax({
-        imageSrc: templateUrl+'/assets/images/sample/feature-a.jpg',
+        imageSrc: $('#feature-a').attr('dataf-image-src'),
         zIndex: 9,
         speed: 0.9
     });
     $('#feature-b').parallax({
-        imageSrc: templateUrl+'/assets/images/sample/feature-b.jpg',
+        imageSrc: $('#feature-b').attr('dataf-image-src'),
         zIndex: 9,
         speed: 0.9
     });

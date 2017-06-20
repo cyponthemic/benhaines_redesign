@@ -213,7 +213,7 @@ get_header(); ?>
         <?php endif; ?>
         <div class="row">
             <div class="large-12 colums center">
-                <a class="large button" href="#">More news</a>
+                <a class="large button" href="<?php echo home_url( '/news-reviews/' );?>">More news</a>
             </div>
         </div>
 
@@ -282,7 +282,7 @@ get_header(); ?>
         <?php endif; ?>
         <div class="row">
             <div class="large-12 colums center">
-                <a class="large button hollow" href="#">see the shop</a>
+                <a class="large button hollow" href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) );?>">see the shop</a>
             </div>
         </div>
     </div>

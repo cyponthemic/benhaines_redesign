@@ -28,7 +28,7 @@ $info_message  = apply_filters( 'woocommerce_checkout_login_message', __( 'Retur
 $info_message .= ' <a href="#" class="showlogin">' . __( 'Click here to login', 'woocommerce' ) . '</a>';
 //wc_print_notice( $info_message, 'notice' );
 ?>
-sick
+
 <?php
 	woocommerce_login_form(
 		array(

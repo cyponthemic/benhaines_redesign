@@ -29,17 +29,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<style>
 			@import url(http://fonts.googleapis.com/css?family=Lato:400,900);
-			<?php 
-			/*  This is normally not needed because 
+			<?php
+			/*  This is normally not needed because
 			 *  WooCommerce inserts it into your templates
 			 *  automatically. It's here so the styles
 			 *  get applied to the preview correctly.
-			 */			
-			
+			 */
+
 			wc_get_template( 'emails/email-styles.php');
-			
+
 			/* Custom styles can be added here
-			  * NOTE: Don't add inline comments in your styles, 
+			  * NOTE: Don't add inline comments in your styles,
 			  * they will break the template.
 			  */
 			$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
@@ -55,7 +55,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				display: block;
 				margin: 0.75em 0;
 			}
-			
+
 			#template-selector {
 				background: #333;
 				color: white;
@@ -66,7 +66,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				border: 4px solid #5D5D5D;
 				border-width: 0 0 4px 0;
 			}
-			
+
 			#template-selector a.logo {
 				display: inline-block;
 				position: relative;
@@ -76,7 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			#template-selector a.logo img {
 				max-height: 5em;
 			}
-			
+
 			#template-selector a.logo p {
 				display: none;
 				float: left;
@@ -93,12 +93,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 				line-height: 1.8;
 				transition: all 500ms ease-in-out;
 			}
-			
+
 			#template-selector a.logo:hover p {
 				display: block;
 				opacity: 1;
 			}
-			
+
 			#template-selector a.logo p:after, #template-selector a.logo p:before {
 				bottom: 100%;
 				left: 50%;
@@ -164,7 +164,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					top: 4.5em;
 					left: 0.25em;
 				}
-				
+
 				#template-selector a.logo p:after, #template-selector a.logo p:before {
 					left: 10%;
 				}
@@ -190,10 +190,20 @@ if ( ! defined( 'ABSPATH' ) ) {
                             	<td align="center" valign="top">
                                     <!-- Header -->
                                 	<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template_header">
-                                        <tr>
+																				<tr>
+																					<td align="center">
+																						<img id="header_logo" src="<?php echo get_stylesheet_directory_uri(); ?>/woocommerce/emails/img/BH_Logo.png">
+																					</td>
+																				</tr>
+																				<tr>
+																					<td align="center">
+																							<img width="100%" src="<?php echo get_stylesheet_directory_uri(); ?>/woocommerce/emails/img/header.jpg">
+																						</td>
+																				</tr>
+																				<tr>
 	                                        <td>
                                             	<h1 id="header_wrapper"><?php echo $email_heading; ?></h1>
-                                            </td>
+                                          </td>
                                         </tr>
                                     </table>
                                     <!-- End Header -->

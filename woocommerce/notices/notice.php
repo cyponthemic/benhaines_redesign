@@ -26,5 +26,5 @@ if ( ! $messages ){
 ?>
 
 <?php foreach ( $messages as $message ) : ?>
-	<div class="custom-notice custom-notice--info" data-ng-notice style="display:none"><?php echo wp_kses_post( $message ); ?></div>
+	<div class="wooocommerce-info"><?php echo wp_kses_post( $message ); ?></div>
 <?php endforeach; ?>

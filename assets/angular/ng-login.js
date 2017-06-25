@@ -32,6 +32,7 @@
         clc.emailFormat =  /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
         clc.title = "Login/Register";
         clc.message = "Please enter your email address to continue to delivery and payment.";
+        clc.state = true;
         clc.checkAddress = function () {
             $http({
                 method: 'POST',
@@ -82,9 +83,11 @@
                     if (data.data.loggedin === true) {
                         console.log('success success', data, data.data.loggedin);
                         clc.isLoggedIn = true;
+                        clc.state = true;
                         location.reload();
                     } else {
                         clc.message = "Wrong password";
+                        clc.state = false;
                         console.log('success error', data, data.data.loggedin);
                     }
                 }, function errorCallback(data) {

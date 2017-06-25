@@ -29,7 +29,7 @@ if ( ! $messages ){
 <!--<section class="section section-white message__header">-->
 <!--    <div class="row">-->
 <!--        <div class="small-12 large-12 columns" role="main">-->
-            <div class="woocommerce-message" data-ng-notice>
+            <div class="custom-notice custom-notice--success" data-ng-notice style="display:none">
                 <span>
                 <?php echo wp_kses_post( $message ); ?>
                 </span>

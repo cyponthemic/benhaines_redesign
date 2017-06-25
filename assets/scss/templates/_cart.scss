@@ -60,6 +60,9 @@
   input.ng-valid.ng-not-empty{
    border-bottom: 4px solid #18de83;
   }
+  input.ng-valid.ng-not-empty.error{
+     border-bottom: 4px solid #ffae00;
+  }
 }
 #checkout .woocommerce{
   position: relative;

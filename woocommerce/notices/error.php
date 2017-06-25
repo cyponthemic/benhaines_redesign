@@ -24,8 +24,10 @@ if ( ! $messages ){
 }
 
 ?>
+<div class="custom-notice custom-notice--error" data-ng-notice>
 <ul class="woocommerce-error">
 	<?php foreach ( $messages as $message ) : ?>
 		<li><?php echo wp_kses_post( $message ); ?></li>
 	<?php endforeach; ?>
 </ul>
+</div>

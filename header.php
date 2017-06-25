@@ -54,7 +54,6 @@
         <div class="title-bar" data-responsive-toggle="site-navigation" data-hide-for="large">
             <div class="title-bar-title">
                 <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-
                     <svg style="width: 115px; margin-top: -20px; margin-bottom: -35px;" id="Layer_1" data-name="Layer 1"
                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 218.04 146.96">
                         <defs>
@@ -121,7 +120,8 @@
 
         <nav id="site-navigation" class="main-navigation top-bar" role="navigation">
             <div class="top-bar-left">
-                <svg style="width: 175px; margin-top: -20px; margin-bottom: -35px;" id="Layer_1" data-name="Layer 1"
+                <a class="top-bar-left__logo-link" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                  <svg id="Layer_1" data-name="Layer 1"
                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 218.04 146.96">
                     <defs>
                         <style>.cls-1 {
@@ -173,7 +173,8 @@
                     <path class="cls-2"
                           d="M139.56,92.87a7.1,7.1,0,0,1-5.4-2.09l-0.23-.23,1.6-1.29,0.19,0.21a4.87,4.87,0,0,0,3.88,1.67c2,0,3.15-.68,3.15-1.82,0-1.53-1.63-2-3.52-2.56-2.1-.62-4.47-1.31-4.47-3.81,0-1.77,1.29-3.66,4.93-3.66a6.5,6.5,0,0,1,5,2l0.22,0.23-1.54,1.26-0.19-.22A4.35,4.35,0,0,0,139.73,81c-1.81,0-2.8.61-2.8,1.71,0,1.31,1.55,1.79,3.36,2.33,2.18,0.66,4.64,1.41,4.64,4C144.92,91.38,142.82,92.87,139.56,92.87Z"
                           transform="translate(36.92 20.42)"/>
-                </svg>
+                  </svg>
+                </a>
                 <ul class="menu">
                     <?php foundationpress_top_bar_l(); ?>
                 </ul>

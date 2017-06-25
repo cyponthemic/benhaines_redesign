@@ -42,7 +42,7 @@ if ( is_user_logged_in() ) {
 	<label for="password">
 		Your password
 	</label>
-	<input id="password" type="password" name="password" ng-model="clc.loginPassword">
+	<input id="password" type="password" name="password" ng-model="clc.loginPassword"  ng-class="{'error': !clc.state}">
 
 	<button class="button submit_button" type="submit" value="Login" name="submit">
 		<i loading-spinner="" class="fa fa-spinner fa-spin fa-fw loading-spinner-button"></i>
@@ -55,10 +55,3 @@ if ( is_user_logged_in() ) {
 		</a>
 	<?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
 </form>
-
-
-
-
-
-
-

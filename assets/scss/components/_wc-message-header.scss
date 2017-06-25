@@ -1,16 +1,18 @@
-body.woocommerce-page .woocommerce-message{
+.custom-notice{
+  position: static;
+  display: none;
   margin: 0px auto 0px !important;
-  position: fixed;
+  background: #18de83;
   z-index: 9999999;
-  top: 100px;
-  width: 90%;
-  max-width: 530px;
-  padding: 3em 3em 2em !important;
+  width: 100%;
+  padding: 0.5rem 3rem 0.5rem 0.5rem !important;
   text-align: left !important;
-  left: 50%;
-  transform: translate(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   span{
-    line-height: 1.7px;
+    line-height: 1.7;
     font-weight: 400;
     font-size: 14px;
   }
@@ -20,10 +22,13 @@ body.woocommerce-page .woocommerce-message{
   .fa.fa-close{
     position: absolute;
     right:18px;
-    top: 18px;
+    top: 20px;
     font-size: 18px;
     color: map_get($ben-palette, 'charcoal');
   }
+}
+.custom-notice--error {
+  background: #ffae00;
 }
 .breadcrumbs__header+.message__header{
   margin-top: -30px;
@@ -32,32 +37,30 @@ body.woocommerce-page .woocommerce-message{
   border-top:3px solid #8fae1b;
   background: #f7f6f7;
 }
-body.woocommerce-page .woocommerce-message{
-  border-top: none;
-}
-body.woocommerce-page .woocommerce-message:before{
+
+.custom-notice:before{
   left: 32px;
   top: 0;
 }
-body.woocommerce-page .woocommerce-message .button{
-  margin: 30px 0 0;
+.custom-notice .button{
+  margin: 0 15px;
   float: right;
   display: block;
   max-width: 150px;
 }
-body.woocommerce-page.post-type-archive  .woocommerce-message{
 
-}
 @media screen and (max-width: 63.9375em) {
 
-
-  body.woocommerce-page .woocommerce-message .button {
+.custom-notice{
+    padding: 3rem 1rem !important;
+  }
+.custom-notice .button {
     float: none;
     display: block;
     max-width: 150px;
     margin: 15px auto 0 !important;
   }
-  body.woocommerce-page .woocommerce-message {
+  .custom-notice {
     border-top: none;
     display: block;
     line-height: 24px;
@@ -73,16 +76,4 @@ body.woocommerce-page.post-type-archive  .woocommerce-message{
       display: none;
     }
   }
-}
-
-.js-notice-exit{
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  content: "";
-  top:0;
-  left:0;
-  background: #333;
-  opacity: 0.7;
-  z-index: 99999;
 }

@@ -2,6 +2,21 @@
 
 .desktop-menu, .top-bar-left {
  @include show-for(large);
+
+ .top-bar-left__logo-link{
+   width: 175px;
+   height: 90px;
+   position: relative;
+   overflow: hidden;
+
+   > svg {
+     position: absolute;
+     width: 100%;
+     left: 50%;
+     top: 55%;
+     transform: translate(-50%,-50%);
+   }
+ }
 }
 
 #mobile-menu, .title-bar {

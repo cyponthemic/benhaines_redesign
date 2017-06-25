@@ -45,6 +45,11 @@ function custom_override_checkout_fields( $fields ) {
         'ng-show' => 'blc.company'
     );
 
+    //adding custom attribute to company field
+    $fields['billing']['billing_phone']['custom_attributes'] = array(
+        'ng-model' => 'blc.fields.billing_phone'
+    );
+
     $fields['billing']['billing_postcode']= array(
         'required' => 'false',
         'custom_attributes' => array(

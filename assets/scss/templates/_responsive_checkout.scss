@@ -11,4 +11,21 @@
   .woocommerce .cart .button, .woocommerce .cart input.button {
     width: 100%;
   }
+
+  .cart-header-button {
+    border: none !important;
+  }
+}
+
+// Remove distraciton from checkout
+
+.page-template-page-one-cart-php{
+  #footer-container,
+  #masthead {
+    display: none;
+  }
+
+  #page{
+    min-height: 100vh;
+  }
 }

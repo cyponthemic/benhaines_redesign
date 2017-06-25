@@ -18,14 +18,27 @@ get_header(); ?>
     <div id="page" role="main" ng-checkout-login>
 
         <section class="checkout-notice">
-            <div class="row">
-                <div class="columns small-12 center">
-                    <h3>Store notice</h3>
-                    <p>$15,00 shipping for orders less than 12</p>
+            <div class="row expanded">
+                <div class="columns small-12 center flex-notice">
+                    <a class="button hollow white cart-header-button" href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>">
+                      <span><i class="fa fa-chevron-left"></i></span>
+                      <span class="hide-for-small-only">&nbsp; Back to shop</span>
+                    </a>
+                    <div>
+                      <img class="cart-logo" height="40px" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo/logo_invert-small.png"/>
+                    </div>
+                    <div style="display: none;">
+                      <h3>Store notice</h3>
+                      <p>$15,00 shipping for orders less than 12</p>
+                    </div>
+                    <a class="button hollow white cart-header-button" href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>">
+                      <span><i class="fa fa-info"></i></span>
+                      <span class="hide-for-small-only">&nbsp; Need help ?</span>
+                    </a>
                 </div>
             </div>
         </section>
-        <div class="row hide-for-small-only hide-for-medium-only">
+        <div class="row expanded hide-for-small-only hide-for-medium-only" style="margin-bottom: 20px;">
             <div class="columns large-4 center">
                 <h2 class="checkout-step">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -42,9 +55,9 @@ get_header(); ?>
                     3. Payement</h2>
             </div>
         </div>
-        <div class="row">
+        <div class="row expanded">
             <div id="cart" role="main" class="columns large-4">
-                <div class="checkout-section">
+                <div class="checkout-section checkout-column">
                     <h2 class="checkout-step">Cart</h2>
                     <?php echo do_shortcode('[woocommerce_cart]') ?>
                 </div>

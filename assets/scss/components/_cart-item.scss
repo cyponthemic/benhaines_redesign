@@ -59,11 +59,43 @@
   .shop_table .accordion-title{
     @extend .cart-labels;
     color: #333 !important;
+    padding: 0.75rem 0.5rem;
+    font-size: 10px;
+    line-height: 1.67;
   }
+  .shop_table .accordion-title::before{
+    font-size: 18px;
+    margin-top: 0;
+    transform : translateY(-50%);
+  }
+  .flex-accordion-title {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
 
+    span.number {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: white;
+      background: black;
+      line-height: 1.5rem;
+      text-align: center;
+      border-radius: 100%;
+      margin-right: .5rem;
+    }
+    span.name {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      flex: 1;
+    }
+    span.total {
+      width: 2rem;
+      margin-right: 2rem;
+      margin-left: 1rem;
+    }
+  }
   .flex-form{
     display: flex;
   }
 }
-
-

@@ -42,18 +42,16 @@ do_action( 'woocommerce_before_cart' ); ?>
 				$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 				?>
 				<li class="accordion-item" data-accordion-item>
-				<a href="#" class="accordion-title" data-content="cart-<?php echo $product_id;?>">
-					<span>
-						<?php echo $cart_item['quantity']; ?>&nbsp;<small>x</small>
-
+				<a href="#" class="accordion-title flex-accordion-title" data-content="cart-<?php echo $product_id;?>">
+					<span class="number">
+						<?php echo $cart_item['quantity']; ?>
 					</span>
-					<span>
+					<span class="name">
 						<?php echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;';?>
 					</span>
-					<span>
-						<small>=</small>&nbsp;<?php echo WC_Cart::get_product_subtotal( $_product, $cart_item['quantity'] ); ?>
+					<span class="total">
+						<?php echo WC_Cart::get_product_subtotal( $_product, $cart_item['quantity'] ); ?>
 					</span>
-
 				</a>
 				<div class="accordion-content" data-tab-content id="cart-<?php echo $product_id;?>">
 					<div class="bh-cart <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>"0>

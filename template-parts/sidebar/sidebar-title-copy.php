@@ -2,7 +2,7 @@
 do_action('foundationpress_before_sidebar');
 ?>
 <div class="" style="background:#EBEBEB; padding: 30px 20px">
-    <h4>Welcome to ben haines wine exploration</h4>
+    <h4>Welcome to Ben Haines wine exploration</h4>
 
     <!-- <p >
         I started writing to share and inspire <a href="#" class="news-link">news</a> and <a href="#"

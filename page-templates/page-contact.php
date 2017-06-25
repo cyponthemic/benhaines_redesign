@@ -4,15 +4,18 @@ Template Name: Contact
 */
 get_header(); ?>
 
-<?php get_template_part('template-parts/featured-image'); ?>
-
     <div id="page-full-width" class="contact-page" role="main">
 
         <?php do_action('foundationpress_before_content'); ?>
         <?php while (have_posts()) : the_post(); ?>
           <div class="row">
             <div class="medium-4 columns widget_text">
-              <img src="https://dummyimage.com/280x400/000/fff"/>
+              <?php
+                if (has_post_thumbnail()):
+                $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'large');
+              ?>
+              <img src="<?php echo $featured_image[0]; ?>"/>
+              <?php endif; ?>
             </div>
             <div class="medium-8 columns">
             <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
@@ -79,7 +82,7 @@ get_header(); ?>
                     </div>
                     <hr>
                     <h2>Store locator</h2>
-                    <p>Find here the places where to enjoy Ben Haines Wine – restaurants and bars.</p>
+                    <p>Find here the places where to enjoy Ben Haines Wine – restaurants and barsWhere to enjoy and buy Ben Haines Wine and B Minor wines. Please note that this list is subject to change.</p>
                     <a class="button hollow" href="../stockists">Find store</a>
                     <br><br><br><br>
                 </div>

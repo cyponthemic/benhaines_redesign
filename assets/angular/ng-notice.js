@@ -25,13 +25,22 @@
             $('.js-notice-close').on('click',function () {
                 killNotice(element);
             });
-            $(element).detach().prependTo('body').css('display','flex');
-            //.delay( 10000000 ).fadeOut( 400 ).remove();
+            $(element).detach().prependTo('body').css('display','flex').delay(5000).fadeOut(400, function(){
+                setTimeout(flashCart(element),5000);
+            });
+
         }
         function killNotice(notice) {
           console.log('click');
           $(notice).fadeOut( 400 ).remove();
           console.log('end');
+        }
+        function flashCart(notice) {
+          $('.wpmenucartli a').addClass('green-cart');
+          setTimeout(function(){
+            $('.wpmenucartli a').removeClass('green-cart');
+          },1000);
+
         }
         return directive;
     }

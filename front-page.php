@@ -16,8 +16,8 @@ get_header(); ?>
     <div class="section">
         <div class="video-container" id="heroVideoJs">
             <div class="hero-header after-video-loaded">
-                <h1>Expressing places through wine</h1>
-                <a class="large button" href="shop">Explore wines</a>
+                <h1>Exploring places through wine</h1>
+                <a class="large button" href="shop">Discover</a>
             </div>
 
             <div class="hero-footer after-video-loaded">
@@ -33,10 +33,8 @@ get_header(); ?>
     <div class="section section-padded section-not-padded-mobile after-video-loaded">
         <div class="row row-margin-bottom">
             <div class="large-6 large-offset-3 columns">
-                <h2 class="center">Exploring unique wine</h2>
-
-                <p class="center">Collaborating with different vineyards year to year to explore new and interesting
-                    aspects of new or already discovered sites. </p>
+                <h2 class="center">Ben Haines Wine Exploration</h2>
+                <p class="center">Collaborating with different vineyards year to year to explore unique aspects of new or already discovered sites.</p>
             </div>
         </div>
         <div class="row">

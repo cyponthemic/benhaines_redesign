@@ -1,5 +1,5 @@
 .custom-notice{
-  position: static;
+  position: relative;
   display: none;
   margin: 0px auto 0px !important;
   background: #18de83;
@@ -16,13 +16,15 @@
     font-weight: 400;
     font-size: 14px;
   }
+
   &:before {
     display: none;
   }
-  .fa.fa-close{
+
+  .js-notice-close{
     position: absolute;
     right:18px;
-    top: 20px;
+    top: 0.9rem;
     font-size: 18px;
     color: map_get($ben-palette, 'charcoal');
   }
@@ -53,6 +55,7 @@
 
 .custom-notice{
     padding: 3rem 1rem !important;
+    flex-direction: column;
   }
 .custom-notice .button {
     float: none;
@@ -76,4 +79,7 @@
       display: none;
     }
   }
+}
+.green-cart {
+    color: #18de83 !important;
 }

@@ -51,6 +51,7 @@ get_header();
                 </div>
             <?php endwhile; endif; ?>
     </div>
+
     <div id="page" role="main">
         <header class="main-content">
             <div class="row row-margin-bottom">
@@ -66,25 +67,35 @@ get_header();
 
 
         <div class="main-content">
+            <?php if (max(1, get_query_var('paged')) === 1 ):
+                    $second_feature_args = array(
+                        'post_type' => array('post', 'review', 'news'),
+                        'posts_per_page' => 2,
+                        'offset' => 1,
+                        'post__in' => get_option('sticky_posts'),
+                        'ignore_sticky_posts' => 1
+                    );
+                    $second_feature_query = new WP_Query($second_feature_args);
 
-            <?php if (have_posts()) :
+                    while ($second_feature_query->have_posts()) : $second_feature_query->the_post();
+                       get_template_part('template-parts/sample-content-news_archived', get_post_format());
+                    endwhile;
+                  endif;
 
-                $Postargs = array(
-                    'post_type' => array('post', 'review', 'news'),
-                    'post__not_in' => get_option('sticky_posts'),
-                    'ignore_sticky_posts' => 1,
-                    'post_per_page' => 5,
-                    'paged' => get_query_var( 'paged' )
-                );
-                $my_query_posts = new WP_Query($Postargs); ?>
+                  if (have_posts()) :
+                    $Postargs = array(
+                      'post_type' => array('post', 'review', 'news'),
+                      'post__not_in' => get_option('sticky_posts'),
+                      'ignore_sticky_posts' => 1,
+                      'post_per_page' => 5,
+                      'paged' => get_query_var( 'paged' )
+                    );
+                    $my_query_posts = new WP_Query($Postargs);
 
-                <?php /* Start the Loop */ ?>
-                <?php while ($my_query_posts->have_posts()) : $my_query_posts->the_post(); ?>
-
-                <?php get_template_part('template-parts/sample-content-news_archived', get_post_format()); ?>
-            <?php endwhile; ?>
-
-            <?php else : ?>
+                    while ($my_query_posts->have_posts()) : $my_query_posts->the_post();
+                      get_template_part('template-parts/sample-content-news_archived', get_post_format());
+                    endwhile;
+                  else : ?>
 
                 <?php get_template_part('template-parts/content', 'none'); ?>
 

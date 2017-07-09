@@ -52,7 +52,7 @@ get_header(); ?>
             <div class="columns large-4 center">
                 <h2 class="checkout-step">
                     <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
-                    3. Payement</h2>
+                    3. Payment</h2>
             </div>
         </div>
         <div class="row expanded">

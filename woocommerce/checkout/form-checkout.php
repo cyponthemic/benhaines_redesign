@@ -94,7 +94,7 @@ endif;
 	</div>
 	<div class="columns  large-6">
 		<div class="checkout-section">
-			<h2 class="checkout-step ">PAYEMENT</h2>
+			<h2 class="checkout-step ">PAYMENT</h2>
 			<h4 class="checkout-step-label">Pay by</h4>
 			<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 

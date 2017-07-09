@@ -29,7 +29,7 @@ get_header('shop'); ?>
             </div>
             <div class="small-12 large-6 large-offset-3 columns end" role="main">
                 <p class="nocta-bene">
-                    NB. Minimum order is three bottles. Free freight for orders of 12 bottles or more.
+                    NB. Free freight for orders of 12 bottles or more.
                     Orders of less than 12 bottles will incur a flat rate delivery charge of $15.00.
                     See all Terms & Conditions
                 </p>

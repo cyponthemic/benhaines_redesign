@@ -33,7 +33,7 @@ get_header(); ?>
     <div class="section section-padded section-not-padded-mobile after-video-loaded">
         <div class="row row-margin-bottom">
             <div class="large-6 large-offset-3 columns">
-                <h2 class="center">Ben Haines Wine Exploration</h2>
+                <h2 class="center">Ben Haines Wine</h2>
                 <p class="center">Collaborating with different vineyards year to year to explore unique aspects of new or already discovered sites.</p>
             </div>
         </div>

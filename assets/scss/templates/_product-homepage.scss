@@ -4,6 +4,10 @@
   flex-wrap: wrap;
 }
 
+.post-type-archive-product .stock.out-of-stock.out_of_stock_color {
+  display: none;
+}
+
 .product-archived {
   text-align: center;
   @include breakpoint(medium){
@@ -82,7 +86,7 @@ body.single.single-product{
       height: 80vh;
     }
   }
-  
+
   .shop-feature-product-link{
     color: #000;
     &:hover{

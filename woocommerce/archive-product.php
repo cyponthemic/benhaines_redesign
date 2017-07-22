@@ -87,7 +87,7 @@ if(!is_product_category()):
         <div class="small-12 large-6 large-offset-3 columns end" role="main">
             <p class="nocta-bene">
                 NB. These wines are not avaible on the website. Order on request only.</br>
-                Please contact ben@ben.com.au
+                Please contact &#105;&#110;&#102;&#111;&#064;&#098;&#101;&#110;&#104;&#097;&#105;&#110;&#101;&#115;&#119;&#105;&#110;&#101;&#046;&#099;&#111;&#109;
             </p>
         </div>
     </div>

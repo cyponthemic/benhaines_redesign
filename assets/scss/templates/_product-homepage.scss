@@ -2,6 +2,12 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+
+  .medium-4.product.product-archived {
+    @include breakpoint(medium){
+      width: 33%;
+    }
+  }
 }
 
 .post-type-archive-product .stock.out-of-stock.out_of_stock_color {

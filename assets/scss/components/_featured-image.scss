@@ -90,15 +90,14 @@
 		opacity: 1;
 		left: 50%;
 		top: 0;
-		transform: translateX(-50%);
+		transform: translateX(-50%) scale(1);
 		height: 100%;
 		width: auto;
 		max-width: none;
 		transition: all .4s;
 		&:hover{
-			height: 200% !important;
-			top: -90%;
-			transform: translate(-50%);
+			top: -50%;
+			transform: translate(-50%) scale(2);
 			transition: all .4s;
 			transition-delay: .4s;
 		}

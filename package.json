@@ -74,5 +74,8 @@
     "postinstall": "bower install && gulp build",
     "production": "gulp --production",
     "watch": "gulp"
+  },
+  "dependencies": {
+    "node-sass": "^4.5.3"
   }
 }

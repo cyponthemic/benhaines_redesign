@@ -1,10 +1,10 @@
-.cart-labels{
+.cart-labels {
   font-family: Lato;
   font-weight: 900;
   text-transform: uppercase;
   color: #333;
 }
-.cart-labels-small{
+.cart-labels-small {
   font-size: 0.5em;
   line-height: 1.9;
   margin: 0;
@@ -33,7 +33,6 @@
      color:     #e2e2e2;
   }
 
-
   margin-top: 0;
   max-width: none;
 
@@ -41,39 +40,45 @@
     @extend .cart-labels;
     @extend .cart-labels-small;
   }
-  input[type="text"]{
+
+  input[type="text"] {
     height: 3.125rem;
     text-transform: none;
     padding-left: 1rem;
     font-size: 0.9em;
     line-height: 1 !important;
   }
-  input.input-checkbox{
+
+  input.input-checkbox {
     margin: 0 3px;
   }
-  input+.fa.fa-check{
+
+  input+.fa.fa-check {
     display: none;
   }
-  input.ng-valid.ng-not-empty.ng-dirty+.fa.fa-check{
+
+  input.ng-valid.ng-not-empty.ng-dirty+.fa.fa-check {
     display: block;
   }
+
   input.ng-valid.ng-not-empty{
    border-bottom: 4px solid #18de83;
   }
-  input.ng-valid.ng-not-empty.error{
+
+  input.ng-valid.ng-not-empty.error {
      border-bottom: 4px solid #ffae00;
   }
 }
 #checkout .woocommerce{
   position: relative;
 
-  .loading-spinner-holder{
+  .loading-spinner-holder {
     position: absolute;
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.73);
   }
-  .loading-spinner{
+  .loading-spinner {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -81,7 +86,7 @@
   }
 }
 
-.loading-spinner-button{
+.loading-spinner-button {
   margin-right: 10px;
 }
 
@@ -93,7 +98,8 @@
 #deliver_select_field{
   input{
     display:none;
-    }
+  }
+
   label.radio{
     display:inline-block;
     width : 50%;
@@ -102,6 +108,7 @@
     padding: 7px;
     text-transform: uppercase;
   }
+  
   label[for="home"]{
     display:block;
   }

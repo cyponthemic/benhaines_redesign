@@ -108,7 +108,7 @@
     padding: 7px;
     text-transform: uppercase;
   }
-  
+
   label[for="home"]{
     display:block;
   }
@@ -211,9 +211,13 @@ textarea#order_comments{
   max-width: 320px;
   margin: 0 auto;
 }
+.woocommerce-checkout #payment div.form-row,
 .woocommerce-checkout #payment ul.payment_methods, #add_payment_method #payment ul.payment_methods{
   padding: 0;
 }
+
+
+
 .tabs--selector{
   display:flex;
   li{

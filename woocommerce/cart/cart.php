@@ -50,7 +50,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						<?php echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;';?>
 					</span>
 					<span class="total">
-						<?php echo WC_Cart::get_product_subtotal( $_product, $cart_item['quantity'] ); ?>
+						<?php echo apply_filters( 'woocommerce_cart_item_subtotal',  WC()->cart->get_product_subtotal($_product, $cart_item['quantity']),  $cart_item,  $cart_item_key ); ?>
 					</span>
 				</a>
 				<div class="accordion-content" data-tab-content id="cart-<?php echo $product_id;?>">
@@ -85,12 +85,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 							if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
 								echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>';
 							}
-							?>
-						</div>
-
-						<div class="bh-cart__product-price" data-title="<?php _e( 'Price', 'woocommerce' ); ?>">
-							<?php
-							echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 							?>
 						</div>
 

@@ -10,6 +10,11 @@
   }
 }
 
+.row-feature-wine{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
 .post-type-archive-product .stock.out-of-stock.out_of_stock_color {
   display: none;
 }

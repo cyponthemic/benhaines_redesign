@@ -58,13 +58,13 @@ get_header(); ?>
             </div>
         </div>
         <?php if (!wp_is_mobile()): ?>
-            <div class="row">
+            <div class="row row-feature-wine">
 
 
                 <?php
                 $args = array(
                     'post_type' => 'product',
-                    'posts_per_page' => 3
+                    'posts_per_page' => 2
                 );
 
                 $loop = new WP_Query($args);

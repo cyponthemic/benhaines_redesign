@@ -30,8 +30,8 @@ get_header('shop'); ?>
             <div class="small-12 large-6 large-offset-3 columns end" role="main">
                 <p class="nocta-bene">
                     NB. Free freight for orders of 12 bottles or more.
-                    Orders of less than 12 bottles will incur a flat rate delivery charge of $15.00.
-                    See all Terms & Conditions
+                    Orders of less than 12 bottles will incur a flat rate delivery charge of $15.00.<br>
+                    <a href="<?php echo get_permalink( get_theme_mod('bh_footer_links') ); ?>" target="_blank">See all Terms & Conditions.</a>
                 </p>
             </div>
         </div>

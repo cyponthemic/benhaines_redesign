@@ -37,8 +37,8 @@ get_header(); ?>
                     <div class="large-6 columns">
                       <p class="p-upper">&nbsp;</p>
                       <b>
-                      <a href="mailto:&#098;&#101;&#110;&#064;&#098;&#101;&#110;&#104;&#097;&#105;&#110;&#101;&#115;&#119;&#105;&#110;&#101;&#046;&#099;&#111;&#109;">
-                        &#098;&#101;&#110;&#064;&#098;&#101;&#110;&#104;&#097;&#105;&#110;&#101;&#115;&#119;&#105;&#110;&#101;&#046;&#099;&#111;&#109;
+                      <a href="mailto:&#105;&#110;&#102;&#111;&#064;&#098;&#101;&#110;&#104;&#097;&#105;&#110;&#101;&#115;&#119;&#105;&#110;&#101;&#046;&#099;&#111;&#109;;">
+                        &#105;&#110;&#102;&#111;&#064;&#098;&#101;&#110;&#104;&#097;&#105;&#110;&#101;&#115;&#119;&#105;&#110;&#101;&#046;&#099;&#111;&#109;
                       </a><br>
                       <a href="tel:+&#054;&#049;&#052;&#049;&#055;&#048;&#056;&#051;&#054;&#052;&#053;">+&#054;&#049;&#052;&#049;&#055;&#048;&#056;&#051;&#054;&#052;&#053;</a>
                       </b>
@@ -61,6 +61,7 @@ get_header(); ?>
                           <p class="">
                             Vigorous Brothers</br>
                             Contact: Daniel Jacobson</br>
+                            0430071720
                           </p>
                           <br>
                           <p class="p-upper">REST OF AUSTRALIA</p>
@@ -82,7 +83,7 @@ get_header(); ?>
                     </div>
                     <hr>
                     <h2>Store locator</h2>
-                    <p>Find here the places where to enjoy Ben Haines Wine – restaurants and barsWhere to enjoy and buy Ben Haines Wine and B Minor wines. Please note that this list is subject to change.</p>
+                    <p>Where to enjoy and buy Ben Haines Wine. Please note that this list is subject to change.</p>
                     <a class="button hollow" href="../stockists">Find store</a>
                     <br><br><br><br>
                 </div>

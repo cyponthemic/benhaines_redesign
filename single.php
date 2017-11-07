@@ -159,7 +159,7 @@ get_header(); ?>
         </div>
         <div class="row row-margin-bottom">
             <div class="medium-8 medium-offset-2 columns">
-                <?php echo do_shortcode('[mc4wp_form id="1427"]'); ?>
+                <?php get_template_part('template-parts/form'); ?>
             </div>
         </div>
 

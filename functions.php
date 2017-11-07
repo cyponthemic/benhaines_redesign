@@ -104,3 +104,14 @@ function wpdocs_custom_excerpt_length($length)
 }
 
 add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);
+
+add_action( 'template_redirect', 'redirect_to_specific_page' );
+
+function redirect_to_specific_page() {
+
+if ( !is_page('coming-soon') && ! is_user_logged_in() ) {
+
+wp_redirect( 'http://redesign.benhaineswine.com/coming-soon', 301 );
+  exit;
+    }
+}

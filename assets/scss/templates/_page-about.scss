@@ -1,0 +1,42 @@
+body.page-template-page-about {
+  .hero .square{
+    position: relative;
+    z-index: 99;
+    margin-top: 100px;
+    @include aspect-ratio(1,1);
+    background: white;
+    padding: 0 !important;
+    h1{
+      color: #0a0a0a;
+
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      margin-bottom: 0;
+
+      font-size: 88px;
+      line-height: 1;
+    }
+  }
+  h2 {
+    margin-bottom: 60px;
+  }
+  article footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  article footer div{
+    text-align: right;
+  }
+}
+body.page-template-page-about {
+@media screen and (max-width: 768px) {
+  .hero .square{
+    @include aspect-ratio(16,6);
+    h1{
+      font-size: 48px;
+      bottom: 50%;
+      transform: translateY(50%);
+    }
+  }
+}}

@@ -17,10 +17,10 @@
             bindToController: true
         };
         function link(scope, element, attrs) {
-            var toggle = $('#toggleFullAddress').detach();
-            $('.flex-billing_gg_address').after(
-                toggle
-            );
+            // var toggle = $('#toggleFullAddress').detach();
+            // $('.flex-billing_gg_address').after(
+            //     toggle
+            // );
         }
         return directive;
     }

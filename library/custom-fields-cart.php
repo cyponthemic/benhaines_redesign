@@ -18,7 +18,7 @@ function custom_override_checkout_fields( $fields ) {
             'ng-model' => 'blc.fields.billing_fullname',
             'ng-init' => 'blc.fields.billing_fullname="'.($userMetaFullName ?: $userMetaFullName).'"',
             'ng-change' => 'blc.setNames()',
-            'ng-prevent-form-on-enter' => ''
+            'ng-prevent-form-on-enter' => true
         )
     );
 
@@ -30,8 +30,8 @@ function custom_override_checkout_fields( $fields ) {
         'clear'     => true,
         'custom_attributes' => array(
             'ng-model' => 'billing_gg_address',
-            'ng-googleplace' => '',
-            'ng-prevent-form-on-enter' => '',
+            'ng-googleplace' => true,
+            'ng-prevent-form-on-enter' => true,
             'ng-focus' => 'gc.geolocate()',
         )
     );

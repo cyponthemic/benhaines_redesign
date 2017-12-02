@@ -111,7 +111,7 @@ function redirect_to_specific_page() {
 
 if ( !is_page('coming-soon') && ! is_user_logged_in() ) {
 
-wp_redirect( 'http://redesign.benhaineswine.com/coming-soon', 301 );
+wp_redirect( 'http://benhaineswine.com/coming-soon', 302 );
   exit;
     }
 }

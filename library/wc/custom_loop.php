@@ -202,13 +202,13 @@ if (!function_exists('wc_bh_museum_loop')) {
         wp_reset_postdata();
         $args = array(
             'post_type' => 'product',
-						'per_page' => 24,
+	    'per_page' => 24,
+	    'nopaging' => true,
             'meta_key' => 'bh_is_museum_wine',
             'meta_value' => 'yes',
             'meta_compare' => '='
 
         );
-
         // Set the query
         $products = new WP_Query( $args );
         // Standard loop

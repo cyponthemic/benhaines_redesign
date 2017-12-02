@@ -200,12 +200,9 @@ if (!function_exists('wc_bh_museum_loop')) {
     function wc_bh_museum_loop()
     {
         wp_reset_postdata();
-        // Products per page
-        $per_page = 24;
-
         $args = array(
             'post_type' => 'product',
-
+						'per_page' => 24,
             'meta_key' => 'bh_is_museum_wine',
             'meta_value' => 'yes',
             'meta_compare' => '='
@@ -267,4 +264,3 @@ if (!function_exists('wc_bh_category_loop')) {
         endif;
     }
 }
-

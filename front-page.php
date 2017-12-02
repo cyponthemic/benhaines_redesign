@@ -179,8 +179,7 @@ get_header(); ?>
         <div class="row row-margin-bottom">
             <div class="large-10 large-offset-1 columns">
 
-                <p class="center">Collaborating with different vineyards year to year to explore new and interesting
-                    aspects of already discovered sites. </p>
+                <p class="center">Get Notified. Sign up. Join the exploration</p>
             </div>
         </div>
         <div class="row row-margin-bottom">

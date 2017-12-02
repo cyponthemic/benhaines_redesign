@@ -105,7 +105,7 @@ function wpdocs_custom_excerpt_length($length)
 
 add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);
 
-add_action( 'template_redirect', 'redirect_to_specific_page' );
+//add_action( 'template_redirect', 'redirect_to_specific_page' );
 
 function redirect_to_specific_page() {
 

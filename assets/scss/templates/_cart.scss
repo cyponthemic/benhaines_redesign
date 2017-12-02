@@ -174,6 +174,7 @@ textarea#order_comments{
     line-height: 1.4;
   }
 }
+
 .flex-notice {
   display: flex;
   justify-content: space-between;
@@ -187,9 +188,11 @@ textarea#order_comments{
     border: 0;
   }
 }
+
 .checkout-notice .cart-logo {
   height: 40px;
 }
+
 .checkout-step{
   @extend .cart-labels;
   font-size: 1.1em;
@@ -199,13 +202,16 @@ textarea#order_comments{
   text-align: center;
   letter-spacing: 1px;
 }
+
 .checkout-step-label{
   @extend .cart-labels;
   @extend .cart-labels-small;
 }
+
 .checkout-section{
   .checkout-step{ display: none;}
 }
+
 .checkout-section,
 .checkout-column {
   max-width: 320px;

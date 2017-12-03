@@ -71,6 +71,8 @@ require_once('library/feature-image-hp.php');
 
 require_once('library/cuztomizer.php');
 
+require_once('library/protected-posts.php');
+
 /**
 * Preview WooCommerce Emails.
 * @author WordImpress.com

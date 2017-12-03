@@ -54,6 +54,9 @@ if (!function_exists('foundationpress_scripts')) :
             wp_enqueue_script('app');
 
 
+            wp_register_script('ng-subscribe', get_template_directory_uri() . '/assets/angular/ng-subscribe.js', array('app'));
+            wp_enqueue_script('ng-subscribe');
+
             wp_register_script('ng-login', get_template_directory_uri() . '/assets/angular/ng-login.js', array('app'));
             wp_enqueue_script('ng-login');
 

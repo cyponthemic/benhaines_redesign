@@ -81,6 +81,7 @@ if (!function_exists('wc_bh_first_loop')) {
         $wc_bh_first_loop_args = array(
             'post_type' => 'product',
             'posts_per_page' => $per_page,
+            'has_password' => false,
             'meta_query' => $meta_query_stock_not_museum
 
 
@@ -109,6 +110,7 @@ if (!function_exists('wc_bh_feature_loop')) {
 
         $wc_bh_first_loop_args = array(
             'post_type' => 'product',
+            'has_password' => false,
             'posts_per_page' => 1,
             'meta_key' => 'bh_is_big_wine',
             'meta_value' => 'yes',
@@ -172,6 +174,7 @@ if (!function_exists('wc_bh_second_loop')) {
         );
         $wc_bh_second_loop_args = array(
             'post_type' => 'product',
+            'has_password' => false,
             'per_page' => -1,
             'offset' => 3,
             'meta_query' => $meta_query_stock_not_museum
@@ -202,8 +205,9 @@ if (!function_exists('wc_bh_museum_loop')) {
         wp_reset_postdata();
         $args = array(
             'post_type' => 'product',
-	    'per_page' => 24,
-	    'nopaging' => true,
+            'has_password' => false,
+      	    'per_page' => 24,
+      	    'nopaging' => true,
             'meta_key' => 'bh_is_museum_wine',
             'meta_value' => 'yes',
             'meta_compare' => '='
@@ -248,7 +252,8 @@ if (!function_exists('wc_bh_category_loop')) {
 
         $args = array(
             'post_type' => 'product',
-            'product_cat' => $cateID
+            'product_cat' => $cateID,
+            'has_password' => false
 
         );
 

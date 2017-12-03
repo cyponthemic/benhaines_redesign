@@ -1,0 +1,21 @@
+form#add-to-cart-form.cart.is-pack {
+		.single_add_to_cart_button {
+		 display: block;
+		 float: none;
+		 color: #fff;
+	 }
+
+	 .quantity {
+		display: flex;
+		float: none;
+		align-items: center;
+		margin-bottom: 3em;
+		label {
+			font-size: 1.4rem;
+  		margin-right: 1em;
+		}
+		.input-text.qty {
+			margin-bottom: 0;
+		}
+	}
+}

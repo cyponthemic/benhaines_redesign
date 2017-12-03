@@ -254,3 +254,19 @@ function bh_add_subscriber_callback() {
 
     wp_die(); // this is required to terminate immediately and return a proper response
 }
+
+add_action( 'woocommerce_product_options_general_product_data', 'bh_is_pack' );
+
+function bh_is_pack(){
+    woocommerce_wp_checkbox( array( 'id' => 'bh_is_pack', 'wrapper_class' => 'show_if_simple show_if_variable', 'label' => __( 'Is this product a pack?', 'your-plugin-domain' ) ) );
+}
+
+add_action( 'woocommerce_process_product_meta', 'bh_pack_save_product_meta' );
+
+function bh_pack_save_product_meta( $post_id ){
+    if( isset( $_POST['bh_is_pack'] ) ) {
+        update_post_meta( $post_id, 'bh_is_pack', 'yes' );
+    } else {
+        delete_post_meta( $post_id, 'bh_is_pack' );
+    }
+}

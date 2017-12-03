@@ -21,6 +21,9 @@ if (!defined('ABSPATH')) {
 
 global $product;
 
+$is_pack =  get_post_meta( get_the_ID(), 'bh_is_pack', true ) == 'yes';
+$is_pack_class =  $is_pack ? 'is-pack' : '';
+
 if (!$product->is_purchasable()) {
     return;
 }
@@ -39,7 +42,7 @@ echo apply_filters('woocommerce_stock_html', $availability_html, $availability['
 
     <?php do_action('woocommerce_before_add_to_cart_form'); ?>
 
-    <form id="add-to-cart-form" class="cart" method="post" enctype='multipart/form-data'>
+    <form id="add-to-cart-form" class="cart <?php echo $is_pack_class; ?>" method="post" enctype='multipart/form-data'>
         <?php do_action('woocommerce_before_add_to_cart_button'); ?>
 
         <?php
@@ -51,15 +54,23 @@ echo apply_filters('woocommerce_stock_html', $availability_html, $availability['
             ));
         }
         ?>
-        <?php get_template_part('template-parts/wc/single-add-to-cart-custom'); ?>
 
+        <?php
+				if(!$is_pack):
+				get_template_part('template-parts/wc/single-add-to-cart-custom');
+				?>
 
-
-        <input id="add-to-cart-custom-input" type="hidden" name="add-to-cart"
+				<?php
+				endif;
+				?>
+				<input id="add-to-cart-custom-input" type="hidden" name="add-to-cart"
                value="<?php echo esc_attr($product->id); ?>"/>
 
+
+
+
         <button type="submit"
-                class="single_add_to_cart_button button alt"><?php echo esc_html($product->single_add_to_cart_text()); ?></button>
+                class="single_add_to_cart_button button primary"><?php echo esc_html($product->single_add_to_cart_text()); ?></button>
 
         <?php do_action('woocommerce_after_add_to_cart_button'); ?>
     </form>

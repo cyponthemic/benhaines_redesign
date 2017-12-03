@@ -8,6 +8,7 @@ function addToCart(){
     this.input = $(".input-text.qty.text");
     this.updateBtn = function(element){
         $(element).addClass('added');
+        $(element).find('.bh-add-to-cart__qty').html('<i class="fa fa-spin fa-spinner"></i>');
     };
     this.getQty = function(element){
         return element.getAttribute('data-value');
@@ -21,6 +22,12 @@ function addToCart(){
     };
 }
 $(document).ready(function(){
+
+		$('.single_add_to_cart_button').on('click',function(){
+				$(this).html('<i class="fa fa-spin fa-spinner"></i> Adding')
+				$("#add-to-cart-form").submit();
+		});
+
     if(!addToCart.fieldset){
         return false;
     }

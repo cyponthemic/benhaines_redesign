@@ -76,6 +76,32 @@ else:
 <?php
 endif;
 ?>
+
+<?php
+if(!is_product_category()):
+?>
+<section class="section section-white section-padded section-not-padded-mobile">
+    <div class="row">
+        <div class="small-12 large-12 columns" role="main">
+            <h1 class="page-title color-black align-center"><?php  echo get_theme_mod('protected_content_archive_title') ?></h1>
+        </div>
+        <div class="small-12 large-6 large-offset-3 columns end" role="main">
+            <p class="nocta-bene">
+              <?php  echo get_theme_mod('protected_content_archive_intro') ?>
+            </p>
+        </div>
+    </div>
+</section>
+<section class="section section-padded">
+    <div class="row row-feature-wine">
+        <?php wc_bh_members_loop(); ?>
+    </div>
+
+</section>
+<?php
+    endif;
+?>
+
 <?php
 if(!is_product_category()):
 ?>

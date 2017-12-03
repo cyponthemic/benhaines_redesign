@@ -224,6 +224,31 @@ if (!function_exists('wc_bh_museum_loop')) {
         endif;
     }
 }
+if (!function_exists('wc_bh_members_loop')) {
+
+    /**
+    Display title
+     */
+    function wc_bh_members_loop()
+    {
+        wp_reset_postdata();
+        $args = array(
+            'post_type' => 'product',
+            'has_password' => true,
+      	    'per_page' => 24,
+
+        );
+        // Set the query
+        $products = new WP_Query( $args );
+        // Standard loop
+        if ( $products->have_posts() ) :
+            while ( $products->have_posts() ) : $products->the_post();
+                wc_get_template_part('content', 'product');
+            endwhile;
+            wp_reset_postdata();
+        endif;
+    }
+}
 
 //$args = array( 'post_type' => 'product', 'posts_per_page' => 30, 'orderby' => 'date', 'order' => 'DESC',
 //    'meta_query' => array(

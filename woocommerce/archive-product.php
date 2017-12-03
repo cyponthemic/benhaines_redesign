@@ -78,7 +78,7 @@ endif;
 ?>
 
 <?php
-if(!is_product_category()):
+if(!is_product_category() && get_theme_mod('protected_content_archive_display')):
 ?>
 <section class="section section-white section-padded section-not-padded-mobile">
     <div class="row">

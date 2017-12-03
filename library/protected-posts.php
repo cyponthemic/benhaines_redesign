@@ -131,6 +131,26 @@ if (!function_exists('bh_register_theme_customizer_protected')) :
 								)
 						)
 				);
+
+				$wp_customize->add_setting(
+						'protected_content_archive_display',
+						array(
+								'default' => false,
+						)
+				);
+
+				$wp_customize->add_control(
+						new WP_Customize_Control(
+								$wp_customize,
+								'protected_content_archive_display_control',
+								array(
+										'type' => 'checkbox',
+										'label' => 'Display members only section on shop',
+										'section' => 'protected_content_archive',
+										'settings' => 'protected_content_archive_display'
+								)
+						)
+				);
     }
 
 

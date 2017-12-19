@@ -135,3 +135,11 @@
 		padding-top: 40%;
 	}
 }
+.post-password-required .image-crop--bottle-shot:hover{
+	height: 100%;
+    max-width: none;
+    width: auto;
+    top: 0%;
+    -ms-transform: translate(-50%) scale(1);
+    transform: translate(-50%) scale(1);
+}

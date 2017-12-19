@@ -22,19 +22,19 @@ function custom_override_checkout_fields( $fields ) {
         )
     );
 
-    $fields['billing']['billing_gg_address']= array(
-        'label'     => __('Delivery Address', 'woocommerce'),
-        'placeholder'   => _x('eg. 123 High Street Melbourne', 'placeholder', 'woocommerce'),
-        'required'  => true,
-        'class'     => array('form-row'),
-        'clear'     => true,
-        'custom_attributes' => array(
-            'ng-model' => 'billing_gg_address',
-            'ng-googleplace' => true,
-            'ng-prevent-form-on-enter' => true,
-            'ng-focus' => 'gc.geolocate()',
-        )
-    );
+    // $fields['billing']['billing_gg_address']= array(
+    //     'label'     => __('Delivery Address', 'woocommerce'),
+    //     'placeholder'   => _x('eg. 123 High Street Melbourne', 'placeholder', 'woocommerce'),
+    //     'required'  => true,
+    //     'class'     => array('form-row'),
+    //     'clear'     => true,
+    //     'custom_attributes' => array(
+    //         'ng-model' => 'billing_gg_address',
+    //         'ng-googleplace' => true,
+    //         'ng-prevent-form-on-enter' => true,
+    //         'ng-focus' => 'gc.geolocate()',
+    //     )
+    // );
     //reorder start
 
     //reorder end
@@ -50,13 +50,13 @@ function custom_override_checkout_fields( $fields ) {
         'ng-model' => 'blc.fields.billing_phone'
     );
 
-    $fields['billing']['billing_postcode']= array(
-        'required' => 'false',
-        'custom_attributes' => array(
-            'ng-model' => 'blc.fields.billing_postcode',
-            'ng-show' => 'blc.showAddress'
-        )
-    );
+    // $fields['billing']['billing_postcode']= array(
+    //     'required' => 'false',
+    //     'custom_attributes' => array(
+    //         'ng-model' => 'blc.fields.billing_postcode',
+    //         'ng-show' => 'blc.showAddress'
+    //     )
+    // );
 
     //hidden address fields
     $hffields = array(
@@ -77,7 +77,7 @@ function custom_override_checkout_fields( $fields ) {
     foreach($hffields as $hffields)
     {
         $fields['billing'][$hffields]['required'] = false;
-        $fields['billing'][$hffields]['custom_attributes']['ng-show'] = 'blc.showAddress';
+        // $fields['billing'][$hffields]['custom_attributes']['ng-show'] = 'blc.showAddress';
         if(get_user_meta( $user->ID, $hffields, true )){
             $userGGaddress = $userGGaddress.get_user_meta( $user->ID, $hffields, true ).', ';
         }
@@ -92,7 +92,7 @@ function custom_override_checkout_fields( $fields ) {
         "billing_fullname",
         "billing_first_name",
         "billing_last_name",
-        "billing_gg_address",
+        // "billing_gg_address",
         "billing_address_1",
         "billing_address_2",
         "billing_postcode",
@@ -113,13 +113,13 @@ function custom_override_checkout_fields( $fields ) {
 
 
     }
-    $fields['billing']['billing_gg_address']['custom_attributes']['ng-init'] = "blc.fields.billing_gg_address=\"".$userGGaddress."\"";
+    // $fields['billing']['billing_gg_address']['custom_attributes']['ng-init'] = "blc.fields.billing_gg_address=\"".$userGGaddress."\"";
 
     $fields2['billing']['billing_fullname'] = $fields['billing']['billing_fullname'];
     $fields2['billing']['billing_first_name'] = $fields['billing']['billing_first_name'];
     $fields2['billing']['billing_last_name'] = $fields['billing']['billing_last_name'];
     $fields2['billing']['billing_company'] = $fields['billing']['billing_company'];
-    $fields2['billing']['billing_gg_address'] = $fields['billing']['billing_gg_address'];
+    // $fields2['billing']['billing_gg_address'] = $fields['billing']['billing_gg_address'];
     $fields2['billing']['billing_phone'] = $fields['billing']['billing_phone'];
     $fields2['billing']['billing_email'] = $fields['billing']['billing_email'];
     $fields2['billing']['billing_address_1'] = $fields['billing']['billing_address_1'];

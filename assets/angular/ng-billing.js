@@ -70,7 +70,7 @@
             console.log(blc.address);
             $scope.$apply(function() {
                 //blc.showAddress= true;
-                blc.fields.billing_address_1 = blc.address.street_number+" "+blc.address.route;
+                blc.fields.billing_address_1 = blc.address.name+" "+blc.address.street_number+" "+blc.address.route;
                 blc.fields.billing_address_2  = blc.address.subpremise;
                 blc.fields.billing_postcode  = blc.address.postal_code;
                 blc.fields.billing_country  = 'AU';

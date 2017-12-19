@@ -241,3 +241,11 @@ textarea#order_comments{
     padding: 16px;
   }
 }
+
+.woocommerce form .form-row .select2-container {
+	display: none;
+}
+
+.woocommerce-billing-fields {
+	margin-bottom: 2em;
+}

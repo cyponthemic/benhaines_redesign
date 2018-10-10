@@ -64,7 +64,7 @@ get_header(); ?>
                 <?php
                 $args = array(
                     'post_type' => 'product',
-                    'posts_per_page' => 2,
+                    'posts_per_page' => 3,
 										'has_password' => false
                 );
 

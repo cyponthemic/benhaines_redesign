@@ -28,9 +28,9 @@ get_header(); ?>
                       <p class="p-upper">BEN HAINES WINE</p>
                       <p class="">
                         <address>
-                        5 Parker Street</br>
-                        Ballarat, Victoria 3350</br>
-                        Australia
+                            15B Ellesmere Street</br>
+                            Northcote Vic 3070</br>
+                            Australia
                         </address>
                       </p>
                     </div>
